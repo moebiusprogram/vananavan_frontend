@@ -1,0 +1,31 @@
+import { User } from './user';
+
+export interface Trip {
+  _id?: string,
+  from?: any,
+  to?: any,
+  userId?: string,
+  driverId?: string,
+  fromAddress?: string,
+  toAddress?: string,
+  fare?: string,
+  quote?: string,
+  numberOfPassengers?: string,
+  instructions?: string,
+  date?: Date,
+  time?: string,
+  returnDate?: Date,
+  returnTime?: string,
+  review?: number,
+  rating?: number,
+  isRating?: boolean,
+  isHavingLuggage?: boolean,
+  isHavingRoundTrip?: boolean,
+  isSharing?: boolean,
+  status?: number,
+  bookingId?: string,
+  createdAt?: Date,
+  updatedAt?: Date,
+  details?: User,
+  isResponded?: boolean
+}

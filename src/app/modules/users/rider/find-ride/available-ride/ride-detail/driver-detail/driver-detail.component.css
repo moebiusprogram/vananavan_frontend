@@ -1,0 +1,18 @@
+.fa {
+  color: lightgray;
+}
+.checked {
+  color: #f96a0a;
+}
+agm-map {
+  height: 120px;
+  width: 180px;
+}
+.green-icon {
+  color: #28a745;
+}
+
+.drop-loction {
+  height: 120px;
+  width: 180px;
+}

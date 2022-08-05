@@ -1,0 +1,125 @@
+<div class="chat-top-box">
+  <div class="Txt-name-Hd">
+    <div class="d-flex justify-content-between wrap-cancel">
+
+      <div class="driver-img van-icon_img">
+        <img src="assets/images/van.svg" alt="" class="img-fluid border-0">
+      </div>
+
+      <div [class]="requestType==1? 'cancel-reqest_box-profile':'cancel-reqest_box-profile closeride-details'">
+        <!-- <h6 *ngIf="selectedRequest && selectedRequest.status==3 && selectedRequest?.fare!='' && selectedRequest?.fare">
+          ${{selectedRequest?.fare}}</h6> -->
+        <div class="sep-date">
+          <h5>From</h5>
+          <h4>{{ selectedRequest?.date | date }}</h4>
+        </div>
+        <div class="round-box">
+          <img src="assets/images/round.svg" alt="" class="img-fluid">
+        </div>
+        <div>
+          <div class="sep-date">
+            <h5>To</h5>
+            <h4>{{ selectedRequest?.isHavingRoundTrip? (selectedRequest?.returnDate | date):
+              (selectedRequest?.date | date) }}</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="cancel-request-link" *ngIf="requestType==1">
+        <h3 (click)="cancelRequest()">Cancel Request</h3>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="booking-map-box">
+  <div class="map-booking-img request-map" id="request-map1">
+    <!-- <agm-map [zoom]="3" [fitBounds]="true" [mapTypeControl]='true' [streetViewControl]="false" [latitude]="lat" [longitude]="long">
+      <agm-marker *ngFor="let coordinate of coordinates" [latitude]="coordinate.lat" [longitude]="coordinate.long" [agmFitBounds]="true">
+      </agm-marker>
+    </agm-map> -->
+  </div>
+
+  <div class="loction-form-to">
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="book-map-add">
+          <h3> From</h3>
+          <h4>{{ selectedRequest?.fromAddress}}</h4>
+        </div>
+      </div>
+      <div class="col-md-6 ">
+        <div class="book-map-add">
+          <h3> To</h3>
+          <h4>{{ selectedRequest?.toAddress }}</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="booking-rating">
+
+      <div class="passenger-detail">
+        <h4>Passenger Details</h4>
+      </div>
+      <div class="Special-instruction">
+
+        <div class="number-passenger-box">
+          <h3> Number of Passengers</h3>
+          <h4>{{ selectedRequest?.numberOfPassengers }}</h4>
+        </div>
+        <div class="number-passenger-box">
+          <h3>Luggage</h3>
+          <h4 *ngIf="selectedRequest?.isHavingLuggage">Yes</h4>
+          <h4 *ngIf="!selectedRequest?.isHavingLuggage">No</h4>
+        </div>
+
+        <div class="number-passenger-box">
+          <h3>Would you like to share this ride?</h3>
+          <h4 *ngIf="selectedRequest?.isSharing">Yes</h4>
+          <h4 *ngIf="!selectedRequest?.isSharing">No</h4>
+        </div>
+
+        <div class="border-drivers"></div>
+
+        <div class="instruction-Txt">
+          <h6>Special Instructions</h6>
+          <h5>{{ selectedRequest?.instructions }}</h5>
+        </div>
+      </div>
+
+      <div class="passenger-detail">
+        <h4>Response From Drivers</h4>
+      </div>
+
+      <ng-container *ngFor="let item of response">
+        <div class="response-driver" *ngIf="selectedRequest.bookingId==item?.bookingId">
+          <div (click)="goToMessage()" class="Txt-name-Hd">
+            <div class="d-flex justify-content-between">
+              <div class="driver-pic d-flex">
+                <div class="driver-img">
+                  <img src="{{item?.driverId?.avatar? environment.host+environment.imageBaseUrl+item?.driverId?.avatar: 
+                  'assets/images/Profile.svg'}}" alt="" class="img-fluid">
+                </div>
+                <div class="driver-name-Txt " id="book-star">
+                  <h4>{{ item?.driverId?.firstName }} {{ item?.driverId?.lastName }}</h4>
+                  <!-- <h5>5.0 (400)</h5> -->
+                </div>
+              </div>
+
+              <div class="booking-lihnik total-cost">
+                <h3 class="cost">Total Cost<span>${{ item?.quote }}</span></h3>
+                <h6>{{  item?.createdAt | date }} {{  item?.createdAt | date:"HH:mm"}}</h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+    </div>
+
+  </div>
+</div>

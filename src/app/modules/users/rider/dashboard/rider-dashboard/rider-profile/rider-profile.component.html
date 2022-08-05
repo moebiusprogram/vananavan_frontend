@@ -1,0 +1,105 @@
+<app-layout>
+  <router-outlet>
+    <section>
+      <div class="container-fluid">
+        <div class="row"> 
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <app-rider-dashboard-sidebar> </app-rider-dashboard-sidebar>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="profile-detail-form">
+              <div class="tab-content mt-0">
+                <div>
+                  <div class="form-box">
+                    <div class="personal-information-Hd">
+                      <h3>Your personal information</h3>
+                    </div>
+                    <div class="form-personal-information p-0">
+                      <form [formGroup]="profileForm">
+                        <div class="form-group email-form mb-0">
+                          <label class="mb-0">First Name</label>
+                          <input [ngStyle]="{'cursor' :  user?.firstName ? 'not-allowed' : null}" [readonly]="user?.firstName" formControlName="firstName" type="text" class="form-control">
+                          <div
+                            *ngIf="profileForm.get('firstName').invalid && (profileForm.get('firstName').touched || profileForm.get('firstName').dirty || isSubmit)"
+                            style="color: red;">
+                            <span *ngIf="profileForm.get('firstName')?.errors?.required">
+                              Please enter first name
+                            </span>
+                            <span *ngIf="profileForm.get('firstName')?.errors?.minlength">
+                              Please enter at least 3 characters
+                            </span>
+                            <span *ngIf="profileForm.get('firstName')?.errors?.maxlength">
+                              Please enter at most 20 characters
+                            </span>
+                          </div>
+                        </div>
+
+                        <div class="form-group email-form mb-0">
+                          <label class="mb-0">Last Name</label>
+                          <input [ngStyle]="{'cursor' :  user?.lastName ? 'not-allowed' : null}" [readonly]="user?.lastName"  formControlName="lastName" type="text" class="form-control">
+                          <div
+                            *ngIf="profileForm.get('lastName').invalid && (profileForm.get('lastName').touched || profileForm.get('lastName').dirty || isSubmit)"
+                            style="color: red;">
+                            <span *ngIf="profileForm.get('lastName')?.errors?.required">
+                              Please enter first name
+                            </span>
+                            <span *ngIf="profileForm.get('lastName')?.errors?.minlength">
+                              Please enter at least 3 characters
+                            </span>
+                            <span *ngIf="profileForm.get('lastName')?.errors?.maxlength">
+                              Please enter at most 20 characters
+                            </span>
+                          </div>
+                        </div>
+                        <div class="form-group email-form mb-0">
+                          <label class="mb-0">Email</label>
+                          <input [ngStyle]="{'cursor' :  user?.email ? 'not-allowed' : null}" formControlName="email" type="email" class="form-control"
+                            [readonly]="user?.email">
+                        </div>
+                        <div class="form-group email-form">
+                          <label class="m-0">Phone Number</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                              <button class="btn btn-outline-secondary dropdown-toggle us-icon" type="button"
+                                disabled><img
+                                src="assets/images/us-flag.svg" alt="">+1</button>
+                              <!-- <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#"> Action</a>
+                                <a class="dropdown-item" href="#">Another </a>
+                                <a class="dropdown-item" href="#">Something</a>
+                              </div> -->
+                            </div>
+                            <input formControlName="mobile" onlyNumber type="text" min="14" max="14" 
+                            (input)="changePhoneFormat($event)"
+                            class="form-control"
+                              aria-label="Text input with dropdown button">
+                          </div>
+                          <div
+                            *ngIf="profileForm.get('mobile').invalid && (profileForm.get('mobile').touched || profileForm.get('mobile').dirty || isSubmit)"
+                            style="color: red;">
+                            <span *ngIf="profileForm.get('mobile')?.errors?.required">
+                              Please enter phone number
+                            </span>
+                            <span
+                              *ngIf="profileForm.get('mobile')?.errors?.minlength || profileForm.get('mobile')?.errors?.maxlength">
+                              Please enter 10 digits
+                            </span>
+                          </div>
+                        </div>
+                        <div class="seartch-Btn text-right">
+                          <button class="btn btn-outline-success my-2 my-sm-0  call-now" type="submit"
+                            (click)="submitForm()">Submit</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </router-outlet>
+</app-layout>

@@ -1,0 +1,170 @@
+<app-layout>
+  <router-outlet>
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <app-rider-dashboard-sidebar></app-rider-dashboard-sidebar>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="profile-detail-form">
+              <div class="tab-content mt-0">
+                <div>
+                  <div class="massege-Box">
+                    <div class="row">
+                      <div class="col-md-5 pr-0">
+                        <div class="massege-filter-box">
+                          <div class="bookings-tab">
+                            <ul class="nav nav-tabs" role="tablist">
+                              <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#request-home"
+                                  (click)="updateRequestByType(1)">Active</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#cancelled"
+                                  (click)="updateRequestByType(2)">Closed</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <!-- Tab panes -->
+                          <div class="tab-content m-0 current-tab-body">
+                            <div id="request-home" class="tab-pane active "
+                              *ngIf="activeRequest.length>0 && requestType==1">
+                              <div class="listing_main-two">
+                                <div class="current-detail-sidbar">
+                                  <div class="sort-by pt-1">
+                                    <!-- <div class="sort-Txt">
+                                      <h3>Filter</h3>
+                                    </div> -->
+                                    <div class="Week-calendar">
+                                      <!-- <h3>New Request <span><i class="fa fa-calendar" aria-hidden="true"></i></span></h3> -->
+                                    </div>
+                                  </div>
+                                  <div class="current-listing" *ngFor="let item of activeRequest">
+                                    <div [class]="selectedId==item._id? 'highlight-request':'current-driver-box'">
+                                      <div class="current-page-box-profile" (click)="updateSelectedRequest(item, 1)">
+                                        <div class="drivers-filters d-flex filter-padding ">
+                                          <div class="driver-pic d-flex">
+                                            <div class="driver-img">
+                                              <img src="assets/images/van.svg" alt="" class="img-fluid border-0">
+                                            </div>
+                                          </div>
+                                          <div class="booking-van-date">
+                                            <h4>
+                                              <span><i class="fa fa-calendar" aria-hidden="true"></i></span>
+                                              {{ item?.date | date}}
+                                            </h4>
+                                          </div>
+                                        </div>
+
+                                        <div class="current-loction-txt">
+                                          <div class="pickup-address card-qution">
+                                            <div class="pick-Txt">
+                                              <h5>{{ item?.fromAddress }}</h5>
+                                            </div>
+                                            <div class="pick-Txt mt-3">
+                                              <h5>{{ item?.toAddress }}</h5>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div *ngIf="activeRequest.length==0 && requestType==1">
+                              <h4>No Ride Requests.</h4>
+                            </div>
+
+                            <div id="cancelled" class="tab-pane fade" *ngIf="requestType==2">
+                              <div class="listing_main-two">
+                                <div class="current-detail-sidbar">
+                                  <!-- <div class="sort-by">
+                                  <div class="sort-Txt">
+                                    <h3>Filter</h3>
+                                  </div>
+                                  <div class="Week-calendar">
+                                    <h3>New Request <span><i class="fa fa-calendar" aria-hidden="true"></i></span></h3>
+                                  </div>
+                                </div> -->
+
+                                  <div class="current-listing" *ngFor="let item of cancelledRequest">
+                                    <div  [class]="selectedId==item._id? 'highlight-request':'current-driver-box'">
+                                      <div class="current-page-box-profile" (click)="updateSelectedRequest(item, 2)">
+                                        <div class="drivers-filters d-flex filter-padding ">
+                                          <div class="driver-pic d-flex">
+                                            <div class="driver-img">
+                                              <img
+                                                [src]="item?.avatar? item?.avatar: item?.loginType==1? item?.photoUrl : 'assets/images/Driver.svg'"
+                                                alt="" class="img-fluid">
+                                            </div>
+                                            <div class="driver-name-Txt monteiro">
+                                              <h4>
+                                                {{ item?.firstName }}
+                                                <span>
+                                                  {{ item?.lastName }}
+                                                </span>
+                                              </h4>
+                                              <h6 *ngIf="item?.isHavingRoundTrip">{{ item?.date | date }} -
+                                                {{ item?.returnDate | date}}</h6>
+                                              <h6 *ngIf="!item?.isHavingRoundTrip">{{ item?.date | date }}</h6>
+                                            </div>
+                                          </div>
+
+                                          <div class="accepted-hd-2">
+                                            <h6 *ngIf="item?.fare!='' && item?.fare && item?.status==3">${{item?.fare}}
+                                            </h6>
+                                            <h5 *ngIf="item?.status==1">Requested</h5>
+                                            <h5 *ngIf="item?.status==4">Cancelled</h5>
+                                            <h5 *ngIf="item?.status==2">Rejected</h5>
+                                            <h5 *ngIf="item?.status==3">Booked</h5>
+                                            <h5 *ngIf="item?.status==5">Completed</h5>
+                                          </div>
+
+                                          <!-- <div class="driver-days time-date-txt">
+                                          <span>{{ item?.date | date }}</span>
+                                          <strong>{{ item?.returnTime }}</strong>
+                                        </div> -->
+                                        </div>
+
+                                        <div class="current-loction-txt">
+                                          <div class="pickup-address card-qution">
+                                            <div class="pick-Txt">
+                                              <h5>{{ item?.fromAddress }}</h5>
+                                            </div>
+                                            <div class="pick-Txt mt-3">
+                                              <h5>{{ item?.toAddress }}</h5>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+                            <div *ngIf="cancelledRequest.length==0 && requestType==2">
+                              <h4>No Ride Requests.</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-7 pl-0 padding-left-request-page"
+                        *ngIf="(requestType==1 && activeRequest.length>0) || (requestType==2 && cancelledRequest.length>0)">
+                        <app-rider-request-detail></app-rider-request-detail>
+                      </div>
+                    </div>
+                    <!-- close-row -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </router-outlet>
+</app-layout>

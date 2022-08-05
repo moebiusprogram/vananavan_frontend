@@ -1,0 +1,102 @@
+<!--------------------------------start of header------------------------------------------------>
+
+<header id="top-header" class="fixed-top">
+  <div class="container-fluid ">
+    <div class="header-wrapper">
+      <nav class="navbar">
+        <div class="logo-new">
+          <a (click)="goToProfile('/driver/profile')">
+            <img src="assets/images/logo.png" alt="" class="img-fluid" id="vanlogo-driver">
+          </a>
+        </div>
+        <div class="menu-drop-new">
+          <ul class="navbar-nav-new">
+            <!-- <li>
+              <div class="notification_dropdown">
+                <img src="assets/images/bell.svg" alt="" class="">
+                <div class="drop-padding">
+                  <div class="dropdown-content-notification">
+                    <div class="request_form_new">
+                      <h4>You have a new ride request From:</h4>
+                      <h3>Shadrias Pearson</h3>
+                    </div>
+                    <div class="request_form_new mt-top">
+                      <h4>Your Quotation accepted by:</h4>
+                      <h3>John Smith</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li> -->
+            <li> <img
+                [src]="currentUser?.avatar? currentUser?.avatar: currentUser?.loginType==1? currentUser?.photoUrl: 'assets/images/nav_Driver.svg'"
+                alt="" class="circel-header-image"></li>
+            <li class="nav-item">
+              <div class="shadrias-drop you-are-address" id="xy">
+                <a class="nav-link"> {{ currentUser?.firstName }} {{ currentUser?.lastName }}
+                  <span><i class="fa fa-caret-down" aria-hidden="true"></i></span></a>
+                <div class="parent">
+                  <div class="dropdown-header-menu flex-column " id="v-pills-tab" role="tablist"
+                    aria-orientation="vertical">
+                    <a (click)="goToGivenRoute('/driver/dashboard')" class="nav-link">
+                      <span><img src="assets/images/material-dashboard.svg" alt=""></span>
+                      Dashboard</a>
+                    <a (click)="goToGivenRoute('/driver/profile')" class="nav-link" id="v-pills-home-tab"
+                      data-toggle="pill" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                      <span><img src="assets/images/profile-2.svg" alt=""></span>
+                      Profile <small class="notification_dropdown"><i [class]="showProfileIcon? 'fa fa-circle': ''"
+                          aria-hidden="true"></i>
+                      </small>
+                    </a>
+                    <a (click)="goToGivenRoute('/driver/vehicles-detail')" class="nav-link" id="v-pills-Vehicle-tab"
+                      data-toggle="pill" role="tab" aria-controls="v-pills-Vehicle" aria-selected="true">
+                      <span><img src="assets/images/car.svg" alt=""></span>
+                      Your Vehicle Details<small class="notification_dropdown"><i
+                          [class]="showVehicleIcon? 'fa fa-circle': ''" aria-hidden="true"></i>
+                      </small></a>
+
+                    <a (click)="goToGivenRoute('/driver/school-route')" class="nav-link" id="v-pills-Route-tab"
+                      data-toggle="pill" role="tab" aria-controls="v-pills-Route" aria-selected="false">
+                      <span><img src="assets/images/icon.svg" alt=""></span>
+                      School Routes</a>
+                      
+                    <a (click)="goToGivenRoute('/driver/booking-route')" class="nav-link" id="v-pills-Route-tab"
+                      data-toggle="pill" role="tab" aria-controls="v-pills-Route" aria-selected="false">
+                      <span><img src="assets/images/icon.svg" alt=""></span>
+                      Booking Routes</a>
+
+                    <a (click)="goToGivenRoute('/driver/ride-request')" class="nav-link" id="v-pills-History-tab"
+                      data-toggle="pill" role="tab" aria-controls="v-pills-History" aria-selected="false">
+                      <span><img src="assets/images/pc1.svg" alt=""></span>
+                      Ride Requests<small class="notification_dropdown"><i [class]="isNewRequest? 'fa fa-circle': ''"
+                          aria-hidden="true"></i>
+                      </small></a>
+                    <a (click)="goToGivenRoute('/driver/trip-history')" class="nav-link" id="v-pills-History-tab"
+                      data-toggle="pill" role="tab" aria-controls="v-pills-History" aria-selected="false">
+                      <span><img src="assets/images/trip-history.svg" alt=""></span>
+                      Trip History</a>
+                    <!-- <a (click)="goToGivenRoute('/driver/my-route')" class="nav-link" id="v-pills-Route-tab"
+                      data-toggle="pill" role="tab" aria-controls="v-pills-Route" aria-selected="false">
+                      <span><img src="assets/images/icon.svg" alt=""></span>
+                      My Routes</a> -->
+
+                    <a (click)="goToGivenRoute('/driver/messages')" class="nav-link" id="v-pills-messages-tab"
+                      data-toggle="pill" role="tab" aria-controls="v-pills-messages" aria-selected="false">
+                      <span><img src="assets/images/meesage.svg" alt=""></span>
+                      Messages<small class="notification_dropdown"><i [class]="isNewMessage? 'fa fa-circle': ''"
+                          aria-hidden="true"></i>
+                      </small></a>
+                    <a (click)="logout()">
+                      <span><img src="assets/images/log-out.svg" alt=""></span>
+                      Log out</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+<!--End of header-->

@@ -1,0 +1,129 @@
+      <section class="contact_hd">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="contactTxt">
+                <h1>Contact Us</h1>
+                <p>Please contact us for further assistance</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="contact-form">
+                <form [formGroup]="contactUsForm">
+                  <div class="form-row">
+                    <div class="form-group  mb-4 col-md-6">
+                      <label> First Name</label>
+                      <input type="text" formControlName="firstName" class="form-control" id="inputEmail4">
+                      <div
+                        *ngIf="contactUsForm.get('firstName').invalid && (contactUsForm.get('firstName').touched || contactUsForm.get('firstName').dirty || isSubmit)"
+                        style="color: red;">
+                        <span *ngIf="contactUsForm.get('firstName')?.errors?.required">
+                          Please enter first name
+                        </span>
+                        <span *ngIf="contactUsForm.get('firstName')?.errors?.minlength">
+                          Please enter at least 3 characters
+                        </span>
+                        <span *ngIf="contactUsForm.get('firstName')?.errors?.maxlength">
+                          Please enter at most 20 characters
+                        </span>
+                      </div>
+                    </div>
+
+                    <div class="form-group  mb-4 col-md-6">
+                      <label> Last Name</label>
+                      <input type="text" formControlName="lastName" class="form-control">
+                      <div
+                        *ngIf="contactUsForm.get('lastName').invalid && (contactUsForm.get('lastName').touched || contactUsForm.get('lastName').dirty || isSubmit)"
+                        style="color: red;">
+                        <span *ngIf="contactUsForm.get('lastName')?.errors?.required">
+                          Please enter last name
+                        </span>
+                        <span *ngIf="contactUsForm.get('lastName')?.errors?.minlength">
+                          Please enter at least 3 characters
+                        </span>
+                        <span *ngIf="contactUsForm.get('lastName')?.errors?.maxlength">
+                          Please enter at most 20 characters
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group  mb-4">
+                    <label>Email</label>
+                    <input type="text" class="form-control " formControlName="email" >
+                    <div
+                      *ngIf="contactUsForm.get('email').invalid && (contactUsForm.get('email').touched || contactUsForm.get('email').dirty || isSubmit)"
+                      style="color: red;">
+                      <span *ngIf="contactUsForm.get('email')?.errors?.required">
+                        Please enter email
+                      </span>
+                      <span *ngIf="contactUsForm.get('email')?.errors?.email">
+                        Please enter valid email
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="form-group  mb-4">
+                    <label>Comment</label>
+                    <textarea formControlName="comment"></textarea>
+                    <div
+                      *ngIf="contactUsForm.get('comment').invalid && (contactUsForm.get('comment').touched || contactUsForm.get('comment').dirty || isSubmit)"
+                      style="color: red;">
+                      <span *ngIf="contactUsForm.get('comment')?.errors?.required">
+                        Please enter comment
+                      </span>
+                      <span *ngIf="contactUsForm.get('comment')?.errors?.minlength">
+                        Please enter at least 3 characters
+                      </span>
+                      <span *ngIf="contactUsForm.get('comment')?.errors?.maxlength">
+                        Please enter at most 250 characters
+                      </span>
+                    </div>
+                  </div>
+
+                  <button  type="button" (click)="submitContact()" class="  btn-login contact-Btn justify-content-center w-auto" >
+                    Contact Us
+                  </button>
+
+                </form>
+              </div>
+            </div>
+            <div class="col-md-1"> </div>
+            <div class="col-md-5">
+              <div class="our-address">
+                <div class="adress-loaction">
+                  <div class="ave-address">
+                    <h3><img src="assets/images/Location.svg" alt="" class="img-fluid"></h3>
+                    <h4>
+                      Marceda LLC
+                      <br>
+                      Our Address
+                        <span>14055 SW 142 AVE</span>
+                        <span>Miami, Florida 33186</span>
+                    </h4>
+                  </div>
+                  <div class="border-adress"></div>
+                  <div class="ave-address">
+                    <h3><img src="assets/images/Bold-Message.svg" alt="" class="img-fluid"></h3>
+                    <h4>
+                      Our Email
+                      <span>info@vananavan.com
+
+                      </span>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+           
+          
+          </div>
+        </div>
+      </section>

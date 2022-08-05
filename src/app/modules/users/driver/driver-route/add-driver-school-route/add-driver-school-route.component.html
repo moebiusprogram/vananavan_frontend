@@ -1,0 +1,116 @@
+<app-driver-layout>
+  <router-outlet>
+    <section class="create_rout">
+      <div class="container max-container">
+        <div class="pointer" (click)="navigateONRoute()">
+
+          <p><i class="fa fa-angle-left" aria-hidden="true"></i> &nbsp; Back</p>
+        </div>
+
+        <div class="rout_bod">
+          <div class="row">
+
+            <div class="col-md-5 col-sm-5">
+              <div class="rout-height">
+                <div class="ad-rout-box">
+                  <div class="txt-create">
+                    <h2>Create Route</h2>
+                    <p data-toggle="modal" data-target="#exampleModal3" style="cursor: pointer; font-size: 14px;">Need Help? <span style="color: orange;">Watch Tutorial</span></p>
+                  </div>
+                  <form [formGroup]="routeForm">
+                    <div class="input-Box">
+                      <div class="loaction-add_hd ">
+                        <h2>School name</h2>
+                      </div>
+                      <div class="form-group">
+                        <input type="text" google-school-autocomplete formControlName="schoolName"
+                          (onSelect)="selectAddress($event)" class="form-control" id="exampleInputEmail1"
+                          aria-describedby="emailHelp">
+                        <div
+                          *ngIf="routeForm.get('schoolName').invalid && (routeForm.get('schoolName').touched || routeForm.get('schoolName').dirty || isSubmit)"
+                          style="color: red;">
+                          <span *ngIf="routeForm.get('schoolName')?.errors?.required">
+                            Please select schoolName
+                          </span>
+                        </div>
+                      </div>
+
+                      <div class="loaction-add_hd">
+                        <h2>Route Name</h2>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12 doller">
+                          <div class="col form-group ">
+                            <input type="text" placeholder="Route name" formControlName="title" class="form-control">
+                            <div
+                              *ngIf="routeForm.get('title')?.invalid && (routeForm.get('title')?.touched || routeForm.get('title')?.dirty || isSubmit)"
+                              style="color: red;">
+                              <span *ngIf="routeForm.get('title')?.errors?.required">
+                                Please enter route name
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+
+                    <div class="row ml-0 mt-3">
+                      <div class="submit-quote">
+                        <button type="submit" [disabled]="!isPolygon"
+                          [ngStyle]="{'cursor' :  !isPolygon ? 'not-allowed' : null}" (click)="saveRoute()">Save
+                          Route</button>
+                      </div>
+                      <div class=" name-save-route">
+                        <div class=" name-save-route">
+                          <div class="submit-quote">
+                            <button type="button" (click)="cancelRoute()" id="cr_btn">Clear Route</button>
+                          </div>
+                        </div>
+                      </div>
+
+
+
+                    </div>
+                  </form>
+                </div>
+
+
+              </div>
+
+            </div>
+            <div class="col-md-7 col-sm-7">
+              <div class="mapImg-add-rout">
+                <div class="map" id="local">
+                  <label id="panel"></label>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal3">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="">
+            <button style="padding:8px 0px" type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span style="position:relative; top:2px; right: 8px" aria-hidden="true"><i class="fa fa-times" aria-hidden="true"></i></span>
+            </button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/O0q4OIDfBy0"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </router-outlet>
+</app-driver-layout>

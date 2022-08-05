@@ -1,0 +1,176 @@
+<app-admin-layout>
+  <router-outlet>
+    <section class="user-admin-box">
+      <div class="container-fluid ">
+        <div class="row">
+
+          <div class="col-md-3 p-0">
+            <app-admin-sidebar></app-admin-sidebar>
+          </div>
+
+
+          <div class="col-md-9">
+            <div class="tab-content" id="v-pills-tabContent">
+              <div class="tab-pane fade show active" id="v-pills-abc1" role="tabpanel"
+                aria-labelledby="v-pills-abc1-tab">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-12">
+                      <h4 class="backarrowTxt" routerLink="/admin/user" > <img src="assets/images/Backarrow.svg" alt=""> Back to List</h4>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-7">
+                      <div class="authur-Box mt-0">
+                        <div class="authur-details d-flex">
+                          <div class="images-driver">
+                            <img [src]="rider?.avatar? rider?.avatar: rider?.loginType==1? rider?.photoUrl: 'assets/images/Profile.svg'" alt="">
+                          </div>
+                          <div class="driver-profile">
+                            <div class="driver-call">
+                              <h3>{{rider?.firstName}} {{rider?.lastName}}</h3>
+                              <h5>
+                                <!-- <span>Miami, Florida </span> -->
+                              </h5>
+                            </div>
+
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-6 fullname-user">
+                            <div class="driver-experience ">
+                              <div class="year">
+                                <h3>Full Name</h3>
+                                <h5>{{rider?.firstName}} {{rider?.lastName}}</h5>
+                              </div>
+
+                            </div>
+                            <div class="driver-experience ">
+                              <div class="year">
+                                <h3>Mobile</h3>
+                                <h5>+{{rider?.mobile}}</h5>
+                              </div>
+
+                            </div>
+                          </div>
+                          <div class="col-6 fullname-user">
+                            <div class="driver-experience ">
+                              <div class="year">
+                                <h3>Email</h3>
+                                <h5>{{rider?.email}}</h5>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                      <div class="pickup-Box mb-4">
+
+
+                        <div class="d-flex justify-content-between">
+                          <h6 class="rHd-txt">Upcoming Trips</h6>
+                          <h5 class="viewall_user" *ngIf="upcomingTrips.length>0">View All</h5>
+                        </div>
+                        <div class="pickup-Box ml-0 mt-3 p-0" *ngIf="upcomingTrips.length>0">
+                          <h4 class="oneTxtroute border-bottom-0 pb-0">{{upcomingTrips[0]?.date | date}}</h4>
+                          <div class="picup-loction  coral-padding">
+
+                            <div class="pickup-address schol-pickup-maping-add">
+
+                              <div class="pick-Txt">
+                                <h5 class="newtxt-loaction-Hd">Pick up Location</h5>
+                                <h3>{{upcomingTrips[0]?.fromAddress}}</h3>
+                              </div>
+                              <div class="pick-Txt mt-3">
+                                <h5 class="newtxt-loaction-Hd">Drop off Location</h5>
+                                <h3>{{upcomingTrips[0]?.toAddress}}</h3>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+                        <div class="pickup-Box ml-0 mt-3 p-0" *ngIf="upcomingTrips.length==0">
+                          <p>No upcoming trips.</p>
+                        </div>
+
+
+                        <div class="d-flex mt-4 justify-content-between">
+                          <h6 class="rHd-txt">Past Trips</h6>
+                          <h5 class="viewall_user" *ngIf="previousTrips.length>0">View All</h5>
+                        </div>
+                        <div class="pickup-Box ml-0 mt-3 p-0" *ngIf="previousTrips.length>0">
+                          <h4 class="oneTxtroute border-bottom-0 pb-0">23 May 2020</h4>
+                          <div class="picup-loction  coral-padding">
+
+                            <div class="pickup-address schol-pickup-maping-add">
+
+                              <div class="pick-Txt">
+                                <h5 class="newtxt-loaction-Hd">Pick up Location</h5>
+                                <h3>1140 Asturia Ave, Coral Gab…</h3>
+                              </div>
+                              <div class="pick-Txt mt-3">
+                                <h5 class="newtxt-loaction-Hd">Drop off Location</h5>
+                                <h3>Coral Gables Elementary...</h3>
+                              </div>
+                            </div>
+
+                          </div>
+                        </div>
+
+                        <div class="pickup-Box ml-0 mt-3 p-0" *ngIf="previousTrips.length==0">
+                          <p>No past trips.</p>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="col-5">
+                      <div class="admin-reviw">
+                        <div class="reviews mt-0">
+                          <div class="review-Hd">
+                            <h3>Reviews</h3>
+                          </div>
+                          <ng-container *ngFor="let rating of previousTrips">
+                          <div class="customer-reviews" *ngIf="rating.isRating">
+                            <div class="driver-pic d-flex">
+                              <div class="jose-estave ">
+                                <img src="{{rating?.details?.avatar? environment.host + environment.imageBaseUrl + rating?.details?.avatar:
+                                'assets/images/Profile.svg'}}" alt="profile" class="img-fluid">
+                              </div>
+                              <div class="driver-name">
+                                <h4> {{rating?.details?.firstName}}</h4>
+                                <h5> {{rating?.details?.date | date}}</h5>
+                              </div>
+                            </div>
+                            <div class="reviews-star">
+                              <h5>
+                                <rating [ngModel]="rating?.rating" [float]="true" [readonly]="true"></rating>
+                              </h5>
+                              <!-- <h3>Safe driving, punctual, cool minded</h3> -->
+                              <h4>{{rating?.review}}</h4>
+                            </div>
+                          </div>
+                          </ng-container>
+                          <div *ngIf="previousTrips.length==0">
+                            <p>No reviews yet.</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+              </div>
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </router-outlet>
+</app-admin-layout>

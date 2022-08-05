@@ -1,0 +1,69 @@
+<!--------------------------------start of header------------------------------------------------>
+<header id="top-header" class="fixed-top">
+  <div class="container-fluid ">
+    <div class="header-wrapper">
+      <nav class="navbar">
+        <div class="logo-new">
+          <a>
+            <img src="assets/images/logo.png" (click)="goToGivenRoute('/rider/search-ride')" alt="" class="img-fluid" id="vanlogo">
+          </a>
+        </div>
+        <div class="menu-drop-new">
+          <ul class="navbar-nav-new" *ngIf="currentUser">
+            <!-- <li>
+              <div class="notification_dropdown">
+                <img src="assets/images/bell.svg" alt="" class="">
+                <div class="drop-padding">
+                  <div class="dropdown-content-notification">
+                    <div class="request_form_new">
+                      <h4>You have a new ride request From:</h4>
+                      <h3>Shadrias Pearson</h3>
+                    </div>
+                    <div class="request_form_new mt-top">
+                      <h4>Your Quotation accepted by:</h4>
+                      <h3>John Smith</h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li> -->
+            <li> <img [src]="currentUser?.avatar? currentUser.avatar: 'assets/images/nav_User.svg'" alt="" class="circel-header-image"></li>
+            <li class="nav-item">
+              <div class="shadrias-drop you-are-address rider_xy" >
+                <a class="nav-link textFit-content"> {{ currentUser?.firstName }} {{ currentUser?.lastName }}
+                  <span><i class="fa fa-caret-down" aria-hidden="true"></i></span></a>
+                <div class="parent">
+                  <div class="dropdown-header-menu  flex-column " >
+                    <a (click)="goToGivenRoute('/rider/profile')" class="nav-link">
+                      <span><img src="assets/images/profile-2.svg" alt=""></span>
+                      Profile</a>
+                    <a (click)="goToGivenRoute('/rider/my-bookings')" class="nav-link">
+                      <span><img src="assets/images/4 Calendar (2).svg" alt=""></span>
+                      My Bookings</a>
+                    <a (click)="goToGivenRoute('/rider/messages')" class="nav-link">
+                      <span><img src="assets/images/meesage.svg" alt=""></span>
+                      Messages<small class="notification_dropdown"><i [class]="isNewMessage? 'fa fa-circle': ''" aria-hidden="true"></i>
+                      </small></a>
+                    <a (click)="goToGivenRoute('/rider/my-request')" class="nav-link">
+                      <span><img src="assets/images/pc1.svg" alt=""></span>
+                      My Requests</a>
+                      <!-- <a (click)="goToGivenRoute('/rider/driver-profile')" class="nav-link">
+                      <span><img src="assets/images/profileDetail.svg" alt=""></span>
+                      Profile Details</a> -->
+                    <a (click)="logout()">
+                      <span><img src="assets/images/log-out.svg" alt=""></span>
+                      Log out</a>
+                  </div>
+                </div>
+              </div>
+
+            </li>
+
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+  </div>
+</header>
+<!--End of header-->

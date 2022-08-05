@@ -1,0 +1,40 @@
+
+<div class="reviews" *ngIf="totalReview">
+  <div class="review-Hd">
+    <h3>{{ totalReview }} reviews</h3>
+  </div>
+  <div class="listing_main">
+  <div class="customer-reviews " *ngFor="let item of userReview">
+    <div class="driver-pic d-flex">
+      <div class="jose-estave">
+        <img src="{{item?.userId?.avatar? environment.host+environment.imageBaseUrl+item?.userId?.avatar: 
+        item?.userId?.loginType==1? item?.userId?.photoUrl : 'assets/images/Profile.svg'}}" alt="" class="img-fluid">
+      </div>
+      <div class="driver-name">
+        <h4> {{ item?.userId?.firstName}} {{ item?.userId?.lastName }}</h4>
+        <h5> {{ item?.createdAt | date }}</h5>
+      </div>
+    </div>
+    <div class="reviews-star">
+      <h5>
+        <rating [ngModel]="item?.rating"
+          [float]="true"
+                  [readonly]="true"
+></rating>
+        <!-- <i [class]="item?.rating>0? 'fa fa-star checked':'fa fa-star'" aria-hidden="true"></i>
+        <i [class]="item?.rating>1? 'fa fa-star checked':'fa fa-star'" aria-hidden="true"></i>
+        <i [class]="item?.rating>2? 'fa fa-star checked':'fa fa-star'" aria-hidden="true"></i>
+        <i [class]="item?.rating>3? 'fa fa-star checked':'fa fa-star'" aria-hidden="true"></i>
+        <i [class]="item?.rating>4? 'fa fa-star checked':'fa fa-star'" aria-hidden="true"></i> -->
+        <span> {{ item?.rating | number: '1.2-2'}}</span>
+      </h5>
+      <!-- <h3>Safe driving, punctual, cool minded</h3> -->
+      <h4>{{ item?.review }}</h4>
+    </div>
+  </div>
+</div>
+</div>
+<!-- 
+<div class="show-more">
+  <h3>Show more reviews</h3>
+</div> -->

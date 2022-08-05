@@ -1,0 +1,175 @@
+<app-driver-layout>
+  <router-outlet>
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <app-driver-sidebar></app-driver-sidebar>
+          </div>
+
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="profile-detail-form">
+              <div class="tab-content mt-0" id="v-pills-tabContent">
+                <div class="row">
+                  <div class="col-lg-7 col-md-7 reatingBorder">
+                    <div class="over-all-box">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="Recent_reviews_txt_hd recentr-txt">
+                            <h5>Overall Rating</h5>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-7 col-md-7 col-sm-7">
+                          <div class="dasbord-rating">
+                            <circle-progress [radius]="40"
+                              [percent]="dashBoardData?.rating?.goodRating? dashBoardData?.rating?.goodRating: 0"
+                              [showInnerStroke]="true" [innerStrokeWidth]="10" [outerStrokeColor]="'#fa6007'"
+                              [innerStrokeColor]="'#0c024a'" [clockwise]="false" [showZeroOuterStroke]="true"
+                              [space]="-10" [outerStrokeWidth]="10" [responsive]="true">
+                            </circle-progress>
+                          </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5">
+                          <div class="trip_complate_box">
+                            <div class="trip_complate_box_Txt">
+                              <h3>{{priviousTrips?.length}}</h3>
+                              <h4>Trips Completed</h4>
+                            </div>
+                          </div>
+
+                          <div class="trip_complate_box-two">
+                            <div class="trip_complate_box_Txt">
+                              <h3>{{upComigTrips?.length}}</h3>
+                              <h4>Upcoming Trips</h4>
+                            </div>
+                          </div>
+
+
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-lg-12">
+                          <div class="upcoming_trip d-flex justify-content-between">
+                            <h3>Upcoming Trip</h3>
+                            <h5 class="view-orangeTxt" routerLink="/driver/trip-history">View All</h5>
+                          </div>
+
+                          <div class="school-trip_box-dashbord" *ngIf="upComigTrips.length>0">
+                            <div class="school-timeing">
+                              <div class="school-trip-txt-heading">
+                                <h3>Trip</h3>
+                              </div>
+                              <!-- <div class="time-schedule">
+                                <h4>08:00 AM</h4>
+                              </div> -->
+                            </div>
+
+                            <div class="school_trip_circel">
+                              <div class="ave-pickup">
+                                <div class="pickup-trip-usa">Pick up Location</div>
+                                <div class="elementary-school">{{upComigTrips[0]?.fromAddress}}</div>
+                              </div>
+                              <div class="ave-pickup">
+                                <div class="pickup-trip-usa">Drop off Location</div>
+                                <div class="elementary-school">{{upComigTrips[0]?.toAddress}}</div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="school-trip_box-dashbord" *ngIf="upComigTrips.length==0">
+                            <p>No upcoming trips.</p>
+                          </div>
+
+                          <div class="upcoming_trip d-flex justify-content-between">
+                            <h3>Previous Trip</h3>
+                            <h5 class="view-orangeTxt" routerLink="/driver/trip-history">View All</h5>
+                          </div>
+                          <div class="school-trip_box-dashbord" *ngIf="priviousTrips.length>0">
+                            <div class="school-timeing">
+                              <div class="school-trip-txt-heading">
+                                <h3>Trip</h3>
+                              </div>
+                              <div class="time-schedule">
+                                <h4>08:00 AM</h4>
+                              </div>
+                            </div>
+
+                            <div class="school_trip_circel">
+                              <div class="ave-pickup">
+                                <div class="pickup-trip-usa">Pick up Location</div>
+                                <div class="elementary-school">{{priviousTrips[0]?.fromAddress}}</div>
+                              </div>
+                              <div class="ave-pickup">
+                                <div class="pickup-trip-usa">Drop off Location</div>
+                                <div class="elementary-school">{{priviousTrips[0]?.toAddress}}</div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="school-trip_box-dashbord" *ngIf="priviousTrips.length==0">
+                            <p>No past trips.</p>
+                          </div>
+
+                        </div>
+                      </div>
+
+
+                    </div>
+                  </div>
+
+
+
+                  <div class="col-lg-5 col-md-5">
+
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="Recent_reviews_txt_hd ">
+                          <h5 class="pt-0">Recent Reviews</h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="dashbord-reviews rrdashbord mb-0">
+                      <ng-container *ngIf="reviewCount>0">
+                        <div class="customer-reviews" *ngFor="let rating of priviousTrips">
+                          <div class="recent-box">
+                            <div class="dashbord-review-photo">
+                              <img src="{{rating?.details?.avatar? environment.host + environment.imageBaseUrl+ rating?.details?.avatar:
+                      rating?.details?.loginType==1? rating?.details?.photoUrl:'assets/images/Profile.svg'}}" alt=""
+                                class="img-fluid">
+                            </div>
+                            <div class="review-photo-name">
+                              <h4>{{rating?.details?.firstName}} </h4>
+                            </div>
+                          </div>
+                          <div class="reviews-star txt-commet">
+                            <h5>
+                              <rating [ngModel]="rating?.rating" [float]="true" [readonly]="true"></rating>
+                            </h5>
+
+                            <h4>{{rating?.review | number:'1.0-0'}}</h4>
+                          </div>
+                        </div>
+                      </ng-container>
+                      <div class="customer-reviews" *ngIf="reviewCount==0">
+                        <h4>No reviews.</h4>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </router-outlet>
+</app-driver-layout>

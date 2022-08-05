@@ -1,0 +1,294 @@
+<app-admin-layout>
+  <router-outlet>
+    <section class="user-admin-box">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3 p-0">
+            <app-admin-sidebar></app-admin-sidebar>
+          </div>
+
+          <div class="col-md-9">
+            <div class="tab-content">
+              <div role="tabpanel" aria-labelledby="v-pills-bookingthree-tab">
+                <!-- <div class="filter-section-txt">
+                  <div class="usr-nnformationHd">
+                    <h3>All Bookings</h3>
+                    <div class="dropdownfilter">
+                      <button class="filBtn">
+                        <span><img src="assets/images/filtericon.svg" alt="" /></span>
+                        Filter
+                      </button>
+                      <div class="dropdown-contentfilter" >
+                        <div class="icon_img-close"><img src="assets/images/crose.svg" alt=""></div>
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-4 p-0">
+                              <div class="filter-listadmin">
+                                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                  aria-orientation="vertical">
+                                  <a class="nav-link active" id="v-pills-ads1-tab" data-toggle="pill"
+                                    href="#v-pills-ads1" role="tab" aria-controls="v-pills-ads1"
+                                    aria-selected="false">Date
+                                    <i [class]="
+                                        selectedDate != '' ? 'fa fa-circle' : ''
+                                      " aria-hidden="true"></i></a>
+                                  <a class="nav-link" id="v-pills-ads2-tab" data-toggle="pill" href="#v-pills-ads2"
+                                    role="tab" aria-controls="v-pills-ads2" aria-selected="false">Rider
+                                    <p>
+                                      {{
+                                        selectedField["riders"].length > 0
+                                          ? selectedField["riders"].length
+                                          : ""
+                                      }}
+                                    </p>
+                                  </a>
+                                  <a class="nav-link" id="v-pills-ads3-tab" data-toggle="pill" href="#v-pills-ads3"
+                                    role="tab" aria-controls="v-pills-ads3" aria-selected="false">Driver
+                                    <p>
+                                      {{
+                                        selectedField["drivers"].length > 0
+                                          ? selectedField["drivers"].length
+                                          : ""
+                                      }}
+                                    </p>
+                                  </a>
+                                  <a class="nav-link" id="v-pills-ads4-tab" data-toggle="pill" href="#v-pills-ads4"
+                                    role="tab" aria-controls="v-pills-ads4" aria-selected="false">Upcoming/Past
+                                    <small class="notification_dropdown"><i [class]="
+                                          selectedField['bookingHistory'] != ''
+                                            ? 'fa fa-circle'
+                                            : ''
+                                        " aria-hidden="true"></i> </small></a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-md-8 p-0">
+                              <div class="advance-date-sec">
+                                <div class="tab-content" id="v-pills-tabContent">
+                                  <div class="tab-pane fade show active" id="v-pills-ads1" role="tabpanel"
+                                    aria-labelledby="v-pills-ads1-tab">
+                                    <div class="decisionFilter-Hd">
+                                      <p class="hd-desion-check">Decision</p>
+                                      <div class="decisionscrool">
+                                        <div class="row">
+                                          <div class="col-12">
+                                            <div class="decisionFilter-Hd p-0">
+                                              <input [minDate]="minDate" [maxDate]="maxDate" (bsValueChange)="
+                                                  handleDateRange($event)
+                                                " [(bsValue)]="selectedDate" bsDaterangepicker />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="v-pills-ads2" role="tabpanel"
+                                    aria-labelledby="v-pills-ads2-tab">
+                                    <div class="decisionFilter-Hd">
+                                      <p class="hd-desion-check">Decision</p>
+                                      <div class="decisionscrool">
+                                        <div class="row">
+                                          <div class="col-6">
+                                            <div class="decisionFilter-Hd p-0">
+                                              <label class="containerdision mt-3" *ngFor="let item of riders">
+                                                {{ item?.firstName }}
+                                                {{ item?.lastName }}
+                                                <input type="checkbox" #checkboxes (change)="
+                                                    selectField(
+                                                      $event,
+                                                      'RIDER',
+                                                      item?._id
+                                                    )
+                                                  " />
+                                                <span class="checkmarkdision"></span>
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="v-pills-ads3" role="tabpanel"
+                                    aria-labelledby="v-pills-ads3-tab">
+                                    <div class="decisionFilter-Hd">
+                                      <p class="hd-desion-check">Decision</p>
+                                      <div class="decisionscrool">
+                                        <div class="row">
+                                          <div class="col-6">
+                                            <div class="decisionFilter-Hd p-0">
+                                              <label class="containerdision mt-3" *ngFor="let item of drivers">
+                                                {{ item?.firstName }}
+                                                {{ item?.lastName }}
+                                                <input type="checkbox" #checkboxes (change)="
+                                                    selectField(
+                                                      $event,
+                                                      'DRIVER',
+                                                      item._id
+                                                    )
+                                                  " />
+                                                <span class="checkmarkdision"></span>
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="tab-pane fade" id="v-pills-ads4" role="tabpanel"
+                                    aria-labelledby="v-pills-ads4-tab">
+                                    <div class="decisionFilter-Hd">
+                                      <p class="hd-desion-check">Decision</p>
+                                      <div class="decisionscrool">
+                                        <div class="row">
+                                          <div class="col-6">
+                                            <div class="decisionFilter-Hd p-0">
+                                              <label class="containerdision mt-3">Upcoming
+                                                <input type="checkbox" name="check1" [checked]="
+                                                    selectedField.bookingHistory ==
+                                                    'UPCOMING'
+                                                  " [disabled]="
+                                                    isCheckBoxDisable == true
+                                                  " (change)="
+                                                    selectField(
+                                                      $event,
+                                                      'BOOKING_HISTORY',
+                                                      'UPCOMING'
+                                                    )
+                                                  " />
+                                                <span class="checkmarkdision"></span>
+                                              </label>
+                                            </div>
+                                          </div>
+                                          <div class="col-6">
+                                            <div class="decisionFilter-Hd p-0">
+                                              <label class="containerdision mt-3">Past
+                                                <input type="checkbox" name="check2" [checked]="
+                                                    selectedField.bookingHistory ==
+                                                    'PAST'
+                                                  " [disabled]="
+                                                    isCheckBoxDisable == true
+                                                  " (change)="
+                                                    selectField(
+                                                      $event,
+                                                      'BOOKING_HISTORY',
+                                                      'PAST'
+                                                    )
+                                                  " />
+                                                <span class="checkmarkdision"></span>
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="pipeline-border">
+                            <div class="col-12">
+                              <div class="clearallapplyBtn">
+                                <button class="btnaply" (click)="submitFilter()">
+                                  Apply
+                                </button>
+                                <button class="btnfltr" (click)="clearAllFilters()">
+                                  Clear All
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+
+                <div class="driver-box-table">
+
+                  <div class="row">
+                    <div class="col-6">
+                      show<select (change)="changePaginate($event)">
+                        <option value="10" selected>10</option>
+                        <option value="25">25</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                      </select> entries
+                    </div>
+
+                    <div class="col-6">
+                      <label>Search Bookings</label>
+                      <input type="text" [(ngModel)]="searchText" (keyup)="searchBookings()" />
+                    </div>
+                  </div>
+
+                  <table id="example" class="table table-striped table-bordered" style="width: 100%;">
+                    <thead>
+                      <tr>
+                        <th>BookingId</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Date</th>
+                        <th>Fare</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <ng-container *ngIf="bookings.length > 0">
+                        <tr *ngFor="let item of bookings
+                              | paginate
+                                : {
+                                    itemsPerPage: pagination.pageLimit,
+                                    currentPage: pagination.page,
+                                    totalItems: pagination.totalDocuments
+                                  }
+                          ">
+                          <td (click)="goToBookingDetail(item?._id)">
+                            {{ item?.bookingId }}
+                          </td>
+                          <td>{{ item?.fromAddress }}</td>
+                          <td>{{ item?.toAddress }}</td>
+                          <td>{{ item?.date | date }}</td>
+                          <td>${{ item?.fare }}</td>
+                          <td (click)="(false); $event.stopPropagation()">
+                            <select selected="true" (change)="openAlert($event, item?._id)">
+                              <option selected hidden>{{
+                                item?.isSuspended == "1"
+                                  ? "Suspended"
+                                  : "Select"
+                              }}</option>
+                              <option value="2">Delete</option>
+                              <option value="1">Suspend</option>
+                              <option value="0">Resume</option>
+                            </select>
+                          </td>
+                        </tr>
+                      </ng-container>
+
+                      <ng-container *ngIf="bookings.length == 0">
+                        No Bookings.
+                      </ng-container>
+                    </tbody>
+                  </table>
+
+                  <div>
+                    <h5>Showing {{pagination.page==1? pagination.page:
+                       (pagination.page-1)*pagination.pageLimit+1}}
+                      to {{(pagination.page)*pagination.pageLimit<=pagination.totalDocuments? 
+                      pagination.page*pagination.pageLimit:pagination.totalDocuments}}
+                      of {{pagination.totalDocuments}} entries</h5>
+                  </div>
+
+                  <pagination-controls *ngIf="bookings.length > 0" (pageChange)="paginate($event)">
+                  </pagination-controls>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </router-outlet>
+</app-admin-layout>

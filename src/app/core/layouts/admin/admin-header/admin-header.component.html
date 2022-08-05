@@ -1,0 +1,33 @@
+
+    <!--------------------------------start of header------------------------------------------------>
+    <header id="top-header" class="fixed-top">
+        <div class="container-fluid ">
+            <div class="header-wrapper">
+                <nav class="navbar p-0">
+                    <div class="logo-new">
+                        <a>
+                            <img src="assets/images/logo.png" id="vanlogo-driver" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="menu-drop-new">
+                        <ul class="navbar-nav-new">
+                            <li class="dropdown-admin">
+                                <a class="nav-link header-heading_txt">
+                                   {{currentUser?.email}}
+                                </a>
+                                <div (click)="logout()" class="dropdown-content-admin">
+                                    <a><span> <i class="fa fa-sign-out" aria-hidden="true"></i></span>
+                                        Logout</a>
+                                </div>
+
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <!--End of header-->
+

@@ -1,0 +1,96 @@
+<app-layout>
+  <router-outlet>
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <app-rider-dashboard-sidebar></app-rider-dashboard-sidebar>
+          </div>
+
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="profile-detail-form">
+              <div class="tab-content mt-0">
+                <div>
+                  <div class="massege-Box">
+                    <div class="row">
+
+                      <div class="col-md-5 pr-0 m-padding-right">
+                        <div class="massege-filter-box">
+                          <div class="search-filter" *ngIf="allTopMessages.length > 0">
+                            <div class="driver-name-search d-flex justify-content-between">
+                              <div class="txt-massege">
+                                <h3>Messages</h3>
+                              </div>
+                            </div>
+                            <div class="serach-driver">
+                              <div class="form-group mb-0">
+                                <input type="email" [(ngModel)]="searchString" (keyup)="filterDriverByName()"
+                                  class="form-control" aria-describedby="emailHelp" placeholder="Search Driver's Name">
+                                <small> <i class="fa fa-search" aria-hidden="true"></i></small>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="listing_main" *ngIf="allTopMessages?.length>0">
+                            <div class="driver_list" *ngFor="let item of allTopMessages">
+                              <div [class]="(activeDriver?._id==item?.from._id)?
+                                'drivers-filters active d-flex filter-padding':'d-flex filter-padding' "
+                                (click)="updateActiveDriver(item.from)" *ngIf="item?.from?.type==2">
+                                <div class="driver-pic d-flex">
+                                  <div class="driver-img">
+                                    <img src="{{item?.from?.avatar? environment.host+environment.imageBaseUrl+item?.from?.avatar:
+                                    item?.from?.loginType==1? item?.from?.photoUrl : 'assets/images/Driver.svg'}}"
+                                      alt="" class="img-fluid">
+                                  </div>
+                                  <div class="driver-name-Txt monteiro">
+                                    <h4>{{ item?.from?.firstName}} {{ item?.from?.lastName}}</h4>
+                                    <h5>{{ item?.recentMessage}}</h5>
+                                  </div>
+                                </div>
+                                <div class="driver-days">
+                                  <span> {{ item?.updatedAt | date}}</span>
+                                  <p *ngIf="item?.driverUnreadCount">{{ item?.driverUnreadCount}}</p>
+                                </div>
+                              </div>
+                              <div [class]="(activeDriver?._id==item?.to._id)?
+                                'drivers-filters active d-flex filter-padding':'d-flex filter-padding' "
+                                *ngIf="item?.to?.type==2" (click)="updateActiveDriver(item.to)">
+                                <div class="driver-pic d-flex">
+                                  <div class="driver-img">
+                                    <img src="{{item?.to?.avatar? environment.host+environment.imageBaseUrl+item?.to?.avatar:
+                                    item?.to?.loginType==1? item?.to?.photoUrl : 'assets/images/Driver.svg'}}" alt=""
+                                      class="img-fluid">
+                                  </div>
+                                  <div class="driver-name-Txt monteiro">
+                                    <h4> {{ item?.to?.firstName}} {{ item?.to?.lastName}} </h4>
+                                    <h5> {{ item?.recentMessage}} </h5>
+                                  </div>
+                                </div>
+                                <div class="driver-days">
+                                  <span> {{ item?.updatedAt | date}} </span>
+                                  <p *ngIf="item?.driverUnreadCount"> {{ item?.driverUnreadCount}} </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="massege-filter-box" *ngIf="allTopMessages.length == 0">
+                            <h4>No Messages.</h4>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="col-md-7 pl-0 m-paddding-left border-chatbox-left">
+                        <app-rider-message-detail></app-rider-message-detail>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>

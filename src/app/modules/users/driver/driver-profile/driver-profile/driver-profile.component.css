@@ -1,0 +1,13 @@
+.email-form .dob{    
+    background-color: #ffffff;
+    background: url(src/assets/images/calendar.svg) no-repeat right 10px center;
+}
+
+.lang-know{
+    flex-wrap: wrap;
+}
+
+
+#driverDocumentTitle{
+    text-align-last: center;
+}

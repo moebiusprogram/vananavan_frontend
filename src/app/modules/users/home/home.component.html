@@ -1,0 +1,279 @@
+<app-auth-layout>
+  <router-outlet>
+    <section [class]="activeSchool? 'find-school-rides': 'find-event-rides'">
+      <div class="rides-inner">
+        <div class="inner-box">
+          <div class="col-12">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="ride-hd">
+                  <div class="loctaion-Hd">
+                    <h3 *ngIf="eventType==1">{{ __("Find Drivers for School") }}</h3>
+                    <h3 *ngIf="eventType==2">Find Drivers for Trip</h3>
+                  </div>
+                  <div class="school-tab">
+                    <ul class="nav nav-tabs">
+                      <li class="active">
+                        <a data-toggle="tab" href="#school" class="active" (click)="updateEventType(1)">School</a></li>
+                      <li><a data-toggle="tab" href="#other" class="other-Txt" (click)="updateEventType(2)">Book
+                          Event</a></li>
+                    </ul>
+                    <div class="tab-content">
+                      <div id="school" class="tab-pane fade in active show">
+                        <div class="input-Box location-border">
+                          <form [formGroup]="schoolRideForm">
+                            <div class="form-group school-input error-msg-line-2" id="v_massege-two">
+
+                              <input type="text" formControlName="from" (onSelect)="selectAddress($event, 'from')"
+                                google-autocomplete class="form-control " id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder=" Pickup Location">
+                              <div
+                                *ngIf="schoolRideForm.get('from').invalid && (schoolRideForm.get('from').touched || schoolRideForm.get('from').dirty || isSubmit)">
+                                <span style="color: red;">Please select pickup location</span>
+                              </div>
+                            </div>
+                            <div class="form-group school-input  error-msg-line-2" id="v_massege-two">
+                              <input type="text" formControlName="to" (keyup)="searchSchoolName()" class="form-control"
+                                id="exampleInputPassword1" placeholder="School Name">
+                              <div
+                                *ngIf="schoolRideForm.get('to').invalid && (schoolRideForm.get('to').touched || schoolRideForm.get('to').dirty || isSubmit)">
+                                <span style="color: red;">Please select school</span>
+                              </div>
+
+                              <div class="home_dropdown" *ngIf="showSchoolDropDown">
+                                <ul>
+                                  <li style="cursor: pointer;" *ngFor="let item of schoolNames" (click)="selectSchool(item)">{{item?.schoolName}}</li>
+                                  <li style="cursor: pointer;" *ngIf="showSearchedMessage">No drivers found for this school.</li>
+                                </ul>
+                              </div>
+
+                            </div>
+                          </form>
+                        </div>
+
+                        <div class="seartch-Btn">
+                          <button class="btn btn-outline-success my-2 my-sm-0  call-now" type="submit"
+                            (click)="searchRide()"> Search Drivers</button>
+                        </div>
+                      </div>
+
+                      <div id="other" class="tab-pane fade">
+                        <form [formGroup]="otherRideForm">
+                          <div class="input-Box location-border">
+                            <div class="form-group school-input error-msg-line-2">
+                              <input google-city-autocomplete (onSelect)="selectOtherAddress($event, 'from')"
+                                formControlName="source" type="text" class="form-control " id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Pickup Address">
+                              <div
+                                *ngIf="otherRideForm.get('source').invalid && (otherRideForm.get('source').touched || otherRideForm.get('source').dirty || isSubmit)">
+                                <span style="color: red;">Please select source</span>
+                              </div>
+
+                            </div>
+                            <div class="form-group school-input error-msg-line-2">
+                              <input google-city-autocomplete (onSelect)="selectOtherAddress($event, 'to')"
+                                formControlName="destination" type="text" class="form-control"
+                                id="exampleInputPassword1" placeholder="Destination Address">
+                              <div
+                                *ngIf="otherRideForm.get('destination').invalid && (otherRideForm.get('destination').touched || otherRideForm.get('destination').dirty || isSubmit)">
+                                <span style="color: red;">Please select destination</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="chek-box-circel">
+                            <div class="one-way-Txt ">
+                              <label class="round-chekbox-one">One Way
+                                <input formControlName="tripType" (change)="handleRadioButton('oneWay')" value="1"
+                                  type="radio" checked="checked" name="tripType">
+                                <span class="checkmark-tick"></span>
+                              </label>
+                            </div>
+                            <div class="round-trip">
+                              <label class="round-chekbox-one">Round Trip
+                                <input formControlName="tripType" (change)="handleRadioButton('twoWay')" value="2"
+                                  type="radio" name="tripType">
+                                <span class="checkmark-tick"></span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="input-Box ">
+                            <div class="form-row calander-validation" *ngIf="oneWay">
+                              <div class="form-group col-md-6 passenger-calender-icon">
+                                <input placeholder="Choose Date" [minDate]="minDate" [maxDate]="maxDate" readonly
+                                  formControlName="fromDate" class="form-control" bsDatepicker #dp="bsDatepicker">
+                                <small (click)="dp.show()"> <img src="./assets/images/calendar.svg" alt="">
+                                </small>
+                              </div>
+                              <div
+                                *ngIf="otherRideForm.get('fromDate').invalid && (otherRideForm.get('fromDate').touched || otherRideForm.get('fromDate').dirty || isSubmit)">
+                                <span style="color: red;" *ngIf="otherRideForm.get('fromDate')?.errors?.required">
+                                  Please Choose Date</span>
+                                <span style="color: red;" *ngIf="otherRideForm.get('fromDate')?.errors?.bsDate">Please
+                                  Choose Date from calendar</span>
+                              </div>
+                            </div>
+
+                            <div class="form-row calander-validation" *ngIf="twoWay">
+                              <div class="form-group col-md-6 passenger-calender-icon">
+                                <input (bsValueChange)="handleDateRange($event)" [minDate]="minDate" [maxDate]="maxDate"
+                                  bsDaterangepicker #dp1="bsDaterangepicker" placeholder="Choose Date range"
+                                  class="form-control" readonly>
+                                <small (click)="dp1.show()"> <img src="./assets/images/calendar.svg" alt="">
+                                </small>
+                              </div>
+                              <div
+                                *ngIf="otherRideForm.get('fromDate').invalid && (otherRideForm.get('fromDate').touched || otherRideForm.get('fromDate').dirty || isSubmit)">
+                                <span style="color: red;" *ngIf="otherRideForm.get('fromDate')?.errors?.required">Please
+                                  select
+                                  date</span>
+                              </div>
+                            </div>
+
+
+                          </div>
+                          <div class="event-passenger-detail">
+                            <h3 class="pass_hd">Passenger Details</h3>
+                            <div class="event-number">
+                              <div class="num_pass">Number of Passengers</div>
+                              <div class="button-increment-box">
+                                <div class="button-increment"> <button (click)="updatePassengerNo('dec')">-</button>
+                                </div>
+                                <div class="one-txt"><span>{{ otherRideForm.get('numberOfPassengers').value }}</span>
+                                </div>
+                                <div class="button-decrement"> <button (click)="updatePassengerNo('inc')">+</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="event-number">
+                              <div class="num_pass">Do you have Luggage?</div>
+                              <div class="button-increment-box">
+                                <div class="one-way-Txt">
+                                  <label class="round-chekbox-one">Yes
+                                    <input formControlName="isHavingLuggage" value="true" type="radio" checked="checked"
+                                      name="isHavingLuggage">
+                                    <span class="checkmark-tick"></span>
+                                  </label>
+                                </div>
+                                <div class="round-trip">
+                                  <label class="round-chekbox-one">No
+                                    <input formControlName="isHavingLuggage" value="false" type="radio"
+                                      name="isHavingLuggage">
+                                    <span class="checkmark-tick"></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="event-number">
+                              <div class="num_pass">Would you like to share this ride?</div>
+                              <div class="button-increment-box">
+                                <div class="one-way-Txt">
+                                  <label class="round-chekbox-one">Yes
+                                    <input formControlName="isSharing" value="true" type="radio" checked="checked"
+                                      name="isSharing">
+                                    <span class="checkmark-tick"></span>
+                                  </label>
+                                </div>
+                                <div class="round-trip">
+                                  <label class="round-chekbox-one">No
+                                    <input formControlName="isSharing" value="false" type="radio" name="isSharing">
+                                    <span class="checkmark-tick"></span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group event-textarea mb-0">
+                              <label for="">Special instructions</label>
+                              <textarea class="form-control" formControlName="instructions"
+                                placeholder="Type something here..."></textarea>
+                            </div>
+                          </div>
+                          <div class="seartch-Btn-2">
+                            <button class="btn btn-outline-success my-2 my-sm-0  call-now" type="submit"
+                              data-toggle="modal" data-target="#thanksmodel" (click)="searchOtherRide()"> Book
+                              Now</button>
+                          </div>
+                        </form>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <div class="col-md-6" [hidden]="eventType!=1">
+                <div class="school-map" id="school-map">
+                  <!-- <agm-map [latitude]="lat" [longitude]="long" [streetViewControl]="false">
+                    <agm-marker *ngFor="let coordinate of coordinates" [latitude]="coordinate.lat"
+                      [longitude]="coordinate.long"></agm-marker>
+                  </agm-map> -->
+                </div>
+              </div>
+
+
+              <div class="col-md-6 bg-event" [hidden]="eventType!=2">
+                <div class="drivers-Bg">
+
+                  <div class="input-Box event-map" id="event-map1">
+                    <!-- <agm-map class="agm-map-2" [latitude]="currentLat" [longitude]="currentLong">
+                    </agm-map> -->
+                  </div>
+
+                  <div class="driver-detail-event">
+                    <h3 class="trip-Hd">Booking a trip is now easier than ever! </h3>
+                  </div>
+                  <div class="available-drivers">
+                    <h3 class="book-for-event">Book event for</h3>
+                    <div class="trop-box">
+                      <div class="booking-trip">
+                        <div class="bus-icon">
+                          <span><img src="assets/images/white-icon.svg" alt=""></span>
+                        </div>
+                        <div class="field-trip">
+                          <h3>Field Trip</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="trop-box">
+                      <div class="booking-trip">
+                        <div class="bus-icon">
+                          <span><img src="assets/images/bus.svg" alt=""></span>
+                        </div>
+                        <div class="field-trip">
+                          <h3>Friends</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="trop-box">
+                      <div class="booking-trip">
+                        <div class="bus-icon">
+                          <span><img src="assets/images/home.svg" alt=""></span>
+                        </div>
+                        <div class="field-trip">
+                          <h3>Church </h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="trop-box">
+                      <div class="booking-trip">
+                        <div class="bus-icon">
+                          <span><img src="assets/images/bag.svg" alt=""></span>
+                        </div>
+                        <div class="field-trip">
+                          <h3>Work</h3>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </router-outlet>
+</app-auth-layout>

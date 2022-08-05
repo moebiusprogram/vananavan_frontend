@@ -1,0 +1,51 @@
+<ng-container *ngIf="isLogin">
+  <app-layout>
+    <router-outlet>
+      <section>
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-md-3 p-0 col-sm-6">
+              <app-available-driver></app-available-driver>
+            </div>
+
+            <div class="col-md-5 col-sm-6 p-0" *ngIf="selectedDriver">
+              <app-driver-detail></app-driver-detail>
+            </div>
+
+            <div class="col-md-4" *ngIf="selectedDriver">
+              <app-driver-reviews></app-driver-reviews>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </router-outlet>
+  </app-layout>
+</ng-container>
+
+<ng-container *ngIf="!isLogin">
+  <app-auth-layout>
+    <router-outlet>
+      <section>
+        <div class="container-fluid">
+          <div class="row">
+
+            <div class="col-md-3 p-0 col-sm-6">
+              <app-available-driver></app-available-driver>
+            </div>
+
+            <div class="col-md-5 col-sm-6 p-0" *ngIf="selectedDriver">
+              <app-driver-detail></app-driver-detail>
+            </div>
+
+            <div class="col-md-4" *ngIf="selectedDriver">
+              <app-driver-reviews></app-driver-reviews>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </router-outlet>
+  </app-auth-layout>
+</ng-container>

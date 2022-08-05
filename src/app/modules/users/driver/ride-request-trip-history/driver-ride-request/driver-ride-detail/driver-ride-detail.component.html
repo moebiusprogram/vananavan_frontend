@@ -1,0 +1,114 @@
+<div [hidden]="!selectedRequest">
+
+  <div class="chat-top-box">
+    <div class="Txt-name-Hd">
+      <div class="d-flex justify-content-between">
+        <div class="driver-pic d-flex">
+          <div class="driver-img">
+            <img [src]="selectedRequest?.details?.avatar? selectedRequest?.details?.avatar:
+            selectedRequest?.details?.loginType==1? selectedRequest?.details?.photoUrl : 'assets/images/Profile.svg'"
+              alt="" class="img-fluid">
+          </div>
+          <div class="driver-name-Txt " id="book-star">
+            <h4>{{ selectedRequest?.details?.firstName }} {{ selectedRequest?.details?.lastName }}</h4>
+            <!-- <h5>5.0 (400)</h5> -->
+          </div>
+        </div>
+
+        <div class="booking-lihnik">
+          <h3>Request ID <span>{{ selectedRequest?.bookingId }}</span></h3>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="booking-map-box">
+    <div class="map-booking-img" id="ride-map">
+      <!-- <agm-map [streetViewControl]="false" [latitude]="lat" [longitude]="long">
+        <agm-marker *ngFor="let coordinate of coordinates" [latitude]="coordinate.lat" [longitude]="coordinate.long">
+        </agm-marker>
+      </agm-map> -->
+    </div>
+
+    <div class="loction-form-to">
+      <div class="row">
+        <div class="col-md-6 new-york">
+          <div class="book-map-add">
+            <h3> From</h3>
+            <h4>{{ selectedRequest?.fromAddress }}</h4>
+          </div>
+        </div>
+        <div class="col-md-6 new-york-usa">
+          <div class="book-map-add">
+            <h3> To</h3>
+            <h4>{{ selectedRequest?.toAddress }}</h4>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="booking-rating">
+
+        <div class="passenger-detail">
+          <h4>Passenger Details</h4>
+        </div>
+        <div class="Special-instruction">
+
+          <div class="number-passenger-box">
+            <h3> Number of Passengers</h3>
+            <h4>{{ selectedRequest?.numberOfPassengers }}</h4>
+          </div>
+          <div class="number-passenger-box">
+            <h3>Luggage</h3>
+            <h4 *ngIf="selectedRequest?.isHavingLuggage">Yes</h4>
+            <h4 *ngIf="!selectedRequest?.isHavingLuggage">No</h4>
+          </div>
+
+          <div class="number-passenger-box">
+            <h3>Would you like to share this ride?</h3>
+            <h4 *ngIf="selectedRequest?.isSharing">Yes</h4>
+            <h4 *ngIf="!selectedRequest?.isSharing">No</h4>
+          </div>
+
+          <div class="border-drivers"></div>
+
+          <div class="instruction-Txt">
+            <h6>Special Instructions</h6>
+            <h5>{{ selectedRequest?.instructions }}</h5>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="booking-rating" *ngIf="requestType==1">
+        <div class="set-Price">
+          <h4>Set Price</h4>
+        </div>
+        <div class="row">
+          <div class="col-md-7 col-sm-7 doller">
+            <div class="col form-group ">
+              <input [readonly]="selectedRequest?.isResponded"
+                [ngStyle]="{'cursor' :  selectedRequest?.isResponded ? 'not-allowed' : null}" type="text"
+                class="form-control" [(ngModel)]="quote"
+                oninput="this.value = '$'+ this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')">
+            </div>
+          </div>
+          <div class="col-md-5 col-sm-5">
+            <div class="submit-quote" *ngIf="!selectedRequest?.isResponded">
+              <button [disabled]="selectedRequest?.isResponded"
+                [ngStyle]="{'cursor' :  selectedRequest?.isResponded ? 'not-allowed' : null}"
+                (click)="submitQuote()">SUBMIT QUOTE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div *ngIf="selectedRequest">
+
+</div>

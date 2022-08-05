@@ -1,0 +1,84 @@
+<div class="border-rider-search">
+  <div class="listing_main-three">
+    <div class="filters">
+      <div class="ride-school-Hd">
+        <h3>Ride for
+          <span> {{ type }} </span>
+        </h3>
+      </div>
+
+
+      <div class="mapSchool-driver" id="myMap">
+        <!-- <agm-map [latitude]="lat" [longitude]="long">
+          <agm-marker *ngFor="let item of coordinates" [latitude]="item.lat" [longitude]="item.long">
+          </agm-marker>
+        </agm-map> -->
+      </div>
+
+
+      <div class="input-Box location-border">
+
+        <form [formGroup]="schoolRideForm">
+          <div class="form-group school-input ">
+            <input type="text" formControlName="from" (onSelect)="selectAddress($event, 'from')" google-autocomplete
+              class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Pickup Location">
+            <div
+              *ngIf="schoolRideForm.get('from').invalid && (schoolRideForm.get('from').touched || schoolRideForm.get('from').dirty || isSubmit)">
+              <span style="color: red;">Please select pickup location
+</span>
+            </div>
+          </div>
+          <div class="form-group school-input">
+            <input type="text" formControlName="to" (keyup)="searchSchoolName()" class="form-control"
+              id="exampleInputPassword1" placeholder="School Name">
+            <div
+              *ngIf="schoolRideForm.get('to').invalid && (schoolRideForm.get('to').touched || schoolRideForm.get('to').dirty || isSubmit)">
+              <span style="color: red;">Please select school</span>
+            </div>
+            <div class="home_dropdown" *ngIf="showSchoolDropDown">
+              <ul>
+                <li style="cursor: pointer;" *ngFor="let item of schoolNames" (click)="selectSchool(item)">
+                  {{item?.schoolName}}</li>
+                  <li style="cursor: pointer;" *ngIf="showSearchedMessage">No drivers found for this school.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="seartch-Btn">
+            <button class="call-now" type="submit" (click)="searchRide()"> Search
+              Drivers
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="fillter-rides d-flex justify-content-between" *ngIf="totalRides>0">
+        <div class="rides-avlable">
+          <h3>{{ totalRides }} Drivers Available</h3>
+        </div>
+      </div>
+      <div class="fillter-rides d-flex justify-content-between" *ngIf="totalRides==0">
+        <div class="rides-avlable">
+          <h3>No Drivers Available.</h3>
+        </div>
+      </div>
+      <div
+        [class]="selectedDriver?._id==item?._id? 'drivers-filters df-active d-flex justify-content-between':'drivers-filters d-flex justify-content-between'"
+        (click)="selectDriver(item)" *ngFor="let item of allDrivers">
+        <div class="driver-pic d-flex">
+          <div class="jose-estave ">
+            <img src="{{item?.avatar? environment.host + environment.imageBaseUrl+ item.avatar:
+            item?.loginType==1? item?.photoUrl:'assets/images/Driver.svg'}}" alt="" class="img-fluid">
+          </div>
+          <div class="driver-name">
+            <h4> {{ item.firstName }} {{ item.lastName }}</h4>
+            <!-- <h5></h5> -->
+          </div>
+        </div>
+        <div class="school-rating-rides ">
+          <img src="assets/images/rating.svg" alt="">
+          <span>{{ item.averageRating }} ({{ item.totalReview }})</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

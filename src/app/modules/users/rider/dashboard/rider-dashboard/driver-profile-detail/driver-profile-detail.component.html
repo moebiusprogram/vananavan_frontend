@@ -1,0 +1,309 @@
+<app-layout>
+  <router-outlet>
+    <section>
+
+      <div class="container-fluid">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <app-rider-dashboard-sidebar></app-rider-dashboard-sidebar>
+          </div>
+
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="profile-detail-form">
+              <div class="tab-content mt-0">
+
+
+                <div>
+                  <div class="row" *ngIf="isDriverSelected">
+                    <div class="col-lg-7 col-md-7 ">
+                      <div class="backImg">
+                        <h4 routerLink="/rider/messages"> <img src="assets/images/arrows-Back.svg" alt="">Back</h4>
+                      </div>
+
+                      <div class="authur-Box mt-3 ml-0">
+                        <div class="authur-details d-flex">
+                          <div class="images-driver">
+                            <img [src]="driver?.avatar? 
+                              environment.host+environment.imageBaseUrl+driver?.avatar:driver?.loginType==1? 
+                              driver?.photoUrl : 'assets/images/Driver.svg'" alt="">
+                          </div>
+                          <div class="driver-profile">
+                            <div class="driver-call">
+                              <h3>{{driver?.firstName + ' ' + driver?.lastName }} <img
+                                  src="assets/images/green-icon.svg" alt=""></h3>
+                              <h5>
+                                <rating [(ngModel)]="averageRating" [float]="true" [readonly]="true"></rating>
+                                <span> {{averageRating}} ({{reviewCount}}) </span>
+                              </h5>
+                            </div>
+                            <div class="driver-call-masege d-flex justify-content-end mt-4">
+                              <button class="btn btn-outline-success my-2 my-sm-0 call-now-2" type="submit"
+                                (click)="displayNumber()"><img src="assets/images/call-btn.svg" alt="">
+                                {{displayCallText}}</button>
+                              <button class="btn btn-outline-success my-2 my-sm-0 massege-Btn-2" type="submit"
+                                data-toggle="modal" data-target="#exampleModalCenter"
+                                routerLink="/rider/messages">Message</button>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="driver-experience ">
+                          <div class="year d-flex justify-content-between ">
+                            <h3>Years of Experience</h3>
+                            <h5>{{yearOfexp}}</h5>
+                          </div>
+                          <div class="year d-flex justify-content-between ">
+                            <h3>Languages known</h3>
+                            <h5><span *ngFor="let item of languages; let i = index">{{item?.name }}<span
+                                  *ngIf="languages.length-1>i">, </span></span></h5>
+                          </div>
+                          <div class="year d-flex justify-content-between">
+                            <h3>Weekly Starting Rate</h3>
+                            <h5>{{driverDetails? driverDetails?.rate:''}}</h5>
+                          </div>
+                          <div class="year d-flex justify-content-between">
+                            <h3>Chauffeur License Number</h3>
+                            <h5>
+                              {{driverDetails? driverDetails?.chauffeurLicenseNumber:''}}
+                            </h5>
+                          </div>
+                          <div class="year d-flex justify-content-between">
+                            <h3>License Number</h3>
+                            <h5>
+                              {{driverDetails? driverDetails?.licenseNumber:''}}
+                            </h5>
+                          </div>
+                        </div>
+
+                        <div class="driver-experience ">
+                          <div class="year d-flex justify-content-between ">
+                              <h3>Chauffeur License Photo</h3>
+                            </div>
+                        </div>
+
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
+                          *ngIf="liscencePhoto.length>0">
+                          <div class="carousel-inner">
+                            <div class="row">
+
+                              <div *ngFor="let images of liscencePhoto; let i = index"
+                                [class]="i==0? 'carousel-item active':'carousel-item'">
+                                <div class="row">
+                                  <div class="col-sm" *ngFor="let item of images"><img class="d-block w-100"
+                                      [src]=" environment.host+environment.imageBaseUrl+item" alt="1 slide"></div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous </span>
+                          </a>
+                          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+
+                      </div>
+
+                      <div class="pickup-Box ml-0">
+                        <h6 class="rHd-txt">Event Routes</h6>
+                        <div class="pickup-Box ml-0 mt-3 p-0" *ngFor="let item of eventRoutes; let i = index">
+                          <h4 class="oneTxtroute">Route {{i+1}}</h4>
+                          <div class="picup-loction d-flex justify-content-between coral-padding">
+
+                            <div class="pickup-address schol-pickup-maping-add">
+
+                              <div class="pick-Txt">
+                                <h5>Pick up Location</h5>
+                                <h3>{{item?.fromAddress}}</h3>
+                              </div>
+                              <div class="pick-Txt mt-3">
+                                <h5>Drop off Location</h5>
+                                <h3>{{item?.toAddress}}</h3>
+                              </div>
+                            </div>
+                            <div class="drop-loction" id="{{'eventMap'+i}}">
+
+                            </div>
+                          </div>
+                        </div>
+
+                        <ng-container [attr.hidden]="schoolRoutes.length==0">
+                          <h6 class="rHd-txt">School Routes</h6>
+                          <div class="pickup-Box ml-0 mt-3 p-0" *ngFor="let item of schoolRoutes; let i = index">
+                            <h4 class="oneTxtroute">Route {{i+1}}</h4>
+                            <div class="picup-loction d-flex justify-content-between coral-padding">
+
+                              <div>
+
+                                <div>
+                                  <h6>Route Name</h6>
+                                  <h4>{{item?.title}}</h4>
+                                </div>
+                              </div>
+                              <div class="drop-loction" id="{{'schoolRoutes'+i}}">
+
+                              </div>
+                            </div>
+                          </div>
+                        </ng-container>
+                      </div>
+
+
+                      <div class="pickup-Box ml-0">
+                        <h3 class="vehicle">Vehicle</h3>
+                        <div class="driver-experience ">
+                          <div class="year d-flex justify-content-between year-display">
+                            <h3>Vehicle Details</h3>
+                            <h5>{{vehicleDetail?.model}}</h5>
+                          </div>
+                          <div class="year d-flex justify-content-between year-display">
+                            <h3>Vehicle Plate Number</h3>
+                            <h5> {{vehicleDetail?.registrationNumber}} </h5>
+                          </div>
+                          <div class="year d-flex justify-content-between year-display">
+                            <h3> Vehicle Identification Number (VIN)</h3>
+                            <h5>{{vehicleDetail?.vin}}</h5>
+                          </div>
+                          <div class="year d-flex justify-content-between year-display">
+                            <h3> County Inspection Number </h3>
+                            <h5>{{vehicleDetail?.cin}}</h5>
+                          </div>
+                        </div>
+
+                        <div class="driver-experience ">
+                          <div class="year d-flex justify-content-between ">
+                              <h3>Vehicle Photo</h3>
+                            </div>
+                        </div>
+
+
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
+                          *ngIf="vehiclePhoto.length>0">
+                          <div class="carousel-inner">
+                            <div class="row">
+
+                              <div *ngFor="let images of vehiclePhoto; let i = index"
+                                [class]="i==0? 'carousel-item active':'carousel-item'">
+                                <div class="row">
+                                  <div class="col-sm" *ngFor="let item of images"><img class="d-block w-100"
+                                      [src]=" environment.host+environment.imageBaseUrl+item" alt="1 slide"></div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous </span>
+                          </a>
+                          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+
+                        <div class="driver-experience ">
+                          <div class="year d-flex justify-content-between ">
+                              <h3>County Inspection Number Photo</h3>
+                            </div>
+                        </div>
+
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
+                          *ngIf="cinPhoto.length>0">
+                          <div class="carousel-inner">
+                            <div class="row">
+
+                              <div *ngFor="let images of cinPhoto; let i = index"
+                                [class]="i==0? 'carousel-item active':'carousel-item'">
+                                <div class="row">
+                                  <div class="col-sm" *ngFor="let item of images"><img class="d-block w-100"
+                                      [src]=" environment.host+environment.imageBaseUrl+item" alt="1 slide"></div>
+                                </div>
+                              </div>
+
+                            </div>
+                          </div>
+                          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                            data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous </span>
+                          </a>
+                          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                            data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                          </a>
+                        </div>
+
+
+                      </div>
+                    </div>
+
+                    <div class="col-lg-5 col-md-5">
+
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="Recent_reviews_txt_hd ">
+                            <h5 class="pt-0">Recent Reviews</h5>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="dashbord-reviews rrdashbord mb-0">
+
+                        <ng-container *ngFor="let rating of allRating">
+                          <div class="customer-reviews" *ngIf="rating.isRating">
+                            <div class="driver-pic d-flex">
+                              <div class="jose-estave ">
+                                <img src="{{rating?.userId?.avatar? environment.host + environment.imageBaseUrl + rating?.userId?.avatar:
+                                'assets/images/Profile.svg'}}" alt="profile" class="img-fluid">
+                              </div>
+                              <div class="driver-name">
+                                <h4> {{rating?.userId?.firstName}} {{rating?.userId?.lastName}}</h4>
+                                <h5> {{rating?.details?.date | date}}</h5>
+                              </div>
+                            </div>
+                            <div class="reviews-star">
+                              <h5>
+                                <rating [ngModel]="rating?.rating" [float]="true" [readonly]="true"></rating>
+                              </h5>
+                              <!-- <h3>Safe driving, punctual, cool minded</h3> -->
+                              <h4>{{rating?.review}}</h4>
+                            </div>
+                          </div>
+                        </ng-container>
+
+                        <div *ngIf="!reviewCount">
+                          <p>No review yet.</p>
+                        </div>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div *ngIf="!isDriverSelected">
+                    <h4>Driver not selected.</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </router-outlet>
+</app-layout>

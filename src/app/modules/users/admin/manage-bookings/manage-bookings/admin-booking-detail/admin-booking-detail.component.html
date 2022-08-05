@@ -1,0 +1,141 @@
+<app-admin-layout>
+  <router-outlet>
+    <section class="user-admin-box">
+      <div class="container-fluid ">
+        <div class="row">
+
+          <div class="col-md-3 p-0">
+            <app-admin-sidebar></app-admin-sidebar>
+          </div>
+
+          <div class="col-md-9">
+            <div class="tab-content" id="v-pills-tabContent">
+
+              <div role="tabpanel" aria-labelledby="v-pills-bookingthree-tab">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-12 mb-3">
+                      <div class="listback" routerLink="/admin/bookings"><img src="assets/images/Backarrow.svg" alt="">
+                        &nbsp; Back to List</div>
+                    </div>
+                  </div>
+
+                  <div class="details__sec">
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="deatilsTrip">
+                          <div class="upcoming_trip">
+                            <h3 class="p-0">Trip Details</h3>
+                          </div>
+                          <div class="school-trip_box-dashbord pt-0">
+                            <div class="school_trip_circel">
+                              <div class="ave-pickup">
+                                <div class="pickup-trip-usa">Pick up Location</div>
+                                <div class="elementary-school">{{bookingDetail?.fromAddress}}
+                                </div>
+                              </div>
+                              <div class="ave-pickup">
+                                <div class="pickup-trip-usa">Drop off Location</div>
+                                <div class="elementary-school">{{bookingDetail?.toAddress}}</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="bokingId">
+                          <div class="row">
+                            <div class="col-md-5">
+
+                              <div class="bokIdText">
+                                <h5>Booking ID</h5>
+                                <h6>{{bookingDetail?.bookingId}}</h6>
+                              </div>
+                              <div class="bokIdText">
+                                <h5>Type</h5>
+                                <h6>{{bookingDetail?.isHavingRoundTrip ? 'Round Trip': 'One Way'}}</h6>
+                              </div>
+                              <div class="bokIdText">
+                                <h5>Passengers</h5>
+                                <h6>{{bookingDetail?.numberOfPassengers}}</h6>
+                              </div>
+
+                              <div class="bokIdText">
+                                <h5>Amount</h5>
+                                <h6>$ {{bookingDetail?.fare}}</h6>
+                              </div>
+                            </div>
+                            <div class="col-md-7">
+                              <div class="bokIdText">
+                                <h5>Booking Date</h5>
+                                <h6>{{bookingDetail?.createdAt | date}}</h6>
+                              </div>
+                              <div class="bokIdText">
+                                <h5>Trip Date</h5>
+                                <h6>{{bookingDetail?.date | date}} {{bookingDetail?.isHavingLuggage? '-': ''}}
+                                  {{bookingDetail?.isHavingRoundTrip? (bookingDetail?.returnDate | date) : ''}}</h6>
+                              </div>
+                              <div class="bokIdText">
+                                <h5>Luggage</h5>
+                                <h6>{{bookingDetail?.isHavingLuggage? 'Yes': 'No'}}</h6>
+                              </div>
+                              <div class="bokIdText">
+                                <h5>Would you like to share this ride?</h5>
+                                <h6 *ngIf="bookingDetail?.isSharing">Yes</h6>
+                                <h6 *ngIf="!bookingDetail?.isSharing">No</h6>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-12">
+                              <div class="bokIdText">
+                                <h5>Special instructions</h5>
+                                <h6>{{bookingDetail?.instructions}}</h6>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+
+                      </div>
+                      <div class="col-md-6">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="upcoming_trip">
+                              <h3 class="p-0">Booking Details</h3>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="riderboking-details">
+                              <h6>Rider</h6>
+                              <h3>{{bookingDetail?.riderName}} <img
+                                  (click)="goToUserDetail('Rider', bookingDetail?.userId?._id)"
+                                  src="assets/images/technology.svg" alt=""></h3>
+                              <h4>{{bookingDetail?.riderEmail}}</h4>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="riderboking-details">
+                              <h6>Driver</h6>
+                              <h3>{{bookingDetail?.driverName}}<img
+                                  (click)="goToUserDetail('Driver', bookingDetail?.driverId?._id)"
+                                  src="assets/images/technology.svg" alt=""></h3>
+                              <h4>{{bookingDetail?.driverEmail}}</h4>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </router-outlet>
+</app-admin-layout>

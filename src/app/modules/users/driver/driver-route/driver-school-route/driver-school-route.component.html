@@ -1,0 +1,91 @@
+<app-driver-layout>
+  <router-outlet>
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <app-driver-sidebar></app-driver-sidebar>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="profile-detail-form">
+              <div class="tab-content mt-0" id="v-pills-tabContent">
+
+                <div>
+                  <div class="massege-Box">
+                    <div class="row">
+                      <div class="col-md-5 pr-0 ">
+                        <div class="massege-filter-box">
+                          <div class="bookings-tab">
+                            <ul class="nav nav-tabs" role="tablist">
+                              <li class="nav-item cursor-style">
+                                <a [class]="routeType==2? 'nav-link active':'nav-link'" (click)="updateRoutetype(2)">
+                                  School Routes</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <!-- Tab panes -->
+                          <div class="tab-content m-0 current-tab-body">
+
+                            <div class="tab-pane active" *ngIf="routeType==2">
+                              <div class="current-detail-sidbar">
+                                <div class="current-listing">
+                                  <div [class]="selectedId==route._id? 'highlight-route school_root-margin':'current-driver-box-2 school_root-margin'" (click)="showMap(route, 2)"
+                                    *ngFor="let route of allRoute; let i = index">
+                                    <div class="route-Hd routschool-hd">
+                                      <h3>{{route?.title}}
+                                        <span id="routbtn-edit">
+                                          <h1 (click)="deleteRoute(route?._id)" class="mr-2"> <img
+                                              src="assets/images/dBtn.svg" alt=""> </h1>
+                                          <h2 (click)="editRoute(route, 2)"> <img src="assets/images/rout-edit.svg" alt="">
+                                          </h2>
+                                        </span>
+                                      </h3>
+                                    </div>
+                                  </div>
+
+                                  <div class="add-new">
+                                    <button (click)="goToRoute(2)">+ ADD NEW SCHOOL ROUTE</button>
+                                  </div>
+
+                                </div>
+                              </div>
+                            </div>
+
+
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-md-7 pl-0 padding-left-request-page border-chatbox-left" [hidden]="allRoute.length<1">
+                        <div class="route-one" *ngIf="routeType==2">
+                          <h4>Route {{title}}</h4>
+                        </div>
+                        <div class="booking-map-box">
+                          <div class="map-booking-img">
+                            <div class="map" id="local">
+
+                            </div>
+                          </div>
+
+                        </div>
+                        <div class="route-one" *ngIf="routeType==2 && schoolName !=''">
+                          <h4 class="d-flex_school">
+                            <div class="map_school_name">School Name:</div> <div class="dyn_txt_school">{{schoolName}}</div>
+                          </h4>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- close-row -->
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </router-outlet>
+</app-driver-layout>

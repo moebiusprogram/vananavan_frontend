@@ -1,0 +1,32 @@
+.form-error {
+  color: red;
+}
+
+.center_stepprocess .form-group .form-control {
+  margin-bottom: 11px;
+}
+
+.form-group-error {
+  border: 1px solid red;
+}
+
+.check-out {
+  background: none !important;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.input-icon-check {
+  height: 48px;
+  background-image: url(/assets/images/check-in.svg);
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 100px;
+  position: absolute;
+  top: 26px;
+  right: 0px;
+}
+
+.form-group {
+  position: relative;
+}

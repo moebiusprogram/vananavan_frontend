@@ -1,0 +1,77 @@
+<div class="chat-top-box" *ngIf="booking">
+  <div class="Txt-name-Hd">
+    <div class="d-flex justify-content-between">
+      <div class="driver-pic d-flex">
+        <div class="driver-img">
+          <img [src]="booking?.avatar? booking?.avatar:booking?.loginType==1? booking?.photoUrl : 'assets/images/Driver.svg'" alt="" class="img-fluid">
+        </div>
+        <div class="driver-name-Txt " id="book-star">
+          <h4>{{ booking?.firstName }} {{ booking?.lastName }}</h4>
+          <h5>{{ booking?.averageRating }} ({{ booking?.totalReview }})</h5>
+        </div>
+      </div>
+
+      <div class="booking-lihnik">
+        <h3 *ngIf="booking?.fare!='' && booking?.fare">${{booking?.fare}}</h3>
+        <h3>Booking ID <span>{{ booking?.bookingId }}</span></h3>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<div class="booking-map-box">
+  <div class="map-booking-img booking-map" id="booking-map1">
+    <!-- <div class="map" id="local" style="width: 500px; height: 500px;">
+
+    </div> -->
+    <!-- <agm-map [streetViewControl]="false" [latitude]="lat" [longitude]="long">
+      <agm-marker *ngFor="let coordinate of coordinates" [latitude]="coordinate.lat" [longitude]="coordinate.long">
+      </agm-marker>
+    </agm-map> -->
+  </div>
+
+  <div class="loction-form-to">
+    <div class="row">
+      <div class="col-md-6 new-york">
+        <div class="book-map-add">
+          <h3> From</h3>
+          <h4>{{ booking?.fromAddress }}</h4>
+        </div>
+      </div>
+      <div class="col-md-6 new-york-usa">
+        <div class="book-map-add">
+          <h3> To</h3>
+          <h4>{{ booking?.toAddress }}</h4>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="booking-rating" *ngIf="type!==1 && !booking?.isRating">
+      <div class="share-rating-rider">
+        <h4>Add Rating and Review</h4>
+        <h5>
+          <!-- <star-rating value="5" totalstars="5" checkedcolor="red" uncheckedcolor="grey" size="24px" readonly="false"
+            (rate)="onRate($event)"></star-rating> -->
+          <rating [(ngModel)]="starsCount"
+          [float]="true"></rating>
+        </h5>
+      </div>
+      <div class="popup-body">
+        <div class="form-group">
+          <textarea class="form-control" [(ngModel)]="review" placeholder="Type something here..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer border-0">
+
+        <button type="button" class="btn review-submit-Btn" (click)="postRating()">SUBMIT</button>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>

@@ -1,0 +1,44 @@
+image-cropper img {
+  width: 100% !important;
+  height: auto !important;
+  transform-origin: center;
+}
+
+
+
+image-cropper {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+#icon-design {
+  position: absolute;
+  top: 35px !important;
+  color: black;
+  left: 220px;
+}
+
+.uplode-box-two .licence-pic {
+  padding: 13px 14px 12px 13px !important;
+}
+.driver-photo-licence h3{
+  padding: 33px 0px 30px 0px !important;
+}
+.driver_registration_sec .personal_content .tab-content .form-group span{
+  top: 128px !important;
+}
+
+.map {
+    height: 350px;
+    max-width: 100%;
+    border-radius: 15px;
+  }
+
+ #reg_route span{
+  top: 45px !important;
+  left: 16px;
+ }
+ #reg_route2 span{
+  top: 45px !important;
+ 
+ }

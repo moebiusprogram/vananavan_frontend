@@ -1,0 +1,230 @@
+<app-driver-layout>
+  <router-outlet>
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-4 col-md-4 col-sm-4">
+            <app-driver-sidebar></app-driver-sidebar>
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8">
+            <div class="profile-detail-form">
+              <div class="tab-content mt-0" id="v-pills-tabContent">
+
+                <div>
+                  <div class="massege-Box">
+
+                    <div class="row">
+                      <div class="col-md-5 pr-0 ">
+                        <div class="massege-filter-box">
+                          <div class="bookings-tab">
+                            <ul class="nav nav-tabs" role="tablist">
+                              <li class="nav-item">
+                                <a class="nav-link active" data-toggle="tab" href="#current"
+                                  (click)="updateRequestType(1)">Active </a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#Past" (click)="updateRequestType(2)">Closed</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <!-- Tab panes -->
+                          <div class="tab-content m-0 current-tab-body">
+
+                            <div id="current" class="tab-pane active " *ngIf="requestType == 1">
+                              <div class="current-detail-sidbar">
+                                <div class="sort-by p-0">
+                                  <div class="Week-calendar">
+
+                                    <div class="navbar-history">
+                                      <div class="dropdown-sort-btn">
+                                        <!-- <button class="dropbtn">
+                                          <img src="assets/images/filter-results.svg" alt="">
+                                          Filter
+                                        </button> -->
+                                        <div class="sort-box-padding-top">
+                                          <div class="dropdown-content-txt">
+                                            <div class="header-sort">
+                                              <h2>Sort:</h2>
+                                            </div>
+                                            <div class="row">
+                                              <div class="cols">
+                                                <p>
+                                                  <label class="sort-apply">
+                                                    All
+                                                    <input type="checkbox" checked="checked">
+                                                    <span class="checkmar"></span>
+                                                  </label>
+                                                </p>
+                                                <p>
+                                                  <label class="sort-apply">
+                                                    Pending
+                                                    <input type="checkbox">
+                                                    <span class="checkmar"></span>
+                                                  </label>
+
+                                                  <button class="clear_all_apply">Apply</button>
+                                                  <button class="clear_all_btn">Clear All</button>
+
+                                                </p>
+                                              </div>
+                                              <div class="cols">
+                                                <p> <label class="sort-apply">
+                                                    Accepted
+                                                    <input type="checkbox">
+                                                    <span class="checkmar"></span>
+                                                  </label></p>
+                                                <p> <label class="sort-apply">
+                                                    Cancelled
+                                                    <input type="checkbox">
+                                                    <span class="checkmar"></span>
+                                                  </label></p>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="current-listing request_active_sec" *ngIf="rideRequest.length>0">
+
+                                  <div [class]="selectedId==item._id? 'highlight-request margin-current-box':'current-driver-box margin-current-box'"
+                                   *ngFor="let item of rideRequest">
+                                    <div class="current-page-box-profile" (click)="updateSelectedRequest(item, 1)">
+                                      <div class="drivers-filters d-flex filter-padding ">
+                                        <div class="driver-pic d-flex">
+                                          <div class="driver-img">
+                                            <img [src]="item?.details?.avatar? item?.details?.avatar: item?.details?.loginType==1?
+                                             item?.details?.photoUrl: 'assets/images/Profile.svg'" alt="" class="img-fluid">
+                                          </div>
+                                          <div class="driver-name-Txt monteiro">
+                                            <h4>
+                                              {{ item?.details?.firstName }}
+                                              <span>
+                                                {{ item?.details?.lastName }}
+                                              </span>
+                                            </h4>
+                                          </div>
+                                        </div>
+                                        <div class="accepted-hd-2" *ngIf="item?.isHavingRoundTrip">
+                                          <h6>{{ item?.date | date }} - {{ item?.returnDate | date}}</h6>
+                                          <h5 *ngIf="item?.status==1">Requested</h5>
+                                          <h5 *ngIf="item?.status==4">Cancelled</h5>
+                                        </div>
+                                         <div class="accepted-hd-2" *ngIf="!item?.isHavingRoundTrip">
+                                          <h6>{{ item?.date | date }}</h6>
+                                          <h5 *ngIf="item?.status==1">Requested</h5>
+                                          <h5 *ngIf="item?.status==4">Cancelled</h5>
+                                        </div>
+                                      </div>
+
+                                      <div class="current-loction-txt">
+                                        <div class="pickup-address card-qution">
+                                          <div class="pick-Txt">
+                                            <h5>{{ item?.fromAddress }}</h5>
+                                          </div>
+                                          <div class="pick-Txt mt-3">
+                                            <h5>{{ item?.toAddress }}</h5>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                </div>
+
+                                <div class="current-listing" *ngIf="rideRequest.length==0">
+                                  <div class="current-driver-box">
+                                    <div class="current-page-box-profile">
+                                      <h4>No ride requests yet.</h4>
+                                    </div>
+                                  </div>
+                                </div>
+
+                              </div>
+                            </div>
+
+                            <div id="Past" class="tab-pane fade" *ngIf="requestType == 2">
+
+                              <div class="current-detail-sidbar " *ngIf="tripHistory.length>0">
+                                <div class="current-listing">
+                                  <div [class]="selectedId==item._id? 'highlight-request margin-current-box':'current-driver-box margin-current-box'" *ngFor="let item of tripHistory">
+                                    <div class="current-page-box-profile" (click)="updateSelectedRequest(item, 2)">
+                                      <div class="drivers-filters d-flex filter-padding ">
+                                        <div class="driver-pic d-flex">
+                                          <div class="driver-img">
+                                            <img [src]="item?.details?.avatar? item?.details?.avatar: item?.details?.loginType==1?
+                                             item?.details?.photoUrl: 'assets/images/Profile.svg'" alt="" class="img-fluid">
+                                          </div>
+                                          <div class="driver-name-Txt monteiro">
+                                            <h4>
+                                              {{item?.details?.firstName}}
+                                              <span>
+                                                {{item?.details?.lastName}}
+                                              </span>
+                                            </h4>
+                                          </div>
+                                        </div>
+                                        <div class="accepted-hd-2" *ngIf="item?.isHavingRoundTrip">
+                                          <h6>{{ item?.date | date }} - {{ item?.returnDate | date}}</h6>
+                                          <h5 *ngIf="item?.status==2">Rejected</h5>
+                                          <h5 *ngIf="item?.status==3">Booked</h5>
+                                          <h5 *ngIf="item?.status==4">Cancelled</h5>
+                                          <h5 *ngIf="item?.status==5">Completed</h5>
+                                        </div>
+                                         <div class="accepted-hd-2" *ngIf="!item?.isHavingRoundTrip">
+                                          <h6>{{ item?.date | date }}</h6>
+                                          <h5 *ngIf="item?.status==2">Rejected</h5>
+                                          <h5 *ngIf="item?.status==3">Booked</h5>
+                                          <h5 *ngIf="item?.status==4">Cancelled</h5>
+                                          <h5 *ngIf="item?.status==5">Completed</h5>
+                                        </div>
+                                      </div>
+
+                                      <div class="current-loction-txt">
+                                        <div class="pickup-address card-qution">
+                                          <div class="pick-Txt">
+                                            <h5>{{item?.fromAddress}}</h5>
+                                          </div>
+                                          <div class="pick-Txt mt-3">
+                                            <h5>{{item?.toAddress}}</h5>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="current-detail-sidbar">
+                                <div class="current-listing">
+                                  <div class="current-driver-box">
+                                    <div class="current-page-box-profile" *ngIf="tripHistory.length==0">
+                                      <h4>No ride requests yet.</h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-7 pl-0 boking-id-mt border-chatbox-left">
+                       <app-driver-ride-detail></app-driver-ride-detail>
+                      </div>
+                    </div>
+                    <!-- close-row -->
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </router-outlet>
+</app-driver-layout>

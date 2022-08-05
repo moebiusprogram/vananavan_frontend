@@ -1,0 +1,360 @@
+<app-auth-layout>
+  <router-outlet>
+    <section>
+      <div class="container-fluid h-100">
+        <div class="login-bg">
+          <div class="row h-100 flex-column-reverse flex-md-row ">
+            <!-- Start of driver-details -->
+            <div class="col-lg-6 col-md-6 driver-section p-0">
+              <app-rider-dumb *ngIf="userType == 1"></app-rider-dumb>
+              <app-driver-dumb *ngIf="userType == 2"></app-driver-dumb>
+            </div>
+
+            <!-- end of driver-details -->
+            <!-- Start of Login -->
+            <div class="col-lg-6 col-md-6 login-section p-0" *ngIf="!showVerifyOtp">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="drivers-Bg">
+                      <div class="login-Bg-txt" id="create-account">
+                        <h3 class="Log-Hd" *ngIf="userType == 1">
+                          Create your account
+                        </h3>
+                        <h3 class="Log-Hd" *ngIf="userType == 2">
+                          Drive With VananaVan
+                        </h3>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-md-6 facebook-account">
+                          <div class="facebook-sign d-flex">
+                            <img src="assets/images/facebook.svg" alt="" class="img-fluid" />
+                            <h3 (click)="signInWithFB()">
+                              Continue using Facebook
+                            </h3>
+                          </div>
+                        </div>
+                        <div class="col-md-6 google-account">
+                          <div class="google d-flex">
+                            <img src="assets/images/google.svg" alt="" class="img-fluid" />
+                            <h3 (click)="signInWithGoogle()">
+                              Continue using Google
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="border-middle">
+                        <p>OR</p>
+                      </div>
+                      <div class="input-Box">
+                        <form [formGroup]="emailRegistrationForm">
+                          <div class="form-row">
+                            <div class="form-group col-md-6">
+                              <input type="text" noWhiteSpace class="form-control" id="inputEmail4"
+                                placeholder="First Name" formControlName="firstName" />
+                              <div *ngIf="
+                                  emailRegistrationForm.get('firstName')
+                                    .invalid &&
+                                  (emailRegistrationForm.get('firstName')
+                                    .touched ||
+                                    emailRegistrationForm.get('firstName')
+                                      .dirty ||
+                                    isSubmit)
+                                " style="color: red;">
+                                <span *ngIf="
+                                    emailRegistrationForm.get('firstName')
+                                      ?.errors?.required
+                                  ">
+                                  Please enter first name
+                                </span>
+                                <span *ngIf="
+                                    emailRegistrationForm.get('firstName')
+                                      ?.errors?.minlength
+                                  ">
+                                  Please enter at least 3 characters
+                                </span>
+                                <span *ngIf="
+                                    emailRegistrationForm.get('firstName')
+                                      ?.errors?.maxlength
+                                  ">
+                                  Please enter at most 20 characters
+                                </span>
+                              </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                              <input type="text" noWhiteSpace class="form-control" id="inputPassword4"
+                                placeholder="Last Name" formControlName="lastName" />
+                              <div *ngIf="
+                                  emailRegistrationForm.get('lastName')
+                                    .invalid &&
+                                  (emailRegistrationForm.get('lastName')
+                                    .touched ||
+                                    emailRegistrationForm.get('lastName')
+                                      .dirty ||
+                                    isSubmit)
+                                " style="color: red;">
+                                <span *ngIf="
+                                    emailRegistrationForm.get('lastName')
+                                      ?.errors?.required
+                                  ">
+                                  Please enter last name
+                                </span>
+                                <span *ngIf="
+                                    emailRegistrationForm.get('lastName')
+                                      ?.errors?.minlength
+                                  ">
+                                  Please enter at least 3 characters
+                                </span>
+                                <span *ngIf="
+                                    emailRegistrationForm.get('lastName')
+                                      ?.errors?.maxlength
+                                  ">
+                                  Please enter at most 20 characters
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <input type="text" class="form-control" min="10" max="20" id="exampleInputEmail1"
+                              (input)="changePhoneFormat($event)" aria-describedby="emailHelp"
+                              placeholder="Phone Number" formControlName="mobile" />
+                            <div *ngIf="
+                                emailRegistrationForm.get('mobile').invalid &&
+                                (emailRegistrationForm.get('mobile').touched ||
+                                  emailRegistrationForm.get('mobile').dirty ||
+                                  isSubmit)
+                              " style="color: red;">
+                              <span *ngIf="
+                                  emailRegistrationForm.get('mobile')?.errors
+                                    ?.required
+                                ">
+                                Please enter phone number
+                              </span>
+                              <span *ngIf="
+                                  emailRegistrationForm.get('mobile')?.errors
+                                    ?.minlength ||
+                                  emailRegistrationForm.get('mobile')?.errors
+                                    ?.maxlength
+                                ">
+                                Please enter 10 digits
+                              </span>
+                            </div>
+                          </div>
+
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Email"
+                              formControlName="email" />
+                            <div *ngIf="
+                                emailRegistrationForm.get('email').invalid &&
+                                (emailRegistrationForm.get('email').touched ||
+                                  emailRegistrationForm.get('email').dirty ||
+                                  isSubmit)
+                              " style="color: red;">
+                              <span *ngIf="
+                                  emailRegistrationForm.get('email')?.errors
+                                    ?.required
+                                ">
+                                Please enter email
+                              </span>
+                              <span *ngIf="
+                                  emailRegistrationForm.get('email')?.errors
+                                    ?.email
+                                ">
+                                Please enter valid email
+                              </span>
+                            </div>
+                          </div>
+
+                          <div class="form-group create-password-new-2">
+                            <input noWhiteSpace [type]="showPassword ? 'text' : 'password'" class="form-control"
+                              id="exampleInputPassword1" placeholder="Password" formControlName="password" />
+                            <small><i [class]="
+                                  showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'
+                                " aria-hidden="true" (click)="showAndHidePassword(showPassword)"></i></small>
+                            <div *ngIf="
+                                emailRegistrationForm.get('password').invalid &&
+                                (emailRegistrationForm.get('password')
+                                  .touched ||
+                                  emailRegistrationForm.get('password').dirty ||
+                                  isSubmit)
+                              " style="color: red;">
+                              <span *ngIf="
+                                  emailRegistrationForm.get('password')?.errors
+                                    ?.required
+                                " class="position-relative" style="font-size: 16px;top: 0px;">
+                                Please enter password
+                              </span>
+                              <span *ngIf="
+                                  emailRegistrationForm.get('password')?.errors
+                                    ?.minlength
+                                "  class="position-relative" style="font-size: 16px;top: 0px;">
+                                Please enter at least 6 characters
+                              </span>
+                              <span *ngIf="
+                                  emailRegistrationForm.get('password')?.errors
+                                    ?.maxlength
+                                "  class="position-relative" style="font-size: 16px;top: 0px;">
+                                Please enter at most 30 characters
+                              </span>
+                            </div>
+                          </div>
+
+                          <div class="form-group create-password-new-2">
+                            <input noWhiteSpace [type]="showPassword ? 'text' : 'password'" class="form-control"
+                              id="exampleInputPassword1" placeholder="Confirm password" formControlName="confirmPassword" />
+                            <small><i [class]="
+                                  showPassword ? 'fa fa-eye-slash' : 'fa fa-eye'
+                                " aria-hidden="true" (click)="showAndHidePassword(showPassword)"></i></small>
+                            <div *ngIf="
+                                emailRegistrationForm.get('confirmPassword').invalid &&
+                                (emailRegistrationForm.get('confirmPassword')
+                                  .touched ||
+                                  emailRegistrationForm.get('confirmPassword').dirty ||
+                                  isSubmit)
+                              " style="color: red;">
+                              <span *ngIf="
+                                  emailRegistrationForm.get('confirmPassword')?.invalid
+                                "  class="position-relative" style="font-size: 16px;top: 0px;">
+                                Password not matched
+                              </span>
+                            </div>
+                          </div>
+
+                          <div class="form-group form-check d-flex justify-content-between">
+                            <div>
+                              <input type="checkbox" name="checkbox" class="form-check-input remember"
+                                id="exampleCheck1" formControlName="termsAndCondtion" required />
+                              <label class="form-check-label remeber-Txt agree" for="exampleCheck1">By proceeding, I
+                                agree to
+                                VananaVan's Terms of
+                                Use and acknowledge that I have read the Privacy
+                                Policy.</label>
+                              <div *ngIf="
+                                  emailRegistrationForm.get('termsAndCondtion')
+                                    .invalid &&
+                                  (emailRegistrationForm.get('termsAndCondtion')
+                                    .touched ||
+                                    emailRegistrationForm.get(
+                                      'termsAndCondtion'
+                                    ).dirty ||
+                                    isSubmit)
+                                " style="color: red;">
+                                <span *ngIf="
+                                    emailRegistrationForm.get(
+                                      'termsAndCondtion'
+                                    )?.errors?.required
+                                  ">
+                                  Please select terms and condition
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <button type="button" class="btn-login" (click)="submitRegistrationForm()">
+                            SIGN UP
+                            <img src="assets/images/right-arrow.svg" alt="" />
+                          </button>
+                        </form>
+                      </div>
+
+                      <div class="login-bottom-border"></div>
+                      <div class="sign-up d-flex">
+                        <h3>Already have an account?</h3>
+                        <a (click)="goToGivenRoute('/auth/login')"> Log in </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- End of Login -->
+
+
+                        <!-- Verify otp starts -->
+            <div class="col-lg-6 col-md-6 login-section p-0" *ngIf="showVerifyOtp">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="drivers-Bg">
+                      <div class="driver-detail">
+                        <h3 class="trip-Hd otp_color">OTP Verification</h3>
+                        <p class="p-ph-verfiction" *ngIf="accountData">
+                          We just sent a six-digit code to
+                          <a href="javascript:void();">{{ accountData?.email }}</a> via
+                          Email. Enter the code below to confirm your email
+                          .
+                        </p>
+                      </div>
+
+                      <div class="input-Box">
+                        <div class="verify-box-top ">
+                          <div class="verify-box ">
+                            <form [formGroup]="verifyOtpForm">
+                              <ul>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 0)" />
+                                </li>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 1)" />
+                                </li>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 2)" />
+                                </li>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 3)" />
+                                </li>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 4)" />
+                                </li>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 5)" />
+                                </li>
+                              </ul>
+                              <div *ngIf="
+                                  verifyOtpForm.get('otp').invalid &&
+                                  (verifyOtpForm.get('otp').touched ||
+                                    verifyOtpForm.get('otp').dirty ||
+                                    isSubmit)
+                                " style="color: red;">
+                                <span *ngIf="
+                                    verifyOtpForm.get('otp')?.errors?.required
+                                  ">
+                                  Please enter OTP
+                                </span>
+                                <span *ngIf="
+                                    verifyOtpForm.get('otp')?.errors?.invalid
+                                  ">
+                                  Please enter valid OTP
+                                </span>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <button type="button" class="btn-login mt-0" (click)="verifyOtp()">
+                          Verify
+                          <img src="assets/images/right-arrow.svg" alt="" />
+                        </button>
+                      </div>
+                      <div class="login-bottom-border"></div>
+                      <div class="sign-up d-flex">
+                        <h3>Didn't receive code?</h3>
+                        <a (click)="resendOtp()"> Resend Code </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Verify otp ends.. -->
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+  </router-outlet>
+</app-auth-layout>

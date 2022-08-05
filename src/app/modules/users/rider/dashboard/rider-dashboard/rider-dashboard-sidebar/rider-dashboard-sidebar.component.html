@@ -1,0 +1,100 @@
+<div class="tab-sidebar" id="tab-sidebar_two">
+  <div class="profile-detail-box">
+    <div [class]="activeLink=='profile'? 'Shadrias-pearson position-relative profile_change_img':'Shadrias-pearson position-relative'">
+      <img [src]="(selectedFileUrl && selectedFileUrl!='')? selectedFileUrl : 
+      user?.loginType==1? user?.photoUrl: 'assets/images/Profile.svg'" alt="" class="profile-pic">
+      <span data-target="#profile_upload-modal" data-toggle="modal"><img src="assets/images/edit_profileImg.svg"
+          alt=""></span>
+      <div>
+        <h3></h3>
+        <p>{{ user?.firstName }} {{ user?.lastName }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="profile-detail-tab">
+    <div class="nav flex-column">
+      <a style="cursor: pointer;" (click)="goToGivenRoute('/rider/profile', 'profile')"
+        [class]="activeLink=='profile'? 'nav-link active':'nav-link'"><img src="assets/images/profile-2.svg" alt="">
+        Profile</a>
+      <a style="cursor: pointer;" (click)="goToGivenRoute('/rider/my-bookings', 'my-bookings')"
+        [class]="activeLink=='my-bookings'? 'nav-link active':'nav-link'"><img src="assets/images/booking.svg" alt="">
+        My Bookings</a>
+      <a style="cursor: pointer;" (click)="goToGivenRoute('/rider/messages', 'messages')"
+        [class]="activeLink=='messages' || activeLink=='driver-profile'? 'nav-link active':'nav-link'"><img src="assets/images/meesage.svg" alt="">
+        Messages
+        <small class="notification_dropdown"><i [class]="isNewMessage? 'fa fa-circle': ''" aria-hidden="true"></i>
+        </small>
+      </a>
+      <a style="cursor: pointer;" (click)="goToGivenRoute('/rider/my-request', 'my-request')"
+        [class]="activeLink=='my-request'? 'nav-link active':'nav-link'"><img src="assets/images/pc1.svg" alt="">
+        My Requests</a>
+      <!-- <a style="cursor: pointer;" (click)="goToGivenRoute('/rider/driver-profile', 'driver-profile')"
+        [class]="activeLink=='driver-profile'? 'nav-link active':'nav-link'"><img src="assets/images/profileDetail.svg"
+          alt="">
+        Profile Details
+      </a> -->
+    </div>
+  </div>
+</div>
+
+<!-- start work 10/04/2020 -->
+
+<div class="modal fade" id="profile_upload-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered document_popup" role="document"
+    *ngIf="selectedFileUrl!='' || isFileSlected">
+    <div class="modal-content massege_popup_txt-2">
+      <div class="modal-header border-0 p-0">
+        <h1 class="addDoc-txt">Profile photo</h1>
+      </div>
+      <div class="popup-body" id="img-slect-Box">
+
+        <div class="bg-blackPopup">
+          <img [src]="selectedFileUrl" alt="profile" *ngIf="!isFileSlected" />
+          <image-cropper [maintainAspectRatio]="false" [aspectRatio]="4 / 4" [imageChangedEvent]="imageChangedEvent"
+            (imageCropped)="imageCropped($event)">
+          </image-cropper>
+        </div>
+
+      </div>
+      <div class="btn-details m-0" id="document-popup-Btn">
+        <button class="driver-vehicle-Btn deletePhoto" [attr.data-dismiss]="hideModal? 'modal': ''"
+          (click)="deletePhoto()">Delete Photo</button>
+
+        <div class="pictureinput">
+          <button class="driver-vehicle-Btn-cancel changePhoto" *ngIf="selectedFileUrl==''"
+            (click)="changePhoto()">Change
+            Photo</button>
+          <input type="file" (change)="selectFile($event)">
+        </div>
+        <button class="driver-vehicle-Btn" [attr.data-dismiss]="hideModal? 'modal': ''"
+          (click)="submitProfileImage()">Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-dialog modal-dialog-centered document_popup" role="document"
+    *ngIf="selectedFileUrl=='' && !isFileSlected">
+    <div class="modal-content massege_popup_txt-2">
+      <div class="modal-header border-0 p-0">
+        <h1 class="addDoc-txt">Upload Profile Photo</h1>
+      </div>
+      <div class="popup-body" id="img-slect-Box">
+        <div class="slect-input-popup">
+          <h3><img src="assets/images/upload-popup.svg" alt=""></h3>
+          <h4>your files to assets, or <span>Explore</span></h4>
+          <input type="file" (change)="selectFile($event)" class="file-input-popup">
+        </div>
+
+      </div>
+      <div class="btn-details m-0" id="document-popup-Btn">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- End work 10/04/2020 -->
+<!-- popup (Modal) -->

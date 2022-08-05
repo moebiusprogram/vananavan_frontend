@@ -1,0 +1,51 @@
+<app-layout>
+  <router-outlet>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+
+            <div class="profile-detail-box">
+              <div class="Shadrias-pearson">
+                <img src="assets/images/Shadrias-Pearson.png" alt="">
+                <h3>Shadrias Pearson</h3>
+                <p>Miami, Florida</p>
+              </div>
+            </div>
+
+            <div class="profile-detail-tab">
+              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a [routerLink]="[{outlets:{profileOutlet:['settings']}}]" class="nav-link active"
+                  id="v-pills-home-tab" data-toggle="pill" role="tab" aria-controls="v-pills-home" aria-selected="true">
+                  <img src="assets/images/profile.svg" alt="">
+                  Profile
+                </a>
+
+                <a [routerLink]="[{outlets:{profileOutlet:['messages']}}]" class="nav-link"
+                  id="v-pills-profile-tab" data-toggle="pill" role="tab" aria-controls="v-pills-profile"
+                  aria-selected="false">
+                  <img src="assets/images/booking.svg" alt=""> My
+                  Bookings
+                </a>
+                <a [routerLink]="[{outlets:{profileOutlet:['bookings']}}]" class="nav-link"
+                  id="v-pills-messages-tab" data-toggle="pill" role="tab" aria-controls="v-pills-messages"
+                  aria-selected="false">
+                  <img src="assets/images/meesage.svg" alt="">
+                  My Bookings</a>
+                <a [routerLink]="[{outlets:{profileOutlet:['settings']}}]" class="nav-link"
+                  id="v-pills-settings-tab" data-toggle="pill" role="tab" aria-controls="v-pills-settings"
+                  aria-selected="false"><img src="assets/images/log-out.svg" alt=""> Log
+                  out</a>
+              </div>
+            </div>
+
+
+          </div>
+          <router-outlet name="profileOutlet"></router-outlet>
+          <div class="col-md-2"></div>
+        </div>
+      </div>
+    </section>
+
+  </router-outlet>
+</app-layout>

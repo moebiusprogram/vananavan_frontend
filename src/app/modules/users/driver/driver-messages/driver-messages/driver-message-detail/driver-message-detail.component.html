@@ -1,0 +1,195 @@
+<div *ngIf="chat">
+  <div class="chat-top-box chate-away-p-bottom">
+    <div class="Txt-name-Hd">
+      <div class="d-flex  ">
+        <div class="driver-pic d-flex">
+          <div class="driver-img">
+            <img src="{{activeRider?.avatar? environment.host+environment.imageBaseUrl+activeRider?.avatar:
+          'assets/images/Profile.svg'}}" alt="" class="img-fluid">
+          </div>
+          <div class="driver-name-Txt away_txt">
+            <h4>{{ activeRider?.firstName }} {{ activeRider?.lastName }}</h4><strong *ngIf="activeRider?.permission==1">
+              Deactivated</strong>
+            <h5 class="a-way-red" *ngIf="activeRider?.status===0">Inactive</h5>
+            <h5 class="a-way-green" *ngIf="activeRider?.status===1">Active</h5>
+            <h5 class="a-way" *ngIf="activeRider?.status===2">Away</h5>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="today-Txt">
+    <!-- <h3>Today</h3> -->
+  </div>
+  <div class="jumbotron m-0 p-0 bg-transparent">
+    <div class="row m-0 p-0 position-relative">
+      <div class="col-12 p-0 m-0">
+        <div class="card border-0 rounded">
+          <div class="card bg-sohbet border-0 m-0 p-0">
+
+            <div id="sohbet" class="card border-0 m-0 p-0 position-relative bg-transparent chat-box-height"
+              (scroll)="scrollHandler($event)">
+
+              <div *ngFor="let item of chat?.messages">
+                <div *ngIf="item?.from==activeRider?._id || item?.to==activeRider?._id">
+                  <div class="balon2 p-2 m-0 position-relative d-flex" *ngIf="item.from!=from && item?.messageType==1">
+                    <div class="chat-image">
+                      <img src="{{activeRider?.avatar? environment.host+environment.imageBaseUrl+activeRider?.avatar:
+          'assets/images/Profile.svg'}}" alt="">
+                    </div>
+                    <!-- <p>{{ item.createdAt | date:'shortTime' }}</p> -->
+                    <a class="sohbet2"> {{ item?.message }}</a>
+
+                  </div>
+
+                  <div class="card-right-align" *ngIf="item.from!=from && item?.messageType==2 && item?.tripId">
+                    <div class="card-chatbox">
+                      <div class="card-header-top">
+                        <div class="quotation">
+                          <h3>Request ID</h3>
+                          <h4>{{item?.bookingId}}</h4>
+                          <!-- <h4 *ngIf="item?.tripId?.status==4"><img src="assets/images/tick (1).svg" alt=""> Cancelled</h4> -->
+                        </div>
+                      </div>
+                      <div class="middle-section">
+                        <div class="van">
+                          <img src="assets/images/van.svg" alt="">
+                        </div>
+                        <div class="van-detail">
+                          <h3 *ngIf="!item?.tripId?.isHavingRoundTrip">{{ item?.tripId?.date | date}}</h3>
+                          <h3 *ngIf="item?.tripId?.isHavingRoundTrip">{{ item?.tripId?.date | date}} -
+                            {{ item?.tripId?.returnDate | date }}</h3>
+                        </div>
+
+                        <div class="accepted-hd">
+                          <h5>Total Cost</h5>
+                          <strong>${{ item?.message }}</strong>
+                        </div>
+
+                      </div>
+                      <div class="border-card"></div>
+                      <div class="footer_text">
+
+                        <div class="pickup-address card-qution acc-box">
+                          <div class="pick-Txt">
+                            <h5>{{ item?.tripId?.fromAddress }}</h5>
+                          </div>
+                          <div class="pick-Txt mt-3">
+                            <h5>{{ item?.tripId?.toAddress }}</h5>
+                          </div>
+                        </div>
+
+                        <div class="decline"
+                          *ngIf="!lastBooking?.tripId?.isRideClosed && item?.bookingId==lastBooking.bookingId">
+                          <div class="accept">
+                            <button (click)="updateDeclineRequest(2, item?.bookingId, item?.message)">
+                              Decline
+                            </button>
+                          </div>
+                          <div class="accept-2">
+                            <button (click)="updateDeclineRequest(3, item?.bookingId, item?.message)">
+                              Accept
+                            </button>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="balon1 p-2 m-0 position-relative" *ngIf="item.from==from && item?.messageType==1">
+                    <!-- <p>{{ item.createdAt | date:'shortTime' }}</p> -->
+                    <a class="float-right"> {{ item?.message }} </a>
+                  </div>
+
+                  <div class="card-right-align" *ngIf="item.from==from && item?.messageType==2 && item?.tripId">
+                    <div class="card-chatbox">
+                      <div class="card-header-top">
+                        <div class="quotation">
+                          <h3>Request ID</h3>
+                          <h4>{{item?.bookingId}}</h4>
+                          <!-- <h4><img src="assets/images/tick (1).svg" alt="" *ngIf="item?.tripId?.status==4"> Cancelled</h4> -->
+                        </div>
+                      </div>
+                      <div class="middle-section">
+                        <div class="van">
+                          <img src="assets/images/van.svg" alt="">
+                        </div>
+                        <div class="van-detail">
+                          <h3 *ngIf="!item?.tripId?.isHavingRoundTrip">{{ item?.tripId?.date | date}}</h3>
+                          <h3 *ngIf="item?.tripId?.isHavingRoundTrip">{{ item?.tripId?.date | date}} -
+                            {{ item?.tripId?.returnDate | date }}</h3>
+                        </div>
+
+                        <div class="accepted-hd">
+                          <h5>Total Cost</h5>
+                          <strong>${{ item?.message }}</strong>
+                        </div>
+
+                      </div>
+                      <div class="border-card"></div>
+                      <div class="footer_text">
+
+                        <div class="pickup-address card-qution acc-box">
+                          <div class="pick-Txt">
+                            <h5>{{ item?.tripId?.fromAddress }}</h5>
+                          </div>
+                          <div class="pick-Txt mt-3">
+                            <h5>{{ item?.tripId?.toAddress }}</h5>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="chat-box-type-two">
+
+            <span class="lowest-price">
+              <button (click)="sendStaticMessage('Hello')"> Hello</button>
+              <ng-container *ngIf="!isMessageFromSchool">
+                <button *ngIf="!lastBooking?.tripId?.isRideClosed && (lastBooking?.tripId?.status==1
+             || lastBooking?.tripId?.status==2) && !isMessageFromSchool" data-toggle="modal" data-target="#makeoffer">
+                  Make an Offer</button>
+              </ng-container>
+              <!-- <button (click)="sendStaticMessage('What\'s the lowest Price?')">
+               What's the lowest Price
+               </button> -->
+            </span>
+
+            <input type="text" [(ngModel)]="message" placeholder="Type a message here...">
+            <button class="send" (click)="sendMessage()">Send</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="makeoffer" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered price-box_width" role="document">
+      <div class="modal-content">
+        <div class="an-offer">
+          <h3>Make an offer</h3>
+          <input type="text" [(ngModel)]="quote" onlyNumber placeholder="Enter your price here" />
+          <img src="assets/images/price.svg" alt="" />
+
+          <div class="btn-pricepopup">
+            <button class="dl_btn" data-dismiss="modal">Cancel</button>
+            <button class="s_btn" [attr.data-dismiss]="hideModal? 'modal':''" (click)="submitQuote()">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!chat"></div>

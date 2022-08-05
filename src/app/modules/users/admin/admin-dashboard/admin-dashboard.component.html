@@ -1,0 +1,60 @@
+<app-admin-layout>
+  <router-outlet>
+    <section class="user-admin-box">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3 p-0">
+            <app-admin-sidebar></app-admin-sidebar>
+          </div>
+
+          <div class="col-md-9">
+            <div class="tab-content">
+              <div role="tabpanel" aria-labelledby="v-pills-bookingtfour-tab">
+                <div class="dashbord-sec">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-12 mb-3">
+                        <!-- <div class="listback" routerLink="/admin/driver"><img src="assets/images/Backarrow.svg" alt=""> &nbsp; Back to
+                          List</div> -->
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-4">
+                        <div class="diver-total">
+                          <div class="noun_driver">
+                            <h2>{{dashboardCount?.driversCount}}</h2>
+                            <h3><img src="assets/images/noun_Driver.svg" alt=""></h3>
+                          </div>
+                          <div class="ttl_divers">Total Drivers</div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="diver-total rider__bg">
+                          <div class="noun_driver">
+                            <h2>{{dashboardCount?.ridersCount}}</h2>
+                            <h3><img src="assets/images/noun_car.svg" alt=""></h3>
+                          </div>
+                          <div class="ttl_divers">Total Riders</div>
+                        </div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="diver-total boking__bg">
+                          <div class="noun_driver">
+                            <h2>{{dashboardCount?.bookingCounts}}</h2>
+                            <h3><img src="assets/images/distance.svg" alt=""></h3>
+                          </div>
+                          <div class="ttl_divers">Total Bookings</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </router-outlet>
+</app-admin-layout>

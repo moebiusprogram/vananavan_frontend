@@ -1,0 +1,4220 @@
+/*--screen-1920px--*/
+
+@media (max-width: 1920px) {
+    .van-icon_img {
+        width: 9%;
+    }
+    .cancel-reqest_box-profile{
+        width: 66%;
+    }
+    .cancel-request-link {
+        width: 17%;
+    }
+    .chat-box-type-two {
+        position: relative;
+        padding: 20px 20px;
+    }
+    .rides-inner{
+        padding-top: 125px;
+    }
+    .tab-sidebar {
+        padding-left: 290px;
+    }
+    .profile-detail-tab {
+        padding: 40px 0px;
+        display: inline-block;
+    }
+    
+    .form-box {
+        border: 1px solid #EEEEEE;
+        border-radius: 8px;
+        padding: 38px 46px;
+        max-width: 760px;
+    }
+    .profile-detail-tab a img {
+        padding-right: 14px;
+    }
+    .send {
+        top: 80px !important;
+        right: 27px;
+    }
+    .form-box {
+        border: 1px solid #EEEEEE;
+        border-radius: 8px;
+        padding: 38px 46px;
+        max-width: 670px;
+    }
+    
+
+}
+/*--screen-1440px--*/
+@media (max-width: 1440px) {
+    .loactionInput-new h3.addStop::before{
+        width: 7px;
+    }
+    .tab-sidebar {
+        padding-left: 159px;
+    }
+    .van-icon_img {
+        width: 12%;
+    }
+    .cancel-request-link {
+        width: 23%;
+    }
+    .cancel-reqest_box-profile {
+        width: 61%;
+    }
+}
+/*--screen-1366px--*/
+@media (max-width: 1366px) {
+    .cancel-request-link {
+        width: 12%;
+    }
+    .cancel-reqest_box-profile {
+        width: 69%;
+    }
+    .cancel-request-link h3{
+        margin-top: 12px !important;
+    }
+    .send {
+        top: 73px !important;
+        right: 13px;
+        width: 89px;
+        height: 52px;
+    }
+    .chat-box-type-two {
+        position: relative;
+        background: #fff;
+        padding: 15px 10px;
+    }
+    .chat-box-type-two input {
+        height: 54px;
+    }
+    
+    .find-rides {
+        background-image: url(../images/banner-backgroound.png);
+        background-repeat: no-repeat;
+        width: 100%;
+        background-size: 1366px;
+        background-position: center bottom;
+    }
+    .height-ride-page {
+        height: 1165px !important;
+    }
+    .rides-inner {
+        max-width: 1090px;
+        margin: 0 auto;
+        padding-top: 125px;
+    }
+    #tab-sidebar_two {
+        padding-left: 195px !important;
+    }
+    .driver-detail {
+        margin-top: 190px;
+        margin-bottom: 20px;
+    }
+    .booking-lihnik h3 {
+        font-size: 15px;
+        line-height: 34px;
+        color: #818181;
+        font-family: "Gilroy-Medium";
+        text-align: right;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        max-width: 170px;
+    }
+    .book-map-add h4 {
+    font-size: 14px;
+    color: #000;
+    font-family: "Gilroy-Medium";
+    line-height: 18px;
+    margin-top: 4px !important;
+    overflow: hidden;
+    max-width: 200px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    }
+    .profile-detail-tab {
+        padding: 40px 0px;
+        display: inline-block;
+    }
+    .profile-detail-tab a img {
+        padding-right: 12px;
+    }
+    .tab-sidebar {
+        padding-left: 120px;
+    }
+    .login-Bg-txt {
+        margin-top: 150px;
+    } 
+    #create-account {
+        margin-top: 158px !important;
+    }
+
+    .form-box {
+        border: 1px solid #EEEEEE;
+        border-radius: 8px;
+        padding: 38px 46px;
+        max-width: 670px;
+    }
+
+
+
+}
+
+/*--screen-1024px--*/
+@media (max-width: 1024px) {
+    #v_massege span {
+        top: 82px !important;
+    }
+    
+    #weekly_trip_massege {
+        top: 89px !important;
+    }
+    .driver_registration_sec .personal_content .tab-content .form-group span{
+        top: 84px !important;
+    }
+
+    .find-event-rides {
+        background-image: url(../images/banner-backgroound2.png);
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 1180px !important;
+        background-size: cover;
+        background-position: center;
+    }
+    #tab-sidebar_two {
+        padding-left: 75px !important;
+    }
+    .name-save-route .submit-quote button {
+        padding: 15px 9px;
+    }
+
+    .balon1 a {font-size: 14px; 
+        padding: 4px 9px 4px 9px;}
+
+    .trop-box:hover {
+        box-shadow: 0px 10px 30px #0000001A;
+        border: 1px solid #E6E6E6;
+        border-radius: 12px;
+        width: 400px;
+        background: #fff;
+        padding: 8px;
+    }
+
+    .schol-pickup-maping-add::before {
+        position: absolute !important;
+        content: '';
+        height: 41px !important;
+        width: 1px !important;
+        border: 0.5px solid #000000 !important;
+        z-index: 999;
+        top: 17px !important;
+        left: -2px !important;
+    }
+    .chat-box-type-two {
+        padding: 15px 7px;
+    }
+   
+    .chat-box-height {
+        height: 610px;
+        overflow: hidden;
+    }
+  
+    .away_txt h5::before {
+        position: absolute;
+        content: '';
+        width: 11px;
+        height: 11px;
+        border: 1px solid #000000;
+        border-radius: 50%;
+        top: 6px;
+        left: 0px;
+    }
+    .a-way{padding-left: 16px !important;}
+    .submit-quote button {
+        font-size: 14px;
+        color: #fff;
+        border: none;
+        padding: 15px 15px;
+        background: #FA6400 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        line-height: 17px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .profile-detail-tab a img {
+        padding-right: 5px;
+    }
+    .profile-detail-tab .active {
+        font-size: 14px !important;
+        color: #1E306E !important;
+        line-height: 20px !important;
+        font-family: "Gilroy-SemiBold" !important;
+        border-radius: 8px !important;
+        background: #EBF5FC !important;
+        margin-bottom: 18px;
+    }
+    .profile-detail-tab a:hover {
+        color: #1E306E;
+        font-size: 14px !important;
+        line-height: 20px !important;
+        font-family: "Gilroy-SemiBold";
+        margin: 0px 0px;
+        margin-bottom: 18px;
+        border-radius: 8px !important;
+        background: #EBF5FC !important;
+    }
+    .profile-detail-tab a {
+        color: #1E306E;
+        font-size: 14px !important;
+        line-height: 20px !important;
+        font-family: "Gilroy-SemiBold";
+        margin: 0px 0px;
+        margin-bottom: 18px;
+        padding: 15px;
+    }
+    .Recent_reviews_txt_hd h5 {
+        font-family: "Gilroy-SemiBold";
+        padding-top: 45px;
+        padding-bottom: 18px;
+        font-size: 18px;
+        line-height: 24px;
+        color: #000;
+    }
+    .dashbord h3 {
+        margin-top: 150px !important;
+        font-size: 26px;
+        line-height: 26px;
+        font-family: "Gilroy-Bold";
+        padding-left: 124px;
+    }
+    .trip_complate_box-two {
+        background: #FEEDE2;
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+    .trip_complate_box_Txt h3 {
+        font-size: 30px;
+        line-height: 36px;
+        color: #1F2D6E;
+        font-family: "Gilroy-SemiBold";
+    }
+    .trip_complate_box_Txt h4 {
+        font-size: 18px;
+        line-height: 14px;
+        color: #1F2D6E;
+        font-family: "Gilroy-SemiBold";
+    }
+    .driver_list {
+        padding: 8px 2px;
+    }
+    .search-filter {
+        padding: 13px 14px;
+    }
+    .serach-driver small {
+        right: 28px;
+        top: 68px;
+    }
+    .driver-name-Txt h4 {
+    font-size: 13px;
+    padding-top: 0px;
+    color: #000000;
+    font-family: "Gilroy-SemiBold";
+    padding-left: 6px;
+}
+    .pick-Txt h5::before {
+        position: absolute;
+        content: '';
+        width: 11px;
+        height: 11px;
+        border: 1px solid #000000;
+        border-radius: 50%;
+        top: 5px;
+        left: -20px;
+    }
+
+    .driver-name-Txt h4 {
+        font-size: 13px;
+        padding-top: 0px;
+        color: #000000;
+        font-family: "Gilroy-SemiBold";
+        padding-left: 0px;
+    }
+    .driver-days span {
+        font-size: 12px;
+        line-height: 16px;
+        color: #8E8E8E;
+    }
+    .driver-days p {
+        margin: 0 auto;
+        width: 18px;
+        height: 18px;
+        background: #FA6400;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 12px;
+        text-align: center;
+        line-height: 19px;
+    }
+    .time-date-txt {
+        margin-top: 0px;
+    }
+    .monteiro h5 {
+        font-size: 14px !important;
+        padding-left: 0px !important;
+        padding-top: 5px !important;
+    }
+    .driver-name-Txt h5 {
+        font-size: 14px;
+        padding-left: 0px;
+        padding-top: 3px;
+        max-width: 100px;
+    }
+    .time-date-txt span {
+        font-size: 12px;
+        line-height: 14px;
+        color: #000;
+        font-weight: normal;
+        font-family: "Gilroy-Medium";
+    }
+    .time-date-txt strong {
+        display: block;
+        font-size: 13px;
+        line-height: 16px;
+        color: #000000;
+        font-family: "Gilroy-SemiBold";
+    }
+    .current-listing {
+        padding: 5px 8px;
+        height: auto;
+        overflow: hidden;
+        max-height: 868px;
+    }
+    .cancel-request-link h3 {
+        line-height: 14px;
+        margin-top: 10px !important;
+    }
+    .sep-date h4 {
+        font-size: 12px;
+        line-height: 17px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .cancel-reqest_box-profile {
+        width: 64%;
+    }
+    .cancel-request-link {
+        width: 16%;
+    }
+    .chat-top-box {
+        background: #F9F9F9;
+        border-radius: 0px 8px 0px 0px;
+        padding: 14px 10px 20px 10px;
+    }
+    #book-star h5::before {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        text-align: center;
+        top: 5px;
+        font-size: 11px;
+        line-height: 19px;
+        left: 0px;
+        font-family: FontAwesome;
+        content: "\f005";
+        color: #FFFFFF;
+        border-radius: 50%;
+        background: #FA6A0B;
+    }
+    .booking-map-box {
+        padding: 20px 10px;
+    }
+    .book-map-add {
+        background: #F6FAFE;
+        padding: 16px 8px;
+        border-radius: 6px;
+    }
+    .book-map-add h4 {
+        font-size: 14px;
+        color: #000;
+        font-family: "Gilroy-Medium";
+        line-height: 20px;
+        margin-top: 4px !important;
+    }
+    .booking-lihnik h3 {
+        font-size: 15px;
+        line-height: 20px;
+        color: #818181;
+        font-family: "Gilroy-Medium";
+    }
+    .bookings-tab .nav-tabs .nav-link.active {
+        font-size: 18px;
+    }
+    .booking-van-date {
+        margin-top: 12px;
+    }
+    .bookings-tab .nav-tabs .nav-link {
+        color: #000;
+        border: 0px !important;
+        background: #F5F5F5;
+        border-radius: 0px 0px 0px 0px;
+        font-size: 18px;
+        line-height: 22px;
+        font-family: "Gilroy-SemiBold";
+        padding: 16px 0px !important;
+    }
+    .sort-by {
+        display: flex;
+        justify-content: space-between;
+        padding: 22px 6px;
+    }
+
+    .profile-detail-tab {
+        padding: 28px 0px;
+    }
+    .form-personal-information input{
+        margin-bottom: 14px;
+    }
+    .form-box {
+        max-width: 600px;
+    }
+    .profile-detail-box{
+        padding-left: 0px;
+    }
+    .email-form {
+        padding-top: 10px;
+    }
+    .form-personal-information label {
+        font-size: 16px;
+        line-height: 10px;
+        color: #000;
+        padding-bottom: 4px;
+    }
+    .tab-sidebar {
+        padding-left: 60px;
+    }
+    .driver-detail {
+        margin-top: 140px;
+        margin-bottom: 20px;
+    }
+    .login-Bg-txt {
+        margin-top: 125px;
+    }
+    .driver-detail .trip-Hd {
+        color: #081540;
+        font-size: 26px;
+        line-height: 30px;
+        font-family: "Gilroy-Bold";
+    }
+    .Log-Hd {
+        font-size: 26px;
+        line-height: 30px;
+        color: #1E306E;
+        font-family: "Gilroy-Bold";
+    }
+    .available-drivers .Hd-Txt {
+        color: #061033;
+        font-size: 22px;
+        line-height: 27px;
+        font-family: "Gilroy-Bold";
+    }    
+    
+    .drivers-Bg {
+        margin: 0 auto;
+        max-width: 402px;
+        padding-bottom: 160px;
+    } 
+    .call-Btn {
+        margin-top: -28px;
+        margin-right: -38px;
+    }
+    .loctaion-Hd h3{
+        font-size: 33px;
+        line-height: 20px;
+        padding-bottom: 30px;
+    }
+    .rides-inner {
+        max-width: 950px;
+        margin: 0 auto;
+      
+    padding-top: 114px;
+
+    }
+    .find-school-rides{
+        height: 909px !important;
+    }
+    .find-rides {
+        background-image: url(../images/banner-bg.png);
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 750px;
+        background-size: cover;
+        background-position: center;
+    }
+    .pick-Txt h3 {
+        font-size: 13px;
+        color: #000;
+        font-family: "Gilroy-Medium";
+    }
+    .pick-Txt h5 {
+        font-size: 12px;
+        color: #000;
+        line-height: 23px;
+        position: relative;
+    }
+    .pickup-address {
+        padding-left: 13px;
+        position: relative;
+    }
+
+    .pickup-address::before {
+        height: 31px;
+        width: 1px;
+        top: 19px;
+        left: -2px;
+    }
+
+    .year h5 {
+        font-size: 12px;
+        line-height: 30px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .year h3 {
+        font-size: 14px;
+        line-height: 20px;
+        color: #000;
+    }
+    .year {
+        padding-bottom: 0px;
+    }
+    .pickup-Box {
+        margin-top: 12px;
+        border: 1px solid #e0dede;
+        border-radius: 12px;
+        padding: 16px 16px;
+        margin-left: 15px;
+    }
+    .jose-estave {
+        padding: 16px 6px;
+    }
+    .filters {
+        padding: 21px 12px;
+        margin-top: 82px;
+        padding-bottom: 109px;
+    }
+    .driver-pic .driver-name h4 {
+        font-size: 12px;
+        line-height: 16px;
+        font-family: "Gilroy-SemiBold";
+        padding-top: 18px;
+    }
+    .school-rating-rides {
+        padding-top: 16px;
+        padding-right: 4px;
+    }
+    .driver-call h3 {
+        font-size: 18px;
+        line-height: 29px;
+        color: #000;
+        font-family: "Gilroy-SemiBold";
+    }
+    .driver-call h5 i {
+        width: 15px;
+        height: 15px;
+        color: #F96A0A;
+        font-size: 14px;
+    }
+    .driver-call h5 span {
+        font-size: 15px;
+        line-height: 20px;
+        font-family: "Gilroy-Medium";
+        padding-left: 5px;
+    }
+    .massege-Btn-2 {
+        font-size: 13px;
+        color: #1D306E;
+        background: #FFFFFF;
+        border: 2px solid #1D306E;
+        border-radius: 5px;
+        width: 106px;
+        height: 34px;
+        font-family: "Gilroy-SemiBold";
+        line-height: 14px;
+    }
+    .jose-estave img {
+        box-shadow: 0px 4px 11px #DADADA;
+        border: 2px solid #FFFFFF;
+        border-radius: 12px;
+        width: 38px;
+        height: 36px;
+    }
+    .call-now-2 {
+        background: #1D306E;
+        border-radius: 5px;
+        color: #ffff;
+        width: 108px;
+        height: 34px;
+        border: none;
+        font-family: "Gilroy-SemiBold";
+        margin-right: 5px;
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    #create-account {
+        margin-top: 130px !important;
+    }
+    .driver-img {
+        width: 46px;
+        height: 46px;
+    }
+    .drivers-filters{
+        margin: 2px 0px;
+    }
+.driver-name-Txt h6{
+    font-size: 12px;
+}
+}
+
+/*--screen-991px--*/
+@media (max-width: 991px) {
+    .container {
+        max-width: 930px;
+    }
+    .navbar-toggler i {
+        color: #ffffff;
+        font-size: 30px;
+    }
+    .find-school-rides {
+        height: 888px !important;
+    }
+.miami-txt { margin-right: 10px;}
+.rides-inner {
+    max-width: 950px;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+.circel-header-image {
+    border-radius: 170px;
+    width: 40px;
+    height: 40px;
+    margin-left: 44px;
+    margin-right: 10px;
+}
+.parent {
+    position: absolute;
+    z-index: 1;
+    right: 21px;
+    top: 18px;
+    padding-top: 38px;
+    display: none;
+}
+.notification_dropdown .drop-padding {
+    position: absolute;
+    z-index: 1;
+    right: -18px;
+    top: 13px;
+    padding-top: 38px;
+    display: none;
+}
+.dropdown-content-notification::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    right: 24px;
+    height: 16px;
+    width: 16px;
+    background: #fff;
+    transform: rotate(46deg);
+    border: solid 1px rgba(156, 156, 156, 0.32);
+    border-bottom: none;
+    border-right: none;
+}
+
+.dropdown-header-menu a span img{width: 34px !important;}
+    .add-new button {
+        font-size: 14px;
+        line-height: 18px;
+        color: #fff;
+        font-family: "Gilroy-SemiBold";
+        border: none;
+        background: #FA6400;
+        border-radius: 6px;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0px;
+    }
+    .over-all {
+        padding-left: 30px;  
+    }
+    .trip_complate_box_Txt h4 {
+        font-size: 18px;
+        line-height: 30px;
+        color: #1F2D6E;
+        font-family: "Gilroy-SemiBold";
+    }
+    .dashbord h3 {
+        margin-top: 100px !important;
+        font-size: 26px;
+        line-height: 26px;
+        font-family: "Gilroy-Bold";
+        padding-left: 30px;
+    }
+    .pick-Txt h5 {
+        font-size: 11px;
+        color: #000;
+        line-height: 23px;
+        position: relative;
+    }
+    .book-map-add h4 {
+        font-size: 12px;
+        color: #000;
+        font-family: "Gilroy-Medium";
+        line-height: 18px;
+        margin-top: 4px !important;
+    }
+    .year h5 {
+        font-size: 12px;
+        line-height: 25px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .agree {font-size: 12px !important;
+    line-height: 16px;
+    color: #000;
+    font-family: "Gilroy-Medium";
+    padding-left: 10px;}
+
+    .driver-detail .trip-Hd {
+        color: #081540;
+        font-size: 22px;
+        line-height: 26px;
+        font-family: "Gilroy-Bold";
+    }
+    .Log-Hd {
+        font-size: 22px;
+        line-height: 26px;
+        color: #1E306E;
+        font-family: "Gilroy-Bold";
+    }
+    .navbar-expand-lg a img { 
+        width: 60px;
+    }
+
+    #top-header {
+        box-shadow: 0px 9px 10px #D3D3D313;
+        background-color: #000000;
+        padding: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        transition: all 0.5s;
+      
+    }
+
+    .menu-bar {
+        position: fixed;
+        top: 83px;
+        left: 0px;
+        bottom: 0px;
+        background: black;
+        padding: 20px;
+        height: 100%;
+        width: 100%;
+        border-top: 1px solid #797979;
+    }
+    .loction {
+        padding-right: 5px;
+        width: 24px !important;
+    }
+
+    .Login-Btn {
+        border: none !important;
+        font-size: 15px !important;
+        font-family: "Gilroy-SemiBold";
+        margin-right: 18px;
+        font-size: 14px;
+        margin: 10px 0px !important;
+        max-width: 100%;
+        padding: 0;
+    }
+    .get-started-btn {
+        padding: 0;
+        background: none;
+        color: #000;
+        border: #ffffff;
+       
+        line-height: 19px;
+        font-size: 14px;
+        border-radius: 4px;
+        font-family: "Gilroy-SemiBold";
+        border: none;
+        color: #fff;
+    }
+    .call-Btn {
+        margin-top: -28px;
+        margin-right: -28px;
+    }
+
+    .filters {
+        border: 1px solid #E1E1E1;
+        box-shadow: 0px 9px 10px #D3D3D313;
+        background: #fff;
+        padding: 21px 12px;
+        margin-top: 59px;
+        padding-bottom: 110px;
+    }
+
+    .authur-Box {
+        margin-top: 75px;
+        border: 1px solid #e0dede;
+        border-radius: 12px;
+        padding: 16px 16px;
+        margin-left: 15px;
+    }
+    .reviews {
+        margin-top: 75px;
+    }
+    .driver-pic .driver-name h4 {
+        font-size: 13px;
+        line-height: 19px;
+        font-family: "Gilroy-SemiBold";
+        padding-top: 15px;
+    }
+
+    .Shadrias-pearson h3 {
+        font-size: 16px;
+        line-height: 28px;
+        color: #000;
+        padding-top: 12px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .Shadrias-pearson p {
+        font-size: 15px;
+        line-height: 17px;
+    }
+    .form-box {
+        border: 1px solid #EEEEEE;
+        border-radius: 8px;
+        padding: 32px 40px;
+    }
+    .form-personal-information {
+        padding: 30px 0px;
+    }
+    .email-form {
+        padding-top: 10px;
+    }
+    .profile-detail-tab {
+        padding: 10px 0px 50px 0px;
+    }
+
+
+}
+
+/*--screen-767px--*/
+@media (max-width: 767px) {
+    .border-rider-search{
+        border: none;
+    }
+    #weekly_trip_massege {
+        top: 81px !important;
+    }
+    #inspaction_numberImg .dropdown-content-txt {
+        
+        min-width: 275px;
+    }
+    .images-driver {
+        width: 84px;
+        height: 81px !important;
+    }
+    #vanlogo-driver {
+        width: 177px;
+        padding: 12px 0px;
+    }
+    .over-all-box{
+        padding: 20px 0px;
+    }
+    .Recent_reviews_txt_hd {
+        margin-top: 40px;
+    }
+    .reatingBorder{
+        margin: 0px 12px;
+    }
+    .book-map-add{
+        margin: 5px 0px;
+    }
+    .closeride-details{
+        padding: 6px 15px 0px 15px !important;
+    }
+    .our-address{
+        max-width: 100%;
+        padding: 24px 41px;
+        margin: 77px auto 0px auto;
+    }
+    .contact_hd {
+        margin: 112px 0px 96px 0px;
+    }
+    .contactTxt{
+        padding-bottom: 14px;
+    }
+    .contact-form {
+        margin-top: 20px;
+    }
+    .footer-about-box2 p{
+        line-height: 24px;
+        font-size: 14px;
+    }
+    .bg-event {
+      
+        border-radius: 0px 8px 8px 8px;
+    }
+    .find-event-rides {
+        height: auto !important;
+        background-size: cover;
+        padding-bottom: 40px;
+        background-position: center;
+    }
+    .school-map {
+        height: 400px !important;
+        margin-top: 20px !important;
+        max-width: 100% !important;
+        border-radius: 10px;
+        margin-bottom: 20px !important;
+    }
+    .find-school-rides {
+        height: 917px !important;
+        background-size: cover;
+        background-position: center;
+    }
+    .max-container{
+        max-width: 100%!important;
+    }
+    .create_rout {
+        margin: 100px 0px 35px 0px;
+    }
+    .rout-height{
+        max-height: 451px;
+    }
+    .ad-rout-box {
+        padding: 15px 15px 20px 15px;
+    }
+ 
+    .listing_main {
+        max-height: 410px !important;
+        overflow: hidden;
+        height: auto;
+    }
+    .notification_dropdown .drop-padding {
+        position: absolute;
+        z-index: 1;
+        right: -18px;
+        top: 18px;
+        padding-top: 38px;
+        display: none;
+    }
+    .dropdown-header-menu {
+        padding: 18px 0px 0px 0px;
+        min-width: 234px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        box-shadow: 0px 2px 10px #0000001A;
+        border: 1px solid #EAEDF3;
+        z-index: 1;
+        right: 18px;
+        top: 59px;
+        border-radius: 4px;
+    }
+    .dropdown-header-menu::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        right: 22px;
+        height: 16px;
+        width: 16px;
+        background: #fff;
+        transform: rotate(46deg);
+        border: solid 1px #EAEDF3;
+        border-bottom: none;
+        border-right: none;
+    }
+    .logo-new a img { height: 68px;}
+    .earning img {
+        padding-top: 110px;
+    }
+    #tab-sidebar_two {
+        padding-left: 0px !important;
+    }
+    .serach-driver small {
+        right: 45px;
+        top: 68px;
+    }
+    .bg-width {
+        width: 97.1%;
+    }
+    .form-personal-information input {
+        height: 45px;
+        width: 100%;
+        font-size: 13px;
+    }
+    .dropdown-image {
+        border-radius: 8px !important;
+        box-shadow: 0px 2px 10px #0000001A;
+        border: 1px solid #EAEDF3;
+        padding: 10px 10px;
+        min-width: 173px !important;
+        z-index: 1;
+        left: -100px;
+    }
+    .dropdown-image::before {
+        position: absolute;
+        top: -6px;
+        content: '';
+        left: 134px !important;
+        height: 13px;
+        width: 13px;
+        background: #fff;
+        transform: rotate(46deg);
+        border: solid 1px #EAEDF3;
+        border-bottom: none;
+        border-right: none;
+    }
+
+.dropdown-2-image {
+    border-radius: 8px !important;
+    box-shadow: 0px 2px 10px #0000001A;
+    border: 1px solid #EAEDF3;
+    padding: 10px 10px;
+    min-width: 171px !important;
+    z-index: 1;
+    left: -133px;
+}
+
+.dropdown-2-image::before {
+    position: absolute;
+    top: -7px;
+    content: '';
+    left: 134px !important;
+    height: 13px;
+    width: 13px;
+    background: #fff;
+    transform: rotate(46deg);
+    border: solid 1px #EAEDF3;
+    border-bottom: none;
+    border-right: none;
+}
+
+.login-Bg-otp {
+margin-top: 120px;
+}
+  
+.p-ph-number {
+        color: #7E8085 !important;
+        line-height: 20px !important;
+        font-size: 12px !important;
+    }
+    .massege-Box {
+        border-radius: 8px 8px 8px 8px;
+        border: 1px solid #C6C6C6;
+        padding: 1px;
+    }
+    
+    .chat-box-type-two {
+        position: relative;
+    }
+    .m-paddding-left { padding-left: 15px !important;}
+
+    .massege-filter-box {
+        border-right: 0px !important;
+    }
+    .m-padding-right{padding-right: 15px !important;}
+    .card-qution {
+        padding-left: 22px !important;
+        position: relative;
+    }
+    .pickup-address::before {
+        left: 7px;
+        height: 30px !important;
+        top: 20px !important;
+    }
+    .submit-quote button {
+        font-size: 14px;
+        color: #fff;
+        border: none;
+        padding: 15px 33px;
+        background: #FA6400 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        line-height: 17px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .dropdown-content-txt {
+        display: none;
+        position: absolute;
+        box-shadow: 0px 2px 10px #0000001A;
+        border: 1px solid #EAEDF3;
+        min-width: 339px;
+        left: 36px;
+        z-index: 1;
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .schol-pickup-maping-add::before {
+        position: absolute !important;
+        content: '';
+        height: 41px !important;
+        width: 1px !important;
+        border: 0.5px solid #000000 !important;
+        z-index: 999;
+        top: 17px !important;
+        left: -2px !important;
+    }
+    .Recent_reviews_txt_hd h5 {
+        font-family: "Gilroy-SemiBold";
+        padding-top: 45px;
+        padding-bottom: 18px;
+        font-size: 18px;
+        line-height: 14px;
+        padding-left: 30px;
+        color: #000;
+        box-shadow: 0 0 black;
+    }
+    .recentr-txt h5 { padding-left: 0px !important;}
+    .over-all {
+        padding-left: 30px;
+        padding-right: 40px;
+    }
+    .trip_complate_box_Txt h3 {
+        font-size: 30px;
+        line-height: 40px;
+        color: #1F2D6E;
+        font-family: "Gilroy-SemiBold";
+    }
+    .dashbord-reviews {
+        padding: 10px 20px;
+        border: 1px solid #C6C6C6;
+        border-radius: 12px;
+        margin-bottom: 50px;
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    .trip_complate_box_Txt h4 {
+        font-size: 18px;
+        line-height: 50px;
+        color: #1F2D6E;
+        font-family: "Gilroy-SemiBold";
+    }
+    .cancel-request-link h3 {
+        line-height: 15px;
+        font-size: 14px;
+        color: #FA6400;
+        margin-top: 10px !important;
+    }
+    .padding-left-request-page{    padding-left: 15px !important;
+        border-top: 1px solid #d4d4d4;
+        padding: 17px 0px;
+        margin-top: 10px;
+    }
+    .boking-id-mt{ 
+        margin-top: 16px;
+        padding-left: 15px !important;
+        border-top: 1px solid #cacaca;
+        padding: 22px 0px;
+    }
+    .chat-top-box{
+        padding: 14px 20px 20px 10px;
+    }
+.new-york-usa { margin-top: 20px !important;}
+
+    .current-listing {
+        height: auto;
+        overflow: hidden;
+        margin: 0;
+        max-height: 520px;
+        padding-right: 32px;
+        padding-left: 20px;
+    }
+
+    .pick-Txt h5 {
+        font-size: 14px;
+        color: #000;
+        line-height: 23px;
+        position: relative;
+        padding-left: 6px;
+    }
+    
+    .bookings-tab .nav-tabs li {
+        width: 48.5%;
+    }
+    .Week-calendar { padding-right: 10px;}
+    .sort-by {
+        display: flex;
+        justify-content: space-between;
+        padding: 22px 22px;
+    }
+    .profile-detail-tab a:hover {
+        color: #1E306E;
+        font-size: 14px !important;
+        line-height: 22px !important;
+        font-family: "Gilroy-SemiBold";
+        margin: 10px 0px;
+        margin-bottom: 12px !important;
+        border-radius: 8px !important;
+        background: #EBF5FC !important;
+    }
+    .tab-sidebar {
+        padding-left: 5px;
+    }
+
+    .form-box {
+        max-width: 100%;
+    }
+.driver-call-masege {
+    margin-top:14px !important;
+}
+
+    .navbar-expand-lg a img { 
+        width: 60px;
+    }
+
+    #create-account {
+        margin-top:120px !important;
+    }
+    .facebook-account {
+        padding-left: 16px;
+        padding-right: 14px !important;
+    }
+    .google-account {
+        padding-left: 16px;
+        padding-right: 14px !important;
+    }
+    #top-header {
+        box-shadow: 0px 9px 10px #D3D3D313;
+        background-color: #000000;
+        padding: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        transition: all 0.5s;
+      
+    }
+
+
+    .loction {
+        padding-right: 5px;
+        width: 24px !important;
+    }
+
+  
+    
+    .get-started-btn a{ font-size: 12px !important;}
+    .driver-detail {
+        margin-top: 110px;
+        margin-bottom: 25px;
+    }
+    .drivers-Bg {
+        margin: 0 auto;
+        max-width: 402px;
+        padding-bottom: 80px;
+    }
+    .login-Bg-txt {
+        margin-top: 100px;
+    }
+    .footer-Bg {
+        background: #000000;
+        width: 100%;
+        padding: 18px;
+    }
+    .rides-inner {
+        max-width: 650px;
+        margin: 0 auto;
+        padding-top: 100px;
+    }
+    .ride-hd {
+        padding: 24px 15px;
+    }
+
+.driver-detail-event {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+.driver-detail-event h3 {
+    font-family: "Gilroy-Bold";
+    color: #081540;
+    font-size: 26px;
+    line-height: 30px;
+}
+    .find-rides {
+        background-image: url(../images/banner-bg.png);
+        background-repeat: no-repeat;
+        width: 100%;
+        height: auto !important;
+        background-size: cover;
+        background-position: center;
+        padding-bottom: 100px;
+    }
+    .authur-Box {
+        margin-top: 75px;
+        border: 1px solid #e0dede;
+        border-radius: 12px;
+        padding: 16px 16px;
+        margin-right: 15px;
+    }
+
+    .pickup-Box {
+        margin-top: 12px;
+        border: 1px solid #e0dede;
+        border-radius: 12px;
+        padding: 16px 16px;
+        margin-right: 15px;
+    }
+    .show-more h3 {
+        font-size: 13px;
+        line-height: 15px;
+        color: #F96A0A;
+        margin-left: 15px !important;
+        padding-top: 20px;
+        border-bottom: 1px solid gray;
+        padding-bottom: 20px;
+        margin-bottom: 75px !important;
+    }
+    .reviews {
+        margin-top: 60px;
+    }
+    .jose-estave {
+        padding: 16px 11px;
+    }
+    .review-Hd h3 {
+        font-size: 22px;
+        line-height: 27px;
+        padding-left: 5px;
+        font-family: "Gilroy-SemiBold";
+    }
+    /* .pickup-address::before {
+        position: absolute;
+        content: '';
+        height: 55px;
+        width: 1px;
+        border: 0.5px solid #000000;
+        z-index: 999;
+        top: 22px;
+        left: -2px;
+    }     */
+
+    .filters {
+        border: 1px solid #E1E1E1;
+        box-shadow: 0px 9px 10px #D3D3D313;
+        background: #fff;
+        padding: 21px 12px;
+        margin-top: 59px;
+        padding-bottom: 5px;
+    }
+
+    .profile-detail-box {
+        margin-top: 130px;
+        padding-left: 0px;
+    }
+    .profile-detail-tab a img {
+        padding-right: 5px;
+        width: 24px;
+        height: 18px;
+    }
+    .personal-information-Hd h3 {
+        font-size: 18px;
+        line-height: 29px;
+        font-family: "Gilroy-SemiBold";
+        color: #000;
+    }
+    .form-box {
+        border: 1px solid #EEEEEE;
+        border-radius: 8px;
+        padding: 22px 22px;
+    }
+    .form-personal-information label {
+        font-size: 16px;
+        line-height: 10px;
+        color: #000;
+        padding-bottom: 2px;
+    }
+    .profile-detail-tab a {
+        
+        line-height: 15px !important;
+        font-size: 16px !important;
+
+    }
+    .profile-detail-tab .active {
+        line-height: 15px !important;
+        font-size: 16px !important;
+    }
+    #sav_route_btn{
+        margin-left: 15px;
+    }
+
+}
+
+/*--screen-414px--*/
+@media (max-width: 414px) {
+    bs-daterangepicker-container {
+        left: 0px !important;
+        z-index: 1 !important;
+    }
+    #expiration_month select {
+        height: 42px;
+    }
+    #v_massege span {
+        top: 80px !important;
+        font-size: 13px;
+    }
+
+
+    #daymonth_year_error{
+        top: 60px !important;
+        font-size: 13px;
+    }
+
+    #inspaction_numberImg .header-sort img{
+        height: 147px;
+    }
+
+    #inspaction_numberImg .dropdown-content-txt {
+        min-width: 190px;
+    }
+
+
+
+
+
+
+
+    .driver_registration_sec  .uplode-box-two .licence-pic {
+        padding: 13px 14px 15px 13px !important;
+    }
+    .driver_registration_sec .uplode-box-two .licence-pic span.crose-icon img {
+        top: 3px;
+    right: 20px;
+    }
+    #up_close_icon {
+        top: -17px !important;
+        right: -12px !important;
+        cursor: pointer !important;
+    }
+    .driver_registration_box{
+        margin-top: 99px;
+    }
+
+    .call-now{
+        font-size: 14px;
+    }
+
+    .Shadrias-pearson{
+        display: none !important;
+    }
+    .profile_change_img{
+        display: block !important;
+        display: flex !important;
+    }
+    .ad-rout-box{
+        border-bottom: 1px solid #cacaca;
+    }
+    /* .submit-quote{
+        margin-left: 15px;
+    } */
+  .profile-detail-tab .flex-column{
+    display: none;
+  }
+    #cr_btn {
+    
+        padding: 10px 9px;
+    }
+    .border-rider-search{
+        border: none;
+    }
+
+    #vanlogo-driver {
+        width: 177px;
+        padding: 1px 0px;
+    }
+    .send {
+        top: 74px !important;
+        right: 13px;
+        width: 84px;
+        height: 46px;
+    }
+    .Shadrias-pearson span img{
+        bottom: -15px;
+        left: 76px;
+    }
+
+    .contactTxt p{
+        font-size: 16px;
+    }
+    .privacy-p{
+        margin: 62px 0px 96px 15px !important;
+    }
+    .login-Bg-otp {
+        margin-top: 46px;
+    }
+    .footer-about-box2 {
+        padding: 25px 0px 20px 0px;
+    }
+
+    #vanlogo{
+        padding: 9px 0px;
+    }
+    .mapImg-add-rout {
+        padding: 16px 10px 15px 10px;
+       }
+
+    .uplode-box-two .licence-pic span.crose-icon img{top: -7px;  right: 10px;}
+        .uplode-box-two{
+            max-width: 100%;
+        }
+        .uplode-box{max-width:100%;}
+    .logo-new {
+        width: 35%;
+    }
+    .menu-drop-new {
+        width: 65%;
+    }
+    #vanlogo-driver{
+        padding: 8px 0px;
+    }
+ 
+    .get-started-btn a {
+        font-size: 8px !important;
+        padding-left: 2px !important;
+        line-height: 20px !important;
+    }
+    .parent {
+        position: fixed;
+        z-index: 1;
+        width: 50%;
+        left: -235px;
+        top: 22px;
+        height: 100% !important;
+        padding-top: 38px;
+        display: none;
+    }
+    .header-wrapper ul li a {
+        font-size: 14px;
+        line-height: 26px;
+        color: #fff;
+        padding-right: 0px !important;
+        padding-left: 5px;
+    }
+    .navbar-nav-new {
+        justify-content: flex-end;
+        display: flex;
+        margin-top: 8px;
+    }
+    
+    .logo-new a img {
+        height: 48px;
+    }
+    /* .parent {
+        position: absolute;
+        z-index: 1;
+        left: -3px;
+        top: -36px;
+        padding-top: 0px;
+        display: block;
+    } */
+    .conatiner-fluid-pl{
+        padding-right: 0px !important;
+        
+    }
+    .dropdown-header-menu {
+        width: 100%;
+        height: 100%;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 0;
+        z-index: 1;
+        left: 0px;
+        top: 0px;
+        border-radius: 0;
+      box-shadow: 0px 2px 10px #d40f0f00
+    }
+    .dropdown-header-menu a {
+        line-height: 21px;
+        font-family: "Gilroy-Medium";
+        color: #1D306E !important;
+        margin: 0px 0px 17px 10px;
+        text-decoration: none;
+        display: block;
+        padding: 0px !important;
+    }
+    .dropdown-header-menu::before {
+        display: none;
+        content: "";
+        position: absolute;
+        top: 47px;
+        right: 22px;
+        height: 14px;
+        width: 14px;
+        background: #fff;
+        transform: rotate(46deg);
+        border: solid 1px #EAEDF3;
+        border-bottom: none;
+        border-right: none;
+    }
+    .new-york-usa {
+        margin-top: 5px !important;
+    }
+    .dropdown-header-menu a span img {
+        padding-right: 6px;
+    }
+    .dropdown-header-menu a span img {
+        width: 24px !important;
+    }
+
+.header-wrapper ul li a span {padding-left: 0px;}
+
+ .dropdown-content-notification {
+        background: #FFFFFF;
+        box-shadow: 0px 2px 10px #0000001A;
+        border: 1px solid #EAEDF3;
+        z-index: 1;
+        right: 0;
+        top: 0;
+        border-radius: 4px;
+        min-width: 218px;
+        padding: 8px 0px 10px 20px;
+    }
+
+.dropdown-content-notification::before {
+        content: "";
+        position: absolute;
+        top: 25px;
+        right: 41px;
+        height: 14px;
+        width: 14px;
+        background: #fff;
+        transform: rotate(46deg);
+        border: solid 1px rgba(156, 156, 156, 0.32);
+        border-bottom: none;
+        border-right: none;
+}
+  
+.notification_dropdown .drop-padding {
+        position: absolute;
+        z-index: 1;
+        right: -34px;
+        top: 18px;
+        padding-top: 32px;
+        display: none;
+    }
+    .request_form_new h3 {
+        font-size: 13px;
+        line-height: 18px;
+        color: #000;
+        font-family: "Gilroy-Medium";
+    }
+    .request_form_new h4 {
+        position: relative;
+        font-family: "Gilroy-Medium";
+        font-size: 12px;
+        line-height: 19px;
+        color: #B2B2B2;
+    }
+    #shard-person-header{
+        font-size: 12px;
+        line-height: 12px;
+        color: #fff;}
+
+.notification_dropdown img {
+width: 24px;
+height: 24px;
+margin-top: 8px;}
+
+    .circel-header-image {
+        border-radius: 170px;
+        width: 28px;
+        height: 28px;
+        margin-left: 14px;
+      
+        margin-top: 7px;
+    }
+.bg-width {width: 96.1%;}
+.btn-details {
+margin-top: 15px;
+text-align: right;
+}
+    .driver-vehicle-Btn-cancel {
+        border: none;
+        background: none;
+        color: #1E306E;
+        font-size: 15px;
+        line-height: 18px;
+        text-align: center;
+        letter-spacing: 1.2px;
+        margin-right: 32px;
+    }
+    .driver-vehicle-Btn {
+        background: #1D306E;
+        border-radius: 5px;
+        color: #ffff;
+        width: 100px;
+        height: 38px;
+        letter-spacing: 1.2px;
+        border: none;
+        font-family: "Gilroy-SemiBold";
+        font-size: 14px;
+    }
+    .trop-box:hover {
+        box-shadow: 0px 10px 30px #0000001A;
+        border: 1px solid #E6E6E6;
+        border-radius: 12px;
+        width: 360px;
+        background: #fff;
+        padding: 8px;
+    }
+    .instruction-Txt h5 {
+        font-size: 12px;
+        line-height: 16px;
+        padding-top: 2px;
+    }
+    .chat-box-type-two input::placeholder{font-size: 12px;}
+
+    .bookings-tab .nav-tabs li {
+        width: 48.2%;
+    }
+    .margin-top-password {margin-top: 40px !important;}
+    .create-password-new span {
+        position: absolute;
+        color: #999999;
+        font-size: 14px;
+        top: 13px;
+        right: 15px;
+    }
+    .massege-Box {
+        border-radius: 8px 8px 8px 8px;
+        border: 1px solid #C6C6C6;
+        padding: 1px;
+    }
+    /* .chat-box-type-two::before {
+        content: 'Send';
+        cursor: pointer;
+        position: absolute;
+        border: 4px solid #FFFFFF;
+        border-radius: 20px;
+        color: #fff;
+        background: #2376FF;
+        width: 94px;
+        font-size: 18px;
+        height: 48px;
+        text-align: center;
+        line-height: 40px;
+        font-family: "Gilroy-SemiBold";
+        right: 2px;
+        top: 1px;
+        z-index: 1;
+    } */
+    .chat-box-type-two {
+        position: relative;
+    }
+    .monteiro {
+        margin-top: 6px;
+        padding-left: 10px;
+    }
+    .are-you-available {
+        position: relative;
+        padding-left: 70px !important;
+    }
+    .chat-box-type-two input {
+        width: 100%;
+        box-shadow: 0px 2px 30px #9595950D;
+        border: 0.5px solid #07070752;
+        border-radius: 14px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 0px 100px 0px 10px;
+    }
+    .chat-image img {
+        box-shadow: 0px 4px 11px #DADADA;
+        border: 2px solid #FFFFFF;
+        border-radius: 28px;
+        width: 38px;
+        height: 38px;
+        margin-left: 5px;
+    }
+    .driver-call-masege {
+        margin-top: 0px !important;
+    }
+    .driver-detail-event h3 {
+        font-family: "Gilroy-Bold";
+        color: #081540;
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .driver-detail-event {
+        margin-top: 32px;
+        margin-bottom: 14px;
+    }
+    .book-map-add {
+        background: #F6FAFE;
+        padding: 16px 8px;
+        border-radius: 6px;
+        margin-top: 12px;
+    }
+    .route-p-right .massege-filter-box {
+        border-right: 0px !important;
+    }
+    .route-p-right{ padding-right: 15px !important;}
+    .doller input {
+        height: 40px;
+        background: #F3F3F3;
+        border: none;
+        border-radius: 6px;
+    }
+    .submit-quote button {
+        font-size: 12px;
+        color: #fff;
+        border: none;
+        padding: 10px 14px;
+        background: #FA6400 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        line-height: 14px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .dropdown-content-txt {
+        display: none;
+        position: absolute;
+        box-shadow: 0px 2px 10px #0000001A;
+        border: 1px solid #EAEDF3;
+        min-width: 339px;
+        left: 40px;
+        z-index: 999;
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .bookings-tab .nav-tabs .nav-link {
+        color: #000;
+        border: 0px !important;
+        background: #F5F5F5;
+        border-radius: 0px 0px 0px 0px;
+        font-size: 16px;
+        line-height: 20px;
+        font-family: "Gilroy-SemiBold";
+        padding: 14px 0px !important;
+    }
+    .bookings-tab .nav-tabs .nav-link.active{
+        line-height: 20px;
+    }
+    .form-personal-information input {
+        height: 45px;
+        width: 100%;
+        font-size: 13px;
+    }
+    .form-personal-information label {
+        font-size: 14px;
+        line-height: 8px;
+        color: #000;
+        padding-bottom: 2px;
+    }
+    .profile-detail-tab a img {
+        padding-right: 10px;
+        height: auto;
+        width: auto;
+    }
+
+    .over-all {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .Recent_reviews_txt_hd h5 {
+        font-family: "Gilroy-SemiBold";
+        padding-top: 45px;
+        padding-bottom: 18px;
+        font-size: 18px;
+        line-height: 14px;
+        padding-left: 0px;
+        color: #000;
+        box-shadow: 0 0 black;
+    }
+    .time-schedule h4 {
+        font-size: 13px;
+        line-height: 17px;
+        font-family: "Gilroy-Medium";
+    }
+    .school-trip-txt-heading h3 {
+        font-family: "Gilroy-SemiBold";
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .dashbord h3 {
+        margin-top: 85px !important;
+        font-size: 26px;
+        line-height: 24px;
+        font-family: "Gilroy-Bold";
+        padding-left: 0px;
+    }
+    .dashbord-reviews {
+        padding: 0px 4px;
+        border: 1px solid #C6C6C6;
+        border-radius: 12px;
+        margin-bottom: 50px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .upcoming_trip h3 {
+        font-family: "Gilroy-SemiBold";
+        color: #000;
+        font-size: 16px;
+        line-height: 16px;
+        padding: 30px 0px 9px 0px;
+    }
+    .school-trip_box-dashbord {
+        padding: 12px 10px;
+        border: 1px solid #979797;
+        border-radius: 12px;
+    }
+    .trip_complate_box_Txt h4 {
+        font-size: 18px;
+        line-height: 40px;
+        color: #1F2D6E;
+        font-family: "Gilroy-SemiBold";
+    }
+.dasbord-rating img{  width: 100%; margin-bottom: 22px;}
+.trip_complate_box_Txt h3 {
+    font-size: 30px;
+    line-height: 28px;
+    color: #1F2D6E;
+    font-family: "Gilroy-SemiBold";
+}
+
+    .drivers-Bg-two {
+        margin: 0 auto;
+        max-width: 402px;
+        padding-bottom: 60px;
+    }
+    .earn-ghraph-photo{   margin: 0 auto;
+        max-width: 402px;
+        padding-bottom: 10px !important;
+    }
+    .earning img {
+        padding-top: 85px;
+    }
+    .cancel-request-link h3 {
+        line-height: 15px;
+        margin-top: 11px !important;
+    }
+    .cancel-reqest_box-profile{
+        padding: 8px 10px 0px 10px;
+    }
+    .total-cost {
+        margin-top: 4px !important;
+        margin-right: 28px;
+        position: relative;
+    }
+    .review-submit-Btn {
+        width: 110px;
+        height: 40px;
+        background: #1E306E 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        color: #fff;
+    }
+    .popup-body textarea {
+        margin-top: 15px;
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #00000038 !important;
+        border-radius: 8px;
+        height: 80px;
+        padding: 10px;
+        resize: none;
+    }
+.profile-pic{
+height: 100px !important;
+width: 100px !important;
+}
+
+.profile-detail-box {
+    margin-top: 84px;
+    padding-left: 0px;
+}
+    .tab-sidebar {
+    padding-left: 0px;
+    }
+
+    .profile-detail-tab {
+        padding: 0px 0px 26px 0px;
+    }
+    
+    .jose-estave {
+        padding: 13px 11px;
+    }
+    .popup-title {
+        font-size: 20px;
+        line-height: 27px;
+        color: #000000;
+        font-family: "Gilroy-SemiBold";
+    }
+    .authur-Box {
+        margin-top: 30px;
+        border: 1px solid #e0dede;
+        border-radius: 12px;
+        padding: 16px 16px;
+        margin-right: 15px;
+    }
+    .location-border::before {
+        position: absolute;
+        content: '';
+        height: 46px;
+        width: 1px;
+        border: 0.5px solid #000000;
+        z-index: 1;
+        top: 32px;
+        left: 21px;
+    }
+    .facebook {
+        height: 44px;
+        background: #475993 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        margin-top: 20px;
+        padding: 11px 16px;
+    }
+
+    #create-account {
+        margin-top: 40px !important;
+    }
+.footer-Bg .order-last1 {
+    order: 13 !important;
+}
+.footer-Bg .order-first2 {
+    order: -1 !important;
+}
+    .navbar-expand-lg a img { 
+        width: 60px;
+    }
+    .driver-rating {
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-left: 50px;
+    }
+
+    .btn-login {
+        background: #FA6400;
+        border-radius: 6px;
+        width: 100%;
+        height: 44px;
+        border: transparent;
+        text-align: left;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        padding: 14px 20px;
+        font-family: "Gilroy-SemiBold";
+        letter-spacing: 1.2px;
+        margin-top: 20px;
+    }
+    .input-Box input {
+        border-radius: 6px;
+        border: #E6E6E6;
+        height: 44px;
+        background: #E6E6E6;
+        font-size: 15px;
+        line-height: 18px;
+    }
+    #top-header {
+        box-shadow: 0px 9px 10px #D3D3D313;
+        background-color: #000000;
+        padding: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        transition: all 0.5s;
+        height: 60px;
+    }
+
+    .menu-bar{
+        top: 59px;
+    }
+    .loction {
+        padding-right: 0px;
+        width: 14px !important;
+    }
+    .driver-detail {
+        margin-top: 90px;
+        margin-bottom: 30px;
+    }
+    .navbar-nav-new .header-heading_txt {
+        font-size: 10px !important;
+        vertical-align: middle;
+        margin-top: 3px;
+    }
+    .miami-txt {
+        margin-right: 6px;
+        margin-left: 8px;
+    }
+  
+    .driver-detail .trip-Hd {
+        color: #081540;
+        font-size: 18px;
+        line-height: 20px;
+        font-family: "Gilroy-Bold";
+    }
+    .available-drivers .Hd-Txt {
+        color: #061033;
+        font-size: 16px;
+        line-height: 18px;
+        font-family: "Gilroy-Bold";
+    }
+
+.padding-driver-box {
+    padding: 2px 0px;
+}
+.call-Btn {
+    margin-top: -28px;
+    margin-right: 60px;
+}
+.driver-detail {
+    margin-top: 90px;
+    margin-bottom: 14px;
+}
+    .available-drivers {
+        max-width: 402px;
+        border: 1px solid #D1ECFF;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0px 9px 10px #CFEBFF4D;
+        padding: 16px 14px;
+    }
+ .login-Bg-txt {
+    margin-top: 30px;
+}
+.Log-Hd {
+    font-size: 20px;
+    line-height: 26px;
+    color: #1E306E;
+    font-family: "Gilroy-Bold";
+}
+
+.remeber-Txt {
+    font-size: 14px;
+    line-height: 18px;
+    color: #000;
+    font-family: "Gilroy-Medium";
+    padding-left: 8px;
+    padding-top: 5px;
+}
+.password-Txt label {
+    font-family: "Gilroy-Medium";
+    color: #FA6400;
+    font-size: 14px;
+    line-height: 18px;
+    cursor: pointer;}
+
+    .drivers-detail {
+        width: 336px;
+        transition: 0.5s;
+        background-color: #fff;
+        cursor: pointer;
+        margin: 10px 0px;
+    }
+    .drivers-detail:hover {
+        width: 356px;
+        box-shadow: 0px 10px 30px #0000001A;
+        border-radius: 12px;
+    }
+ 
+
+    .massege-Btn {
+        color: #1D306E;
+        background: #FFFFFF;
+        border: 2px solid #1D306E;
+        border-radius: 5px;
+        width: 116px;
+        font-family: "Gilroy-SemiBold";
+        height: 40px;
+    }
+    .massege-Btn:hover {
+        color: #1D306E;
+        background: #FFFFFF;
+        border: 2px solid #1D306E;
+        border-radius: 5px;
+        width: 116px;
+        font-family: "Gilroy-SemiBold";
+        height: 40px;
+    }
+    .google {
+        height: 44px;
+        background: #FFFFFF;
+        border-radius: 6px;
+        margin-top: 20px;
+        padding: 12px 16px;
+        border: 1px solid #D8D8D8;
+        cursor: pointer;
+    }
+    .drivers-Bg {
+        margin: 0 auto;
+        max-width: 402px;
+        padding-bottom: 50px;
+    }
+    .login-bottom-border {
+        border-bottom: 1px solid #E6E6E6;
+        width: 100%;
+        margin: 24px 0px;
+    }
+    .footer-link a {
+        color: #fff;
+        font-size: 13px;
+        line-height: 26px;
+        font-family: "Gilroy-Medium";
+        margin-right: 67px;
+        cursor: pointer;
+    }
+    .form-box {
+        border: 1px solid #EEEEEE;
+        border-radius: 8px;
+        padding: 22px 8px;
+    }
+    .footer-Txt h3 {
+        font-size: 10px;
+        font-family: "Gilroy-Medium";
+        line-height: 18px;
+        color: #fff;
+        padding-top: 1px;
+    }
+    .sign-up h3 {
+        font-size: 14px;
+        color: #6A6A6A;
+        line-height: 0px;
+    }
+    .sign-up a {
+        font-size: 14px;
+        color: #FA6400;
+        padding-left: 5px;
+        line-height: 0px;
+    }
+    .footer-Bg {
+        background: #000000;
+        width: 100%;
+        padding: 10px 0px;
+    }
+    .footer-link {padding-top: 0px;}
+    .drivers-detail {
+        max-width: 336px;
+        transition: 0.5s;
+        background-color: #fff;
+        cursor: pointer;
+        margin: 10px 0px;
+    }
+    .drivers-detail:hover {
+        max-width: 336px;
+        box-shadow: 0px 10px 30px #0000001A;
+        border-radius: 12px;
+    }
+
+    .driver-rating span {
+        font-size: 12px;
+        line-height: 15px;
+        color: #000000;
+    }
+    .rides-inner {
+        max-width: 390px;
+        margin: 0 auto;
+        padding-top: 100px;
+    }
+    .find-rides {
+        background-image: url(../images/banner-bg.png);
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 910px;
+        background-size: cover;
+        background-position: center;
+    }
+.pickup-address::before {
+    left: 7px;
+}
+
+    .profile-detail-form {
+        margin-top: 0px;
+        margin-bottom: 40px;
+        padding-left: 0px;
+    }
+
+    .profile-detail-box {
+        margin-top: 75px;
+        padding-left: 0px;
+    }
+    .Shadrias-pearson h3 {
+        font-size: 22px;
+        line-height: 53px;
+        color: #000;
+        padding-top: 12px;
+        font-family: "Gilroy-SemiBold";
+        padding-left: 30px;
+        padding-top: 10px;
+    }
+    .Shadrias-pearson p {
+        font-size: 15px;
+        line-height: 17px;
+        padding-left: 30px;
+    }
+    .book-for-event {
+        font-family: "Gilroy-Bold";
+        font-size: 20px;
+        line-height: 24px;
+        color: #1E306E;
+    }
+    .Shadrias-pearson { display: flex;}
+    .loctaion-Hd h3 {
+        color: #1E306E;
+        font-size: 28px;
+        line-height: 34px;
+        font-family: "Gilroy-SemiBold";
+        padding-bottom: 30px;
+    }
+    .login-bg{
+        margin-top: 52px;
+    }
+
+}
+
+/*--screen-375px--*/
+@media (max-width: 375px) {
+    .contact_hd {
+        margin: 81px 0px 30px 0px;
+    }
+  
+    .privacy-p{
+        margin: 62px 0px 96px 10px !important;
+    }
+    .chat-box-height {
+        height: 422px;
+    }
+    .navbar-nav-new .header-heading_txt {
+        font-size: 10px !important;
+        vertical-align: middle;
+        margin-top: 1px;
+    }
+    .trop-box:hover {
+        box-shadow: 0px 10px 30px #0000001A;
+        border: 1px solid #E6E6E6;
+        border-radius: 12px;
+        width: 330px;
+        background: #fff;
+        padding: 8px;
+      
+    }
+    .conatiner-fluid-pl {
+        padding-right: 0px !important;
+    }
+    .login-Bg-otp {
+        margin-top: 32px;
+    }
+    .create-password-new span {
+        position: absolute;
+        color: #999999;
+        font-size: 14px;
+        top: 12px;
+        right: 15px;
+    }
+    .verify-box ul li input {
+        background-color: rgb(241, 241, 243);
+        border: none;
+        width: 100%;
+        text-align: center;
+        height: 44px;
+        width: 52px;
+    }
+    .massege-filter-box {
+        border-right:0px !important;
+    }
+    .bookings-tab .nav-tabs li {
+        width: 47.9%;
+    }
+
+    .booking-lihnik h3 {
+        font-size: 12px;
+        line-height: 20px;
+        color: #818181;
+        font-family: "Gilroy-Medium";
+    }
+    .popup-title {
+        font-size: 18px;
+        line-height: 27px;
+        color: #000000;
+        font-family: "Gilroy-SemiBold";
+    }
+    .ride-hd {
+        padding: 14px 5px;
+    }
+    .bus-icon span img{
+        width: 28px;
+        height: 28px;
+    }
+    .bus-icon {
+        width: 50px;
+        height: 50px;
+        background: #FCA870;
+        align-items: center;
+        display: flex;
+        border-radius: 12px;
+        justify-content: center;
+    }
+    .seartch-Btn-2 {
+        margin-top: 0px;
+    }
+    .passenger-calender-icon span {
+        position: absolute;
+        right: 14px;
+        top: 7px;
+    }
+    .trop-box {
+        margin: 10px 0px;
+        padding: 8px;
+        width: 298px;
+        transition: 0.5s;
+        box-shadow: 0px 2px 30px #8B8B8B14;
+        border: 0.5px solid #8B8B8B1F;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+    .dropdown-content-txt {
+        display: none;
+        position: absolute;
+        box-shadow: 0px 2px 10px #0000001A;
+        border: 1px solid #EAEDF3;
+        min-width: 315px;
+        left: 25px;
+        z-index: 999;
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .personal-information-Hd h3 {
+        font-size: 18px;
+        line-height: 18px;
+        font-family: "Gilroy-SemiBold";
+        color: #000;
+    }
+    .form-personal-information label {
+        font-size: 14px;
+        line-height: 10px;
+        color: #000;
+        padding-bottom: 2px;
+    }
+    .txt-commet {padding-left: 16px !important;}
+    .trip_complate_box_Txt h4 {
+        font-size: 18px;
+        line-height: 32px;
+        color: #1F2D6E;
+        font-family: "Gilroy-SemiBold";
+    }
+    .school-trip-txt-heading h3 {
+        font-family: "Gilroy-SemiBold";
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .ave-pickup .elementary-school {
+        font-size: 14px;
+        line-height: 18px;
+        font-family: "Gilroy-Medium";
+    }
+    .drivers-Bg-two {
+        margin: 0 auto;
+        max-width: 402px;
+        padding-bottom: 50px;
+    }
+    .round-box {
+        background: #FFFFFF;
+        box-shadow: 0px 2px 9px #9A9A9A14;
+        border: 0.5px solid #0000000A;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+    }
+    .cancel-request-link h3 {
+        line-height: 14px;
+        font-size: 11px;
+        color: #FA6400;
+        margin-top: 7px !important;
+    }
+    .van-icon_img {
+        width: 13%;
+    }
+    .cancel-reqest_box-profile {
+        padding: 6px 5px 0px 4px;
+    }
+    .round-box img {
+        margin: 0 auto;
+        display: block;
+        margin-top: 7px;
+    }
+    .total-cost {
+        margin-top: 4px !important;
+        margin-right: 15px;
+        position: relative;
+    }
+    .booking-lihnik h3 span {
+        font-size: 13px;
+        line-height: 18px;
+        color: #000000;
+        font-family: "Gilroy-Medium";
+    }
+    .form-box {
+        border: 1px solid #EEEEEE;
+        border-radius: 8px;
+        padding: 22px 8px;
+    }
+    .round-trip {
+        padding-left: 15px;
+    }
+    .driver-detail .trip-Hd {
+        color: #081540;
+        font-size: 16px;
+        line-height: 20px;
+        font-family: "Gilroy-Bold";
+    }
+    .year h3 {
+        font-size: 12px;
+        line-height: 14px;
+        color: #000;
+    }
+    .year h5 {
+        font-size: 11px;
+        line-height: 20px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .call-now-2 {
+        background: #1D306E;
+        border-radius: 5px;
+        color: #ffff;
+        width: 97px;
+        height: 34px;
+        border: none;
+        font-family: "Gilroy-SemiBold";
+        margin-right: 5px;
+        font-size: 12px;
+        line-height: 12px;
+    }
+    .massege-Btn-2 {
+        font-size: 13px;
+        color: #1D306E;
+        background: #FFFFFF;
+        border: 2px solid #1D306E;
+        border-radius: 5px;
+        width: 97px;
+        height: 34px;
+        font-family: "Gilroy-SemiBold";
+        line-height: 13px;
+    }
+    .driver-pic .driver-name h4 {
+        font-size: 13px;
+        line-height: 19px;
+        font-family: "Gilroy-SemiBold";
+        padding-top: 13px;
+    }
+    .loctaion-Hd h3 {
+        color: #1E306E;
+        font-size: 28px;
+        line-height: 40px;
+        font-family: "Gilroy-SemiBold";
+        padding-bottom: 16px;
+    }
+    .find-rides {
+        background-image: url(../images/banner-bg.png);
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 854px;
+        background-size: cover;
+        background-position: center;
+    }
+    .rides-inner {
+        max-width: 354px;
+        margin: 0 auto;
+        padding-top: 96px !important;
+    }
+    .num_pass {
+        font-size: 14px;
+        color: #000;
+        opacity: 85%;
+        line-height: 19px;
+    }
+    .footer-Txt h3 {
+        font-size: 8px;
+        font-family: "Gilroy-Medium";
+        line-height: 16px;
+        color: #fff;
+        padding-top: 1px;
+    }
+    .footer-link a {
+        color: #fff;
+        font-size: 12px;
+        line-height: 18px;
+        font-family: "Gilroy-Medium";
+        margin-right: 39px;
+        cursor: pointer;
+    }
+    .facebook-sign {
+        height: 44px;
+        background: #475993 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        margin-top: 20px;
+        padding: 13px 10px;
+        cursor: pointer;
+    }
+    .drivers-detail {
+        max-width: 316px;
+        transition: 0.5s;
+        background-color: #fff;
+        cursor: pointer;
+        margin: 10px 0px;
+    }
+    .drivers-detail:hover {
+        max-width: 316px;
+        transition: 0.5s;
+        box-shadow: 0px 10px 30px #0000001A;
+        border-radius: 12px;
+    }
+    .driver-rating {
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-left: 30px;
+    }
+    .call-Btn {
+        margin-top: -28px;
+        margin-right: 45px;
+    }
+    .footer-link a {
+        color: #fff;
+        font-size: 12px;
+        line-height: 29px;
+        font-family: "Gilroy-Medium";
+        margin-right: 56px;
+        cursor: pointer;
+    }
+
+.facebook {
+    height: 44px;
+    background: #475993 0% 0% no-repeat padding-box;
+    border-radius: 6px;
+    margin-top: 20px;
+    padding: 13px 16px;
+}
+.google {
+    height: 44px;
+    background: #FFFFFF;
+    border-radius: 6px;
+    margin-top: 20px;
+    padding: 13px 16px;
+    border: 1px solid #D8D8D8;
+    cursor: pointer;
+}
+.facebook h3 {
+    color: #fff;
+    font-size: 15px;
+    line-height: 20px;
+    padding-left: 13px;
+}
+.google h3 {
+    color: #000000;
+    font-size: 15px;
+    line-height: 16px;
+    padding-left: 13px;
+    cursor: pointer;
+}
+.input-Box input {
+    border-radius: 6px;
+    border: #E6E6E6;
+    height: 44px;
+    background: #E6E6E6;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.massege-Btn {
+    color: #1D306E;
+    background: #FFFFFF;
+    border: 2px solid #1D306E;
+    border-radius: 5px;
+    width: 120px;
+    font-family: "Gilroy-SemiBold";
+    height: 40px;
+}
+.massege-Btn:hover{
+    color: #1D306E;
+    background: #FFFFFF;
+    border: 2px solid #1D306E;
+    border-radius: 5px;
+    width: 120px;
+    font-family: "Gilroy-SemiBold";
+    height: 40px;
+}
+
+.btn-login {
+    background: #FA6400;
+    border-radius: 6px;
+    width: 100%;
+    height: 44px;
+    border: transparent;
+    text-align: left;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    padding: 14px 20px;
+    font-family: "Gilroy-SemiBold";
+    letter-spacing: 1.2px;
+    margin-top: 20px;
+}
+
+}
+/*--screen-360px--*/
+@media (max-width: 360px) {
+    .our-address{
+        padding: 23px 10px;
+    }
+    #v_massege-two span {
+        top: 37px;
+    }
+    
+    #v_massege span {
+        top: 75px !important;
+    }
+    #inspaction_numberImg .dropdown-content-txt {
+        min-width: 160px;
+    }
+    #inspaction_numberImg .header-sort img{
+        height: 137px;
+    }
+    #tab-sidebar_two {
+        padding-left: 5px !important;
+    }
+    .ave-address {
+        padding: 26px 16px;
+    }
+    .bg-width {
+        width: 96%;
+    }
+    .conatiner-fluid-pl {
+        padding-right: 0px !important;
+    }
+    .notification_dropdown .drop-padding {
+        position: absolute;
+        z-index: 1;
+        right: -79px;
+        top: 13px;
+        padding-top: 37px;
+        display: none;
+    }
+    .dropdown-content-notification::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        right: 86px;
+        height: 14px;
+        width: 14px;
+        background: #fff;
+        transform: rotate(46deg);
+        border: solid 1px rgba(156, 156, 156, 0.32);
+        border-bottom: none;
+        border-right: none;
+    }
+    .p-ph-verfiction {
+        color: #7E8085!important;
+        line-height: 20px !important;
+        font-size: 12px !important;
+    }
+    .p-ph-verfiction a {
+        color: #FA6400!important;
+        line-height: 20px !important;
+        font-size: 13px !important;
+        font-family: 'Gilroy-Medium';
+    }
+    .border-box-language{    height: 16px !important;
+        width: 16px !important;}
+        .border-box-language::after {
+            left: 5px !important;
+            top: 2px !important;
+            width: 6px !important;
+            height: 10px;
+            border: solid white;
+            border-width: 0px 2px 2px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+    .dropdown-image {
+        border-radius: 8px !important;
+        box-shadow: 0px 2px 10px #0000001A;
+        border: 1px solid #EAEDF3;
+        padding: 10px 10px;
+        width: 100px!important;
+        z-index: 1;
+        left: -3px;
+    }
+    .dropdown-image::before {
+        position: absolute;
+        top: -7px;
+        content: '';
+        left: 61px !important;
+        height: 13px;
+        width: 13px;
+        background: #fff;
+        transform: rotate(46deg);
+        border: solid 1px #EAEDF3;
+        border-bottom: none;
+        border-right: none;
+    }
+    .trop-box {
+        margin: 10px 0px;
+        padding: 8px;
+        width: 288px;
+        transition: 0.5s;
+        box-shadow: 0px 2px 30px #8B8B8B14;
+        border: 0.5px solid #8B8B8B1F;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+    .trop-box:hover {
+        box-shadow: 0px 10px 30px #0000001A;
+        border: 1px solid #E6E6E6;
+        border-radius: 12px;
+        width: 310px;
+        background: #fff;
+        padding: 8px;
+      
+    }
+    .accepted-hd {
+        padding: 10px 0px 0px 55px;
+        text-align: right;
+    }
+    .current-listing {
+        height: auto;
+        overflow: hidden;
+        margin: 0;
+        max-height: 882px;
+        padding-right: 28px;
+        padding-left: 14px;
+    }
+    .create-password-new span {
+        position: absolute;
+        color: #999999;
+        font-size: 14px;
+        top: 10px;
+        right: 15px;
+    }
+    .verify-box ul li {
+        list-style-type: none;
+        width: 15%;
+        display: inline-block;
+        border-radius: 4px;
+        border: 1px solid transparent;
+        height: 70px;
+        overflow: hidden;
+        font-size: 18px;
+    }
+    .verify-box ul li input {
+        background-color: rgb(241, 241, 243);
+        border: none;
+        width: 100%;
+        text-align: center;
+        height: 34px;
+        width: 42px;
+    }
+    .schol-pickup-maping-add::before {
+        position: absolute !important;
+        content: '';
+        height: 56px !important;
+        width: 1px !important;
+        border: 0.5px solid #000000 !important;
+        z-index: 999;
+        top: 17px !important;
+        left: -2px !important;
+    }
+   
+    .massege_popup_txt {
+        padding: 14px 14px 0px 14px;
+    }
+    .popup-title {
+        font-size: 16px;
+        line-height: 27px;
+        color: #000000;
+        font-family: "Gilroy-SemiBold";
+    }
+    .card-qution::before {
+        position: absolute !important;
+        content: '' !important;
+        height: 49px !important;
+        width: 1px !important;
+        border: 0.5px solid #000000;
+        z-index: 1 !important;
+        top: 17px !important;
+        left: 7px !important;
+    }
+
+    .bookings-tab .nav-tabs li {
+        width: 47.8%;
+    }
+
+    .my-route {
+        background: #F5F5F5;
+        border-radius: 8px 0px 0px 0px;
+        padding: 14px 18px;
+        font-family: "Gilroy-SemiBold";
+    }
+
+    .clear_all_apply {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 12px;
+        line-height: 23px;
+        background: #1E306E;
+        font-family: "Gilroy-Medium";
+        padding: 2px 20px;
+        border-radius: 6px;
+        margin-top: 24px;
+        margin-right: 14px;
+    }
+
+    .round-trip {
+        padding-left: 10px;
+    }
+    .dropdown-content-txt {
+        display: none;
+        position: absolute;
+        box-shadow: 0px 2px 10px #0000001A;
+        border: 1px solid #EAEDF3;
+        min-width: 315px;
+        left: 25px;
+        z-index: 999;
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .form-personal-information input {
+        height: 40px;
+        width: 100%;
+        font-size: 14px;
+    }
+    .txt-commet h4 {
+        font-size: 12px;
+        line-height: 16px;
+        color: #000;
+        padding-top: 4px;
+        padding-bottom: 18px !important;
+        border-bottom: 1px solid #979797;
+    }
+    .Recent_reviews_txt_hd h5 {
+        font-family: "Gilroy-SemiBold";
+        padding-top: 30px;
+        padding-bottom: 18px;
+        font-size: 18px;
+        line-height: 14px;
+        padding-left: 0px;
+        color: #000;
+        box-shadow: 0 0 black;
+    }
+    .drivers-Bg-two {
+        margin: 0 auto;
+        max-width: 402px;
+        padding-bottom: 50px;
+    }
+    .cancel-request-link {
+        width: 15%;
+    }
+    #book-star h5 {
+        padding-left: 19px;
+        position: relative;
+        padding-top: 6px !important;
+        font-size: 11px;
+        font-family: "Gilroy-Bold" !important;
+        line-height: 14px;
+    }
+    #book-star h5::before {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+         text-align: center; 
+        top: 5px;
+        font-size: 9px;
+        line-height: 14px;
+        left: 0px;
+        font-family: FontAwesome;
+        content: "\f005";
+        color: #FFFFFF;
+        border-radius: 50%;
+        background: #FA6A0B;
+    }
+    .total-cost {
+        margin-top: 4px !important;
+        margin-right: 13px;
+        position: relative;
+    }
+    .booking-lihnik h3 {
+        font-size: 11px;
+        line-height: 18px;
+        color: #818181;
+        font-family: "Gilroy-Medium";
+    }
+    .booking-lihnik h3 span {
+        font-size: 10px;
+        line-height: 18px;
+        color: #000000;
+        font-family: "Gilroy-Medium";
+    }
+    .booking-lihnik h6 {
+     font-size: 11px; 
+        color: #818181;
+        margin-top: 2px !important;
+    }
+    .driver-name-Txt h4 {
+        font-size: 12px;
+        padding-top: 0px;
+        color: #000000;
+        font-family: "Gilroy-SemiBold";
+        padding-left: 0px;
+    }
+    .driver-pic .driver-name .dana-koprivova {
+        font-size: 14px !important;
+        line-height: 15px;
+        color: #000;
+        font-family: "Gilroy-SemiBold";
+        padding-top: 16px !important;
+    }
+    .year h5 {
+        font-size: 12px;
+        line-height: 24px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .year h5 {
+        font-size: 12px;
+        line-height: 24px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .reviews-star {
+        padding-left: 0px;
+    }
+    .show-more h3 {
+        font-size: 13px;
+        line-height: 15px;
+        color: #F96A0A;
+        margin-left: 0px !important;
+        padding-top: 20px;
+        border-bottom: 1px solid gray;
+        padding-bottom: 20px;
+        margin-bottom: 75px !important;
+    }
+    .massege-Btn-2 {
+        font-size: 13px;
+        color: #1D306E;
+        background: #FFFFFF;
+        border: 2px solid #1D306E;
+        border-radius: 5px;
+        width: 85px;
+        height: 34px;
+        font-family: "Gilroy-SemiBold";
+        line-height: 12px;
+    }
+    .year h3 {
+        font-size: 12px;
+        line-height: 30px;
+        color: #000;
+    }
+    .ride-hd {
+        padding: 19px 5px;
+    }
+    .map {
+        padding: 10px 0px;
+    }
+    .find-rides {
+        background-image: url(../images/banner-bg.png);
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 790px;
+        background-size: cover;
+        background-position: center;
+    }
+    .loctaion-Hd h3 {
+        font-size: 26px;
+        line-height: 30px;
+    }
+    .rides-inner {
+        max-width: 340px;
+        margin: 0 auto;
+        padding-top: 100px;
+    }
+    .footer-link a {
+        color: #fff;
+        font-size: 12px;
+        line-height: 18px;
+        font-family: "Gilroy-Medium";
+        margin-right: 39px;
+        cursor: pointer;
+    }
+    .navbar-expand-lg a img { 
+        width: 60px;
+    }
+
+    #top-header {
+        box-shadow: 0px 9px 10px #D3D3D313;
+        background-color: #000000;
+        padding: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        transition: all 0.5s;
+        height: 60px;
+    }
+
+  
+    .loction {
+        padding-right: 1px;
+        width: 15px !important;
+    }
+    .driver-detail {
+        margin-top: 90px;
+        margin-bottom: 20px;
+    }
+
+    .driver-detail .trip-Hd {
+        color: #081540;
+        font-size: 15px;
+        line-height: 18px;
+        font-family: "Gilroy-Bold";
+    }
+    .available-drivers .Hd-Txt {
+        color: #061033;
+        font-size: 16px;
+        line-height: 20px;
+        font-family: "Gilroy-Bold";
+    }
+  
+
+    .massege-Btn {
+        color: #1D306E;
+        background: #FFFFFF;
+        border: 2px solid #1D306E;
+        border-radius: 5px;
+        width: 120px;
+        font-family: "Gilroy-SemiBold";
+        height: 40px;
+    }
+    .massege-Btn:hover{
+        color: #1D306E;
+        background: #FFFFFF;
+        border: 2px solid #1D306E;
+        border-radius: 5px;
+        width: 120px;
+        font-family: "Gilroy-SemiBold";
+        height: 40px;
+    }
+    .available-drivers {
+        max-width: 402px;
+        border: 1px solid #D1ECFF;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0px 9px 10px #CFEBFF4D;
+        padding: 15px 10px;
+    }
+    .jose-estave {
+        padding: 10px 0px;
+    }
+
+    .jose-estave img {
+        box-shadow: 0px 4px 11px #DADADA;
+        border: 2px solid #FFFFFF;
+        border-radius: 12px;
+        width: 47px;
+        height: 45px;
+    }
+    .driver-pic .driver-name h4 {
+        font-size: 13px;
+        line-height: 19px;
+        font-family: "Gilroy-SemiBold";
+        padding-top: 10px;
+        padding-left: 5px;
+    }
+    .driver-rating {
+        margin: 0 auto;
+        padding-top: 12px;
+        padding-left: 32px;
+    }
+    .driver-pic .driver-name h5 {
+        font-size: 12px;
+        line-height: 16px;
+        font-family: "Gilroy-Medium";
+        padding-left: 5px;
+    }
+    .drivers-detail {
+        max-width: 308px;
+        transition: 0.5s;
+        background-color: #fff;
+        cursor: pointer;
+        margin: 10px 0px;
+    }
+    .drivers-detail:hover {
+        max-width: 308px;
+        transition: 0.5s;
+        box-shadow: 0px 10px 30px #0000001A;
+        border-radius: 12px;
+    }
+    .input-Box input {
+        border-radius: 6px;
+        border: #E6E6E6;
+        height: 40px;
+        background: #E6E6E6;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .input-Box input::-webkit-input-placeholder { /* Edge */
+        color: #000;
+        opacity: 39%;
+      }
+      .footer-Bg {
+    background: #000000;
+    width: 100%;
+    padding: 10px 0px;
+    margin-top: 0px !important;
+}
+      .input-Box input:-ms-input-placeholder { /* Internet Explorer */
+        color: #000;
+        opacity: 39%;
+      }
+      .location-border::before {
+        position: absolute;
+        content: '';
+        height: 43px;
+        width: 1px;
+        border: 0.5px solid #000000;
+        z-index: 1;
+        top: 32px;
+        left: 21px;
+    }
+      .input-Box input::placeholder {
+        color: #000;
+        opacity: 39%;
+      }
+      .call-Btn {
+        margin-top: -23px;
+        margin-right: 42px;
+    }
+    .drivers-Bg {
+        margin: 0 auto;
+        max-width: 402px;
+        padding-bottom: 30px;
+    }
+    .login-Bg-txt {
+        margin-top: 25px;
+    }
+    .Log-Hd {
+        font-size: 18px;
+        line-height: 24px;
+        color: #1E306E;
+        font-family: "Gilroy-Bold";
+    }
+
+    .facebook {
+        height: 40px;
+        background: #475993 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        margin-top: 20px;
+        padding: 11px 15px;
+    }
+    .facebook h3 {
+        color: #fff;
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 13px;
+    }
+    .btn-login {
+        background: #FA6400;
+        border-radius: 6px;
+        width: 100%;
+        height: 40px;
+        border: transparent;
+        text-align: left;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        padding: 11px 16px;
+        font-family: "Gilroy-SemiBold";
+        letter-spacing: 1.2px;
+        margin-top: 16px;
+    }
+    .password-Txt label {
+        font-family: "Gilroy-Medium";
+        color: #FA6400;
+        font-size: 12px;
+        line-height: 16px;
+        cursor: pointer;
+    }
+    .remeber-Txt {
+        font-size: 12px;
+        line-height: 18px;
+        color: #000;
+        font-family: "Gilroy-Medium";
+        padding-left: 5px;
+        padding-top: 5px;
+    }
+    .login-bottom-border {
+        border-bottom: 1px solid #E6E6E6;
+        width: 100%;
+        margin: 18px 0px;
+    }
+   
+    .footer-Txt h3 {
+        font-size: 8px;
+        font-family: "Gilroy-Medium";
+        line-height: 16px;
+        color: #fff;
+        padding-top: 1px;
+    }
+
+
+    .year-display { 
+
+       display: initial !important  }
+       
+       .call-now-2 img{display:none; }
+       .authur-Box {
+        margin-top: 25px;
+        border: 1px solid #e0dede;
+        border-radius: 12px;
+        padding: 16px 16px;
+        margin-right: 15px;
+    }
+
+    .call-now-2 {
+        background: #1D306E;
+        border-radius: 5px;
+        color: #ffff;
+        width: 84px;
+        height: 34px;
+        border: none;
+        font-family: "Gilroy-SemiBold";
+        margin-right: 5px;
+        font-size: 13px;
+        line-height: 14px;
+    }
+    .pickup-address::before {
+        top: 19px !important;
+        left: 6px !important;
+        height: 30px !important;
+    
+    } 
+
+    .footer-Bg {
+        background: #000000;
+        width: 100%;
+        padding: 10px 0px;
+        margin-top: 10px;
+    }
+
+    .google h3 {
+        color: #000000;
+        font-size: 14px;
+        line-height: 16px;
+        padding-left: 13px;
+        cursor: pointer;
+    }
+    .google {
+        height: 40px;
+        background: #FFFFFF;
+        border-radius: 6px;
+        margin-top: 17px;
+        padding: 11px 16px;
+        border: 1px solid #D8D8D8;
+        cursor: pointer;
+    }
+
+
+    .card-right-align {
+        padding-top: 14px;
+        padding-left: 10px;
+    }
+    .accept button {
+        width: 100px;
+        height: 34px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 1px solid #FA6400;
+        border-radius: 6px;
+        color: #FA6400;
+        cursor: pointer;
+        font-family: "Gilroy-Medium";
+        margin-right: 8px;
+    }
+    .accept-2 button {
+        width: 100px;
+        height: 34px;
+        background: #FA6400 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        color: #fff;
+        border: 1px solid #FA6400;
+        font-family: "Gilroy-Medium";
+    }
+
+}
+
+/*--screen-320px--*/
+@media (max-width: 320px) {
+    #atleast_one{
+       font-size: 15px;
+      }
+      #reg_route span{
+        top: 32px !important;
+      
+       }
+       #reg_route2 span{
+        top: 32px !important;
+       
+       }
+      #v_massege span {
+        top: 68px !important;
+        font-size: 13px;
+    }
+      #weekly_trip_massege {
+        font-size: 13px;
+        top: 74px !important;
+    }
+      .driver_registration_sec .personal_content .tab-content .form-group span {
+        top: 69px !important;
+        font-size: 14px;
+    }
+
+    #inspaction_numberImg .dropdown-content-txt {
+        min-width: 130px;
+    }
+    #inspaction_numberImg .header-sort img{
+        height: 117px;
+    }
+
+    .chat-box-type-two .lowest-price button{
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+    .sohbet2{
+        font-size: 14px;
+    }
+    .send {
+        top: 61px !important;
+        right: 10px;
+        width: 65px;
+        height: 36px;
+    }
+    .menu-drop-new {
+        width: 65%;
+    }
+    .Shadrias-pearson span img {
+        bottom: -20px;
+        left: 62px;
+    }
+    .logo-new a img {
+        height: 50px;
+    }
+    .listing_main {
+        max-height: 320px !important;}
+        .chat-box-height {
+            height: 336px;
+        }
+.dropdown-content-notification::before {
+        content: "";
+        position: absolute;
+        top: 31px;
+        right: 113px;
+        height: 14px;
+        width: 14px;
+        background: #fff;
+        transform: rotate(46deg);
+        border: solid 1px rgba(156, 156, 156, 0.32);
+        border-bottom: none;
+        border-right: none;
+    } 
+    .notification_dropdown .drop-padding {
+        position: absolute;
+        z-index: 1;
+        right: -107px;
+        top: 12px;
+        padding-top: 38px;
+        display: none;
+    }
+    .form-personal-information input {
+        height: 40px;
+        width: 100%;
+        font-size: 12px;
+    }
+    .conatiner-fluid-pl{
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+    .bg-width {
+        width: 95%;
+    }
+    .clear_all_apply {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 12px;
+        line-height: 23px;
+        background: #1E306E;
+        font-family: "Gilroy-Medium";
+        padding: 2px 11px;
+        border-radius: 6px;
+        margin-top: 24px;
+        margin-right: 8px;
+    }
+    .trop-box {
+        margin: 10px 0px;
+        padding: 8px;
+        width: 248px;
+        transition: 0.5s;
+        box-shadow: 0px 2px 30px #8B8B8B14;
+        border: 0.5px solid #8B8B8B1F;
+        border-radius: 12px;
+        cursor: pointer;
+    }
+    .trop-box:hover {
+        box-shadow: 0px 10px 30px #0000001A;
+        border: 1px solid #E6E6E6;
+        border-radius: 12px;
+        width: 258px;
+        background: #fff;
+        padding: 8px;
+      
+    }
+
+    .accepted-hd-2 {
+        padding: 4px 0px 0px 0px;
+        text-align: right;
+    }
+    .accepted-hd-2 h6 {
+        font-size: 12px;
+        line-height: 18px;
+        color: #000000;
+        font-family: "Gilroy-SemiBold";
+    }
+    .new-york-usa {
+        margin-top: 0px !important;
+    }
+    
+    
+    .accepted-hd-2 h5 {
+        font-size: 14px;
+        color: #000000;
+        opacity: 60%;
+        line-height: 18px;
+        font-family: "Gilroy-Medium";
+    }
+    .accepted-hd {
+        padding: 10px 0px 0px 48px;
+        text-align: right;
+    }
+    .accepted-hd h5 {
+        font-size: 13px;
+        color: #000000;
+        opacity: 60%;
+        line-height: 18px;
+        font-family: "Gilroy-Medium";
+    }
+    .accepted-hd strong {
+        font-size: 13px;
+        line-height: 18px;
+        color: #000000;
+        font-family: "Gilroy-SemiBold";
+    }
+    .middle-section .van img {
+        padding-right: 20px;
+        width: 63px;
+        height: 60px;
+    }
+    .van-detail h4 {
+        color: #000;
+        font-size: 12px;
+        line-height: 18px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .wrap-cancel{
+        flex-wrap: wrap;
+    }
+    .van-icon_img {
+        width: 17%;
+    }
+    .earning img {
+        padding-top: 70px;
+    }
+    .current-driver-box {
+        padding: 3px 2px 4px 2px;
+        background: #FFFFFF;
+        border: 1px solid #C6C6C6;
+        border-radius: 8px;
+    }
+    .dropdown {
+        font-family: "Gilroy-Medium";
+        color: #FA6400 !important;
+        font-size: 12px;
+        padding-top: 6px;
+    }
+    .p-ph-verfiction {
+        color: #7E8085!important;
+        line-height: 20px !important;
+        font-size: 12px !important;
+    }
+    .create-password-new span {
+        position: absolute;
+        color: #999999;
+        font-size: 14px;
+        top: 9px;
+        right: 15px;
+    }
+    .chat-box-type-two input {
+        width: 100%;
+        box-shadow: 0px 2px 30px #9595950D;
+        border: 0.5px solid #07070752;
+        border-radius: 14px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 19px;
+        padding: 0px 100px 0px 10px;
+    }
+    
+    .dropdown-content-txt {
+        display: none;
+        position: absolute;
+        box-shadow: 0px 2px 10px #0000001A;
+        border: 1px solid #EAEDF3;
+        min-width: 260px;
+        left: 25px;
+        z-index: 999;
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .lang-know input{ width: 0;    height: 45px;
+        font-size: 14px; }
+    .round-trip {
+        padding-left: 10px;
+    }
+    .reviews-star h3 {
+        font-size: 14px;
+        line-height: 14px;
+        font-family: "Gilroy-Medium";
+        padding-top: 3px;
+    }
+    .txt-commet h4 {
+        font-size: 12px;
+        line-height: 18px;
+        color: #000;
+        padding-top: 4px;
+        padding-bottom: 18px !important;
+        border-bottom: 1px solid #979797;
+    }
+    .ave-pickup .pickup-trip-usa {
+        position: relative;
+        font-size: 12px;
+        line-height: 24px;
+        color: #000;
+        opacity: 79%;
+    }
+    .ave-pickup .elementary-school {
+        font-size: 12px;
+        line-height: 18px;
+        font-family: "Gilroy-Medium";
+    }
+    .drivers-Bg-two {
+        margin: 0 auto;
+        max-width: 402px;
+        padding-bottom: 40px;
+    }
+    .pick-Txt h5 {
+        font-size: 12px;
+        color: #000;
+        line-height: 23px;
+        position: relative;
+    }
+    .cancel-request-link {
+        width: 100%;
+    }
+    .cancel-request-link h3 {
+        line-height: 16px;
+        font-size: 13px;
+        color: #FA6400;
+        margin-top: 11px !important;
+        text-align: center;
+    }
+    .sep-date h4 {
+        font-size: 10px;
+        line-height: 15px;
+        font-family: "Gilroy-SemiBold";
+    }
+    .passenger-detail h4 {
+        font-size: 14px;
+        line-height: 12px;
+        color: #000;
+        font-family: "Gilroy-SemiBold";
+        margin-top: 27px !important;
+    }
+    .cancel-reqest_box-profile {
+        background: #FFFFFF;
+        border: 1px solid #0000000D;
+        border-radius: 12px;
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        padding: 9px 12px 7px 12px;
+    }
+    .van-icon_img img {
+        width: 42px;
+        height: 43px;
+    }
+    .response-driver {
+        padding: 10px 0px 10px 4px;
+        background: #FFFFFF 0% 0% no-repeat padding-box;
+        border: 0.5px solid #C6C6C6;
+        border-radius: 8px;
+        margin-top: 17px;
+        cursor: pointer;
+    }
+    .total-cost::before {
+      display:none;
+    }
+    .current-listing {
+        height: auto;
+        overflow: hidden;
+        margin: 0;
+        max-height: 520px;
+        padding-right: 28px;
+        padding-left: 14px;
+    }
+    .email-form {
+        padding-top: 2px;
+    }
+.jose-estave-2 {
+    padding: 10px 3px !important;
+}
+.driver-pic .driver-name .dana-koprivova {
+    font-size: 13px !important;
+    line-height: 9px;
+    color: #000;
+    font-family: "Gilroy-SemiBold";
+    padding-top: 14px !important;
+}
+.jose-estave-2 img {
+    box-shadow: 0px 4px 11px #DADADA;
+    border: 2px solid #FFFFFF;
+    border-radius: 12px;
+    width: 45px;
+    height: 43px;
+}
+
+    .find-rides {
+        background-image: url(../images/banner-bg.png);
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 746px;
+        background-size: cover;
+        background-position: center;
+    }
+    .ride-hd {
+        padding: 16px 4px;
+    }
+    .loctaion-Hd h3 {
+        font-size: 23px;
+    }
+
+    #create-account {
+    margin-top: 30px !important;
+    }
+
+    .google h3 {
+        color: #000000;
+        font-size: 14px;
+        line-height: 16px;
+        padding-left: 13px;
+        cursor: pointer;
+    }
+    .google {
+        height: 40px;
+        background: #FFFFFF;
+        border-radius: 6px;
+        margin-top: 17px;
+        padding: 11px 16px;
+        border: 1px solid #D8D8D8;
+        cursor: pointer;
+    }
+    .navbar-expand-lg a img { 
+        width: 60px;
+    }
+
+    #top-header {
+        box-shadow: 0px 9px 10px #D3D3D313;
+        background-color: #000000;
+        padding: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 99;
+        transition: all 0.5s;
+        height: 60px;
+    }
+
+
+    .loction {
+        padding-right: 0px;
+        width: 14px !important;
+    }
+    .driver-detail {
+        margin-top: 90px;
+        margin-bottom: 20px;
+    }
+    .navbar-nav-new .header-heading_txt {
+        font-size: 8px !important;
+        vertical-align: middle;
+        margin-top: 0px;
+    }
+
+    .driver-detail .trip-Hd {
+        color: #081540;
+        font-size: 16px;
+        line-height: 16px;
+        font-family: "Gilroy-Bold";
+    }
+    .available-drivers .Hd-Txt {
+        color: #061033;
+        font-size: 16px;
+        line-height: 20px;
+        font-family: "Gilroy-Bold";
+    }
+
+  
+
+    .massege-Btn {
+        color: #1D306E;
+        background: #FFFFFF;
+        border: 2px solid #1D306E;
+        border-radius: 5px;
+        width: 120px;
+        font-family: "Gilroy-SemiBold";
+        height: 40px;
+    }
+    .massege-Btn:hover{
+        color: #1D306E;
+        background: #FFFFFF;
+        border: 2px solid #1D306E;
+        border-radius: 5px;
+        width: 120px;
+        font-family: "Gilroy-SemiBold";
+        height: 40px;
+    }
+    .available-drivers {
+        max-width: 402px;
+        border: 1px solid #D1ECFF;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: 0px 9px 10px #CFEBFF4D;
+        padding: 15px 10px;
+    }
+    .jose-estave {
+        padding: 7px 0px;
+    }
+
+    .jose-estave img {
+        box-shadow: 0px 4px 11px #DADADA;
+        border: 2px solid #FFFFFF;
+        border-radius: 12px;
+        width: 47px;
+        height: 45px;
+    }
+    .driver-pic .driver-name h4 {
+        font-size: 13px;
+        line-height: 19px;
+        font-family: "Gilroy-SemiBold";
+        padding-top: 10px;
+        padding-left: 5px;
+    }
+    .driver-rating {
+        margin: 0 auto;
+        padding-top: 10px;
+        padding-left: 32px;
+    }
+    .driver-pic .driver-name h5 {
+        font-size: 12px;
+        line-height: 16px;
+        font-family: "Gilroy-Medium";
+        padding-left: 5px;
+    }
+    .drivers-detail {
+        max-width: 262px;
+        transition: 0.5s;
+        background-color: #fff;
+        cursor: pointer;
+        margin: 10px 0px;
+    }
+    .drivers-detail:hover {
+        max-width: 280px;
+        transition: 0.5s;
+        box-shadow: 0px 10px 30px #0000001A;
+        border-radius: 12px;
+    }
+    .input-Box input {
+        border-radius: 6px;
+        border: #E6E6E6;
+        height: 40px;
+        background: #E6E6E6;
+        font-size: 14px;
+        line-height: 18px;
+    }
+    
+
+
+    .call-Btn {
+        margin-top: -24px;
+        margin-right: 17px;
+    }
+    .drivers-Bg {
+        margin: 0 auto;
+        max-width: 402px;
+        padding-bottom: 30px;
+    }
+    .login-Bg-txt {
+        margin-top: 25px;
+    }
+    .Log-Hd {
+        font-size: 18px;
+        line-height: 24px;
+        color: #1E306E;
+        font-family: "Gilroy-Bold";
+    }
+
+    .facebook {
+        height: 40px;
+        background: #475993 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        margin-top: 20px;
+        padding: 11px 15px;
+    }
+    .facebook h3 {
+        color: #fff;
+        font-size: 14px;
+        line-height: 18px;
+        padding-left: 13px;
+    }
+    .btn-login {
+        background: #FA6400;
+        border-radius: 6px;
+        width: 100%;
+        height: 40px;
+        border: transparent;
+        text-align: left;
+        font-size: 14px;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        padding: 11px 16px;
+        font-family: "Gilroy-SemiBold";
+        letter-spacing: 1.2px;
+        margin-top: 16px;
+    }
+    .password-Txt label {
+        font-family: "Gilroy-Medium";
+        color: #FA6400;
+        font-size: 12px;
+        line-height: 16px;
+        cursor: pointer;
+    }
+    .remeber-Txt {
+        font-size: 12px !important;
+        line-height: 15px;
+        color: #000;
+        font-family: "Gilroy-Medium";
+        padding-left: 5px;
+        padding-top: 3px;
+    }
+    .login-bottom-border {
+        border-bottom: 1px solid #E6E6E6;
+        width: 100%;
+        margin: 18px 0px;
+    }
+
+    .footer-link a {
+        color: #fff;
+        font-size: 11px;
+        line-height: 18px;
+        font-family: "Gilroy-Medium";
+        margin-right: 39px;
+        cursor: pointer;
+    }
+    .profile-pic {
+        height: 84px !important;
+        width: 84px !important;
+    }
+    .Shadrias-pearson h3 {
+        font-size: 18px;
+        line-height: 53px;
+        color: #000;
+        padding-top: 12px;
+        font-family: "Gilroy-SemiBold";
+        padding-left: 20px;
+        padding-top: 0px;
+    }
+    .Shadrias-pearson p {
+        font-size: 15px;
+        line-height: 0px;
+        padding-left: 20px;
+    }
+    .profile-detail-tab a {
+        color: #1E306E;
+        font-size: 14px !important;
+        line-height: 22px !important;
+        font-family: "Gilroy-SemiBold";
+        margin: 10px 0px;
+        margin-bottom: 6px;
+        padding: 10px;
+    }
+    .profile-detail-tab a:hover {
+        color: #1E306E;
+        font-size: 14px !important;
+        line-height: 22px !important;
+        font-family: "Gilroy-SemiBold";
+        margin: 10px 0px;
+        margin-bottom: 6px !important;
+        border-radius: 8px !important;
+        background: #EBF5FC !important;
+    }
+    .profile-detail-tab .active {
+        font-size: 14px !important;
+        color: #1E306E !important;
+        line-height: 22px !important;
+        font-family: "Gilroy-SemiBold" !important;
+        border-radius: 8px !important;
+        background: #EBF5FC !important;
+        margin-bottom: 6px;
+    }
+    .profile-detail-box {
+        margin-top: 84px;
+        padding-left: 0px;
+    }
+    .form-personal-information label {
+        font-size: 14px;
+        line-height: 10px;
+        color: #000;
+        padding-bottom: 2px;
+    }
+    .footer-Txt h3 {
+        font-size: 8px;
+        font-family: "Gilroy-Medium";
+        line-height: 16px;
+        color: #fff;
+        padding-top: 1px;
+    }
+    .rides-inner {
+        max-width: 300px;
+        margin: 0 auto;
+        padding-top: 100px;
+    }
+
+    .year-display { 
+
+       display: initial !important  }
+       
+       .call-now-2 img{display:none; }
+       .authur-Box {
+        margin-top: 25px;
+        border: 1px solid #e0dede;
+        border-radius: 12px;
+        padding: 16px 16px;
+        margin-right: 15px;
+    }
+
+    .call-now-2 {
+        background: #1D306E;
+        border-radius: 5px;
+        color: #ffff;
+        width: 84px;
+        height: 34px;
+        border: none;
+        font-family: "Gilroy-SemiBold";
+        margin-right: 5px;
+        font-size: 13px;
+        line-height: 14px;
+    }
+    .pickup-address::before {
+        position: absolute;
+        content: '';
+        height: 26px;
+        width: 1px;
+        border: 0.5px solid #000000;
+        z-index: 1;
+        top: 17px;
+        left: -2px;
+    }
+    .card-qution::before {
+    height: 29px !important;
+    top: 20px !important;
+    left: 6px !important;
+    }
+    .share-rating-rider h4 {
+        font-size: 16px;
+        line-height: 18px;
+        color: #000;
+        font-family: "Gilroy-SemiBold";
+        margin-top: 27px !important;
+    }
+    .booking-lihnik h3 span {
+        font-size: 10px;
+        line-height: 18px;
+        color: #000000;
+        font-family: "Gilroy-Medium";
+    }
+    .booking-lihnik h3 {
+        font-size: 10px;
+        line-height: 20px;
+        color: #818181;
+        font-family: "Gilroy-Medium";
+    }
+    #book-star h5::before {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        text-align: center;
+        top: 5px;
+        font-size: 9px;
+        line-height: 14px;
+        left: 0px;
+        font-family: FontAwesome;
+        content: "\f005";
+        color: #FFFFFF;
+        border-radius: 50%;
+        background: #FA6A0B;
+    }
+    .popup-body textarea {
+        margin-top: 15px;
+        width: 100%;
+        background: #FFFFFF;
+        border: 1px solid #000000 !important;
+        border-radius: 8px;
+        opacity: 0.2;
+        height: 75px;
+        padding: 10px;
+        resize: none;
+    }   
+    .bookings-tab .nav-tabs li {
+        width: 47.6%;
+    }
+    .review-submit-Btn {
+        width: 110px;
+        height: 40px;
+        background: #1E306E 0% 0% no-repeat padding-box;
+        border-radius: 6px;
+        color: #fff;
+        font-size: 14px;
+    }
+    #book-star h5 {
+        padding-left: 19px;
+        position: relative;
+        padding-top: 5px !important;
+        font-size: 10px;
+        font-family: "Gilroy-Bold" !important;
+        line-height: 17px;
+    }
+    .footer-Bg {
+        background: #000000;
+        width: 100%;
+        padding: 10px 0px;
+        margin-top: 10px;
+    }
+    
+}

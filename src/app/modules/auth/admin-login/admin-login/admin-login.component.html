@@ -1,0 +1,72 @@
+<app-admin-auth-layout>
+  <router-outlet>
+
+    <section class="welcome_box">
+      <div class="admin_box">
+        <div class="input-Box mt-0">
+          <form [formGroup]="loginForm">
+            <h2 class="hd-welcome_back">Welcome Back</h2>
+
+            <div class="form-group">
+              <input type="email" class="form-control " placeholder="Email Address" formControlName="email">
+              <div *ngIf="
+                loginForm.get('email').invalid &&
+                (loginForm.get('email').touched ||
+                  loginForm.get('email').dirty ||
+                  isSubmit)
+              " style="color: red;">
+                <span *ngIf="loginForm.get('email')?.errors?.required">
+                  Please enter email
+                </span>
+                <span *ngIf="loginForm.get('email')?.errors?.email">
+                  Please enter valid email
+                </span>
+              </div>
+            </div>
+            <div class="form-group position-relative eyeIcon">
+              <input [type]="showPassword? 'password':'text'" noWhiteSpace class="form-control" placeholder="Password" formControlName="password">
+              <small><i [class]="showPassword? 'fa fa-eye':'fa fa-eye-slash'" aria-hidden="true"
+                  (click)="showAndHidePassword(showPassword)"></i></small>
+              <div *ngIf="
+                                loginForm.get('password').invalid &&
+                                (loginForm.get('password').touched ||
+                                  loginForm.get('password').dirty ||
+                                  isSubmit)
+                              " style="color: red;">
+                <span *ngIf="
+                                  loginForm.get('password')?.errors?.required
+                                ">
+                  Please enter password
+                </span>
+                <span *ngIf="
+                                  loginForm.get('password')?.errors?.minlength
+                                ">
+                  Please enter at least 6 characters
+                </span>
+                <span *ngIf="
+                                  loginForm.get('password')?.errors?.maxlength
+                                ">
+                  Please enter at most 20 characters
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+
+              <label class="container-admin">Remember me
+                <input type="checkbox">
+                <span class="checkmark-admin"></span>
+              </label>
+
+
+            </div>
+            <button class="btn-login mt-5" type="button" (click)="submitLoginForm()">
+              LOGIN
+              <img src="assets/images/right-arrow.svg" alt="">
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </router-outlet>
+</app-admin-auth-layout>

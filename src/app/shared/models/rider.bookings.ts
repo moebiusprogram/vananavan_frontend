@@ -1,0 +1,21 @@
+export interface RiderBookings {
+  _id?: string,
+  driverId?: string,
+  firstName?: string,
+  lastName?: string,
+  avatar?: string,
+  from?: any,
+  to?: any,
+  fare?: any,
+  quote?: string,
+  fromAddress?: string,
+  toAddress?: string,
+  bookingId?: string,
+  loginType?: number,
+  photoUrl: string,
+  createdAt?: any,
+  averageRating?: number,
+  totalReview?: number,
+  isRating?: any,
+  driverRoutes?: any
+}

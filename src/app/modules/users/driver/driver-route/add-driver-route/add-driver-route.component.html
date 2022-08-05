@@ -1,0 +1,143 @@
+<app-driver-layout>
+  <router-outlet>
+    <section class="create_rout">
+      <div class="container max-container">
+        <div class="pointer" (click)="navigateONRoute()">
+
+          <p><i class="fa fa-angle-left" aria-hidden="true"></i> &nbsp; Back</p>
+        </div>
+
+        <div class="rout_bod">
+          <div class="row">
+
+            <div class="col-md-5 col-sm-5">
+              <div class="rout-height border-routeBox">
+                <div class="ad-rout-box">
+                  <div class="txt-create">
+                    <h2>Create Route</h2>
+                    <h6>Add Route</h6>
+                  </div>
+                  <form [formGroup]="addRouteForm">
+                    <div class="input_Boxnew">
+
+                      <div class="creatRout-input" *ngFor="let item of stops; let i = index">
+                        <div class="loactionInput-new">
+                          <div class="a-box gary-color">
+
+                       <p id="item_citys">{{item?.city}}</p>     
+
+                            <span (click)="deleteStop(i)">
+                              <img
+                                src="assets/images/close-input.svg" alt="">
+                              </span>
+                          </div>
+                          <h3>{{settingConfig.getAlphabetByIndex(i)}}</h3>
+                        </div>
+                      </div>
+
+                      <div class="creatRout-input">
+                        <div class="loactionInput-new">
+                          <input type="text" google-city-autocomplete formControlName="searchStops"
+                            (onSelect)="setPoints($event)" placeholder="Add stop">
+                          <div *ngIf="addRouteForm.get('searchStops').invalid" style="color: red;">
+                            <span *ngIf="addRouteForm.get('searchStops')?.errors?.invalid">
+                              Already taken
+                            </span>
+                          </div>
+                          <h3 class="addStop">{{settingConfig.getAlphabetByIndex(stops.length)}}</h3>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="addStop-Button">
+                      <h3>
+                   
+                        <span>Add Stops</span>
+                      </h3>
+                    </div>
+
+
+                    <!-- <div class="chek-box-circel" *ngIf="(fromLatLong?.lat && fromLatLong?.lng 
+                    && toLatLong?.lat && toLatLong?.lng) || isEdit">
+                      <div class="one-way-Txt ">
+                        <label class="round-chekbox-one">Add Stops </label>
+                        <div class="row">
+                          <div class="col-3 ml-2 mt-2" *ngFor="let item of stops; let i = index">
+                            <button type="button" class="close" aria-label="Close" (click)="deleteStop(i)">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                            <button class="btn btn-light">{{item?.city}}</button>
+                          </div>
+                        </div>
+                        <input class="ml-2 mt-3" type="text" google-autocomplete formControlName="searchStops"
+                          (onSelect)="setPoints($event)" name="tripType"><br>
+                        <div *ngIf="addRouteForm.get('searchStops').invalid" style="color: red;">
+                          <span *ngIf="addRouteForm.get('searchStops')?.errors?.invalid">
+                            Already taken
+                          </span>
+                        </div>
+                      </div>
+                    </div> -->
+
+
+                    <div class="chek-box-circel">
+                      <div class="one-way-Txt ">
+                        <label class="round-chekbox-one">One Way
+                          <input formControlName="tripType" value="1" type="radio" checked="checked" name="tripType">
+                          <span class="checkmark-tick"></span>
+                        </label>
+                      </div>
+                      <div class="round-trip">
+                        <label class="round-chekbox-one">Round Trip
+                          <input formControlName="tripType" value="2" type="radio" name="tripType">
+                          <span class="checkmark-tick"></span>
+                        </label>
+                      </div>
+                    </div>
+
+
+                    <div class="loaction-add_hd">
+                      <h2>Route Name</h2>
+                    </div>
+
+
+                    <div class="row">
+                      <div class="col-md-8  doller">
+                        <div class="col form-group ">
+                          <input type="text" formControlName="locationName" class="form-control">
+                          <div
+                            *ngIf="addRouteCon?.locationName?.invalid && (addRouteCon?.locationName?.touched || addRouteCon?.locationName?.dirty || isRoute)"
+                            style="color: red;">
+                            <span *ngIf="addRouteCon.locationName?.errors?.required && isRoute">
+                              Please enter location name
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-4 name-save-route">
+                        <div class="submit-quote">
+                          <button type="submit" (click)="saveLanLongAndSteps()" id="sav_route_btn">Save Route</button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+
+
+              </div>
+
+            </div>
+            <div class="col-md-7 col-sm-7">
+              <div class="mapImg-add-rout border-left-0">
+                <div class="map" id="local">
+                  <label id="panel"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </router-outlet>
+</app-driver-layout> 

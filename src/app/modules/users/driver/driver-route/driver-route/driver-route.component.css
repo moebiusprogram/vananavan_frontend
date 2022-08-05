@@ -1,0 +1,18 @@
+.map {
+  height: 450px;
+  max-width: 500px;
+}
+
+.highlight-route {
+    background: #ffffff;
+    box-shadow: 0px 2px 18px #6161611c;
+    border: 1px solid #1f2d6e;
+    border-radius: 8px;
+    transition: 0.3s;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cursor-style {
+  cursor: pointer;
+}

@@ -1,0 +1,22 @@
+<ng-container *ngIf="isLogin && currentUser?.type==1">
+  <app-layout>
+    <router-outlet>
+      <app-contact-us-detail></app-contact-us-detail>
+    </router-outlet>
+  </app-layout>
+</ng-container>
+<ng-container *ngIf="isLogin && currentUser?.type==2">
+  <app-driver-layout>
+    <router-outlet>
+      <app-contact-us-detail></app-contact-us-detail>
+    </router-outlet>
+  </app-driver-layout>
+</ng-container>
+
+<ng-container *ngIf="!isLogin">
+  <app-auth-layout>
+    <router-outlet>
+      <app-contact-us-detail></app-contact-us-detail>
+    </router-outlet>
+  </app-auth-layout>
+</ng-container>

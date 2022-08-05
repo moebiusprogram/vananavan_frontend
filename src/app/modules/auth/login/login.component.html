@@ -1,0 +1,207 @@
+<app-auth-layout>
+  <router-outlet>
+    <section>
+      <div class="container-fluid h-100">
+        <div class="login-bg">
+          <div class="row h-100 flex-column-reverse flex-md-row">
+            <div class="col-lg-6 col-md-6 driver-section p-0" *ngIf="userType==1">
+              <app-rider-dumb></app-rider-dumb>
+            </div>
+
+            <div class="col-lg-6 col-md-6 driver-section p-0" *ngIf="userType==2">
+              <app-driver-dumb></app-driver-dumb>
+            </div>
+
+            <!-- Start of Login -->
+            <div class="col-lg-6 col-md-6 login-section p-0" *ngIf="!showVerifyOtp">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="drivers-Bg">
+                      <div class="login-Bg-txt">
+                        <h3 class="Log-Hd" *ngIf="userType==1">Log in as existing customer</h3>
+                        <h3 class="Log-Hd" *ngIf="userType==2">Welcome back</h3>
+                      </div>
+                      <div class="facebook d-flex" (click)="signInWithFB()">
+                        <img src="assets/images/facebook.svg" alt="" class="img-fluid" />
+                        <h3>Log in using Facebook</h3>
+                      </div>
+
+                      <div class="google d-flex" (click)="signInWithGoogle()">
+                        <img src="assets/images/google.svg" alt="" class="img-fluid" />
+                        <h3>
+                          Log in using Google
+                        </h3>
+                      </div>
+                      <div class="border-middle">
+                        <p>OR</p>
+                      </div>
+                      <div class="input-Box">
+                        <form [formGroup]="loginForm">
+                          <div class="form-group">
+                            <input type="email" class="form-control " placeholder="Email" formControlName="email" />
+
+                            <div *ngIf="
+                                loginForm.get('email').invalid &&
+                                (loginForm.get('email').touched ||
+                                  loginForm.get('email').dirty ||
+                                  isSubmit)
+                              " style="color: red;">
+                              <span *ngIf="loginForm.get('email')?.errors?.required">
+                                Please enter email
+                              </span>
+                              <span *ngIf="loginForm.get('email')?.errors?.email">
+                                Please enter valid email
+                              </span>
+                            </div>
+                          </div>
+
+                          <div class="form-group create-password-new-2">
+                            <input [type]="showPassword? 'password':'text'" noWhiteSpace class="form-control" placeholder="Password"
+                              formControlName="password" />
+                         <small><i [class]="showPassword? 'fa fa-eye':'fa fa-eye-slash'" aria-hidden="true"
+                                (click)="showAndHidePassword(showPassword)"></i></small>
+                            <div *ngIf="
+                                loginForm.get('password').invalid &&
+                                (loginForm.get('password').touched ||
+                                  loginForm.get('password').dirty ||
+                                  isSubmit)
+                              " style="color: red;">
+                              <span *ngIf="
+                                  loginForm.get('password')?.errors?.required
+                                ">
+                                Please enter password
+                              </span>
+                              <span *ngIf="
+                                  loginForm.get('password')?.errors?.minlength
+                                ">
+                                Please enter at least 6 characters
+                              </span>
+                              <span *ngIf="
+                                  loginForm.get('password')?.errors?.maxlength
+                                ">
+                                Please enter at most 20 characters
+                              </span>
+                            </div>
+                          </div>
+
+                          <div class="form-group form-check d-flex justify-content-between">
+                            <div>
+                              <!-- <input type="checkbox" class="form-check-input remember" formControlName="rememberMe" />
+                              <label class="form-check-label remeber-Txt">Remember me</label> -->
+                            </div>
+                            
+                            <div class="password-Txt">
+                              <label class="form-check-label remeber-Txt" (click)="goToForgetPassword()">Forgot
+                                Password?</label>
+                            </div>
+                          </div>
+
+
+                            <!-- <div>
+                              <input type="checkbox" class="form-check-input remember" formControlName="driver" />
+                              <label class="form-check-label remeber-Txt">Login as driver</label>
+                            </div> -->
+
+
+                          <button type="button" class="btn-login" (click)="submitLoginForm()">
+                            LOGIN
+                            <img src="assets/images/right-arrow.svg" alt="" />
+                          </button>
+                        </form>
+                      </div>
+                      <div class="login-bottom-border"></div>
+                      <div class="sign-up d-flex">
+                        <h3>Don’t have an account?</h3>
+                        <a style="color: #FA6400;" (click)="goToGivenRoute('/auth/register')"> Sign up </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+                                    <!-- Verify otp starts -->
+            <div class="col-lg-6 col-md-6 login-section p-0" *ngIf="showVerifyOtp">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="drivers-Bg">
+                      <div class="driver-detail">
+                        <h3 class="trip-Hd otp_color">OTP Verification</h3>
+                        <p class="p-ph-verfiction" *ngIf="accountData">
+                          We just sent a six-digit code to
+                          <a href="javascript:void();">{{ accountData?.email }}</a> via
+                          Email. Enter the code below to confirm your email
+                          .
+                        </p>
+                      </div>
+
+                      <div class="input-Box">
+                        <div class="verify-box-top ">
+                          <div class="verify-box ">
+                            <form [formGroup]="verifyOtpForm">
+                              <ul>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 0)" />
+                                </li>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 1)" />
+                                </li>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 2)" />
+                                </li>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 3)" />
+                                </li>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 4)" />
+                                </li>
+                                <li>
+                                  <input class="otp_num" maxlength="1" placeholder="0" (input)="onOtp($event, 5)" />
+                                </li>
+                              </ul>
+                              <div *ngIf="
+                                  verifyOtpForm.get('otp').invalid &&
+                                  (verifyOtpForm.get('otp').touched ||
+                                    verifyOtpForm.get('otp').dirty ||
+                                    isSubmit)
+                                " style="color: red;">
+                                <span *ngIf="
+                                    verifyOtpForm.get('otp')?.errors?.required
+                                  ">
+                                  Please enter OTP
+                                </span>
+                                <span *ngIf="
+                                    verifyOtpForm.get('otp')?.errors?.invalid
+                                  ">
+                                  Please enter valid OTP
+                                </span>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <button type="button" class="btn-login mt-0" (click)="verifyOtp()">
+                          Verify
+                          <img src="assets/images/right-arrow.svg" alt="" />
+                        </button>
+                      </div>
+                      <div class="login-bottom-border"></div>
+                      <div class="sign-up d-flex">
+                        <h3>Didn't receive code?</h3>
+                        <a (click)="resendOtp()"> Resend Code </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Verify otp ends.. -->
+
+            <!-- End of Login -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </router-outlet>
+</app-auth-layout>

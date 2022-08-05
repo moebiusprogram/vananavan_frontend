@@ -1,0 +1,815 @@
+<app-admin-layout>
+  <router-outlet>
+    <section class="driver_registration_sec">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-12">
+            <div class="driver_registration_box">
+              <div class="registrationHd"> Driver Registration</div>
+              <div class="personal_info_tab">
+                <ul class="nav nav-pills " id="pills-tab" role="tablist">
+                  <li class="nav-item" role="presentation"
+                    (click)="goToGivenRoute('/driver/personal-info', 'personalInfo1Form')">
+                    <a [class]="displayForm.personalInfo1Form? 'nav-link active': 'nav-link'" id="pills-home-tab"
+                      aria-controls="pills-home" aria-selected="true"><span><i
+                          [class]="isForm1Complete? 'fa fa-check-circle-o':'fa fa-circle-thin'"
+                          aria-hidden="true"></i></span>Personal Step 1</a>
+                  </li>
+                  <li class="nav-item" role="presentation"
+                    (click)="goToGivenRoute('/driver/personal-info', 'personalInfo2Form')">
+                    <a [class]="displayForm.personalInfo2Form? 'nav-link active': 'nav-link'"
+                      aria-controls="pills-profile" aria-selected="false"> <span><i
+                          [class]="isForm2Complete? 'fa fa-check-circle-o':'fa fa-circle-thin'"
+                          aria-hidden="true"></i></span> Personal Step 2</a>
+                  </li>
+                  <li class="nav-item" role="presentation"
+                    (click)="goToGivenRoute('/driver/personal-info', 'vehicleDetailForm')">
+                    <a [class]="displayForm.vehicleDetailForm? 'nav-link active': 'nav-link'"
+                      aria-controls="pills-contact" aria-selected="false"> <span><i
+                          [class]="isVehcileFormComplete? 'fa fa-check-circle-o':'fa fa-circle-thin'"
+                          aria-hidden="true"></i></span> Vehicle Details</a>
+                  </li>
+                  <li class="nav-item" role="presentation"
+                    (click)="goToGivenRoute('/driver/personal-info', 'routeForm')">
+                    <a [class]="displayForm.routeForm? 'nav-link active': 'nav-link'" aria-controls="pills-contact"
+                      aria-selected="false"> <span><i
+                          [class]="driver?.isCompleteRegistered? 'fa fa-check-circle-o':'fa fa-circle-thin'"
+                          aria-hidden="true"></i></span>School Route</a>
+                  </li>
+                </ul>
+
+                <div class="personal_content">
+                  <form [formGroup]="profileForm">
+                    <div class="tab-content" id="pills-tabContent">
+                      <div *ngIf="displayForm.personalInfo1Form">
+                        <div class="form-personal-information p-0">
+                          <form formGroupName="personalInfo1Form">
+                            <div class="form-group email-form">
+                              <label class="mb-0">Date of Birth</label>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-4 col-sm-6 form-group">
+                                <label class="mb-0">Day</label>
+                                <select formControlName="day" type="text" [class]="(personalInfo1Form.get('day').invalid &&
+                             isSubmit && personalInfo1Form.get('day')?.errors?.required)? 
+                           'form-control is-invalid': 'form-control'">
+                                  <option value="null" hidden selected>Select</option>
+                                  <option *ngFor="let item of dayYearMonth?.days" [value]="item">{{item}}</option>
+                                </select>
+                                <div
+                                  *ngIf="personalInfo1Form.get('day').invalid && (personalInfo1Form.get('day').dirty || personalInfo1Form.get('day').touched || isSubmit)">
+                                  <span id="daymonth_year_error" style="color: red"
+                                    *ngIf="personalInfo1Form.get('day').errors['required']">
+                                    Please select day
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-6 form-group">
+                                <label class="mb-0">Month</label>
+                                <select formControlName="month" type="text" [class]="(personalInfo1Form.get('month').invalid &&
+                             isSubmit && personalInfo1Form.get('month')?.errors?.required)? 
+                           'form-control is-invalid': 'form-control'">
+                                  <option value="null" hidden selected>Select</option>
+                                  <option *ngFor="let item of dayYearMonth?.months" [value]="item.name">{{item.name}}
+                                  </option>
+                                </select>
+                                <div
+                                  *ngIf="personalInfo1Form.get('month').invalid && (personalInfo1Form.get('month').dirty || personalInfo1Form.get('month').touched || isSubmit)">
+                                  <span id="daymonth_year_error" style="color: red"
+                                    *ngIf="personalInfo1Form.get('month').errors['required']">
+                                    Please select month
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="col-md-4 col-sm-6 form-group">
+                                <label class="mb-0">Year</label>
+                                <select formControlName="year" type="text" [class]="(personalInfo1Form.get('year').invalid &&
+                             isSubmit && personalInfo1Form.get('year')?.errors?.required)? 
+                           'form-control is-invalid': 'form-control'">
+                                  <option value="null" hidden selected>Select</option>
+                                  <option *ngFor="let item of dayYearMonth?.year" [value]="item">{{item}}</option>
+                                </select>
+                                <div
+                                  *ngIf="personalInfo1Form.get('year').invalid && (personalInfo1Form.get('year').dirty || personalInfo1Form.get('year').touched || isSubmit)">
+                                  <span id="daymonth_year_error" style="color: red"
+                                    *ngIf="personalInfo1Form.get('year').errors['required']">
+                                    Please select year
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="form-group email-form mb-0">
+                              <label>Language Known</label>
+                            </div>
+
+                            <div class="form-check form-check-inline lang-know">
+                              <div class="one-way-Txt" *ngFor="let item of availableLanguage">
+                                <label class="book-evevnt">{{item?.name}}
+                                  <input [checked]="isLanguageSelected(item?._id)" formControlName="languages"
+                                    (change)="selectLanguage($event, item?._id)" type="checkbox" checked="checked">
+                                  <span class="checkmark border-box-language"></span>
+                                </label>
+                              </div>
+
+                              <div id="atleast_one" style="color: red"
+                                *ngIf="personalInfo1Form.get('languages').invalid">
+                                Please select atleast one language
+                              </div>
+                            </div>
+
+                            <div class="form-group event-textarea">
+                              <label>About Me</label>
+                              <textarea class="form-control" formControlName="about"></textarea>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6 form-group email-form">
+                                <label>Years of Experience</label>
+                                <select formControlName="drivingFromYear" type="text" class="form-control"
+                                  style="height: 46px;">
+                                  <option value="null" hidden selected>Select</option>
+                                  <option *ngFor="let item of yearExperience" [value]="item">{{item}}</option>
+                                </select>
+                                <div
+                                  *ngIf="personalInfo1Form.get('drivingFromYear').invalid && (personalInfo1Form.get('drivingFromYear').dirty || personalInfo1Form.get('drivingFromYear').touched || isSubmit)">
+                                  <span id="weekly_trip_massege" style="color: red"
+                                    *ngIf="personalInfo1Form.get('drivingFromYear').errors['required']">
+                                    Please select year of experience.
+                                  </span>
+                                </div>
+                              </div>
+                              <div class="col-md-6 form-group email-form">
+                                <label>Starting Rate (Weekly trips ) </label>
+                                <input type="text" formControlName="rate" class="form-control"
+                                  oninput="this.value = '$'+ this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')">
+                                <div
+                                  *ngIf="personalInfo1Form.get('rate').invalid && (personalInfo1Form.get('rate').dirty || personalInfo1Form.get('rate').touched || isSubmit)">
+                                  <span id="weekly_trip_massege" style="color: red"
+                                    *ngIf="personalInfo1Form.get('rate').errors['required']">
+                                    Please enter weekly trip rate.
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="btn-details">
+                              <!-- <button class="driver-vehicle-Btn mr-2" (click)="resetForm()">Cancel</button> -->
+                              <button class="driver-vehicle-Btn" (click)="submitProfile()">Next</button>
+                            </div>
+
+                          </form>
+                        </div>
+
+                      </div>
+                      <div *ngIf="displayForm.personalInfo2Form">
+                        <div class="form-personal-information pt-0">
+                          <form formGroupName="personalInfo2Form">
+
+                            <div class="form-group email-form" id="v_massege">
+                              <label>Chauffeur License Number (Public)</label>
+                              <input formControlName="chauffeurLicenseNumber" type="text" class="form-control">
+                              <div
+                                *ngIf="personalInfo2Form.get('chauffeurLicenseNumber').invalid && (personalInfo2Form.get('chauffeurLicenseNumber').dirty || personalInfo2Form.get('chauffeurLicenseNumber').touched || isSubmit)">
+                                <span style="color: red"
+                                  *ngIf="personalInfo2Form.get('chauffeurLicenseNumber').errors['required']">
+                                  Please enter chauffeur license number.
+                                </span>
+                                <span style="color: red"
+                                  *ngIf="personalInfo2Form['controls'].chauffeurLicenseNumber.errors?.minlength">
+                                  Atleast 3 characters are required.</span>
+                              </div>
+                            </div>
+
+                            <div class="form-group email-form" id="v_massege">
+                              <label>Driver's License Number (Not shown to public)</label>
+                              <input type="text" formControlName="licenseNumber" class="form-control">
+                              <div
+                                *ngIf="personalInfo2Form.get('licenseNumber').invalid && (personalInfo2Form.get('licenseNumber').dirty || personalInfo2Form.get('licenseNumber').touched || isSubmit)">
+                                <span style="color: red"
+                                  *ngIf="personalInfo2Form.get('licenseNumber').errors['required']">
+                                  Please enter driver's license number.
+                                </span>
+                                <span style="color: red"
+                                  *ngIf="personalInfo2Form['controls'].licenseNumber.errors?.minlength">
+                                  Atleast 3 characters are required.</span>
+                              </div>
+                            </div>
+
+                            <div class="form-group email-form mb-0">
+                              <label for="exampleInputPassword1">Upload Chauffeur License Number (Public)</label>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6 col-sm-6 form-group " *ngIf="!clDocuments">
+                                <div [class]="showCLRedIcon? 'uplode-box uplode-box-red':'uplode-box'"
+                                  data-toggle="modal" data-target="#new-document1" class="w-100">
+                                  <div class="licence-pic">
+                                    <img src="assets/images/licance.png" alt="">
+                                  </div>
+                                  <div class="driver-photo-licence">
+                                    <h3><span><img src="assets/images/upload.svg" alt="" class="uplode"></span> Upload
+                                      Chauffeur
+                                      License (Public)</h3>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6 col-sm-6 form-group" *ngIf="clDocuments">
+                                <div class="uplode-box-two">
+                                  <div class="licence-pic p-0">
+                                    <img [src]="clDocuments" alt="">
+                                    <span id="up_close_icon" class="crose-icon"
+                                      (click)="removeImage('clDocuments')"><img src="assets/images/crose.svg"
+                                        alt="saved document"></span>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+
+                            <div class="form-group email-form mb-0">
+                              <label for="exampleInputPassword1">Upload Driver's License (Not shown to public)</label>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6 col-sm-6 form-group" *ngIf="dlDocumnts">
+                                <div class="uplode-box-two">
+                                  <div class="licence-pic p-0">
+                                    <img [src]="dlDocumnts" alt="">
+                                    <span id="up_close_icon" class="crose-icon" (click)="removeImage('dlDocumnts')"><img
+                                        src="assets/images/crose.svg" alt="saved document"></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-md-6 col-sm-6 form-group">
+                                <div [class]="showDLRedIcon? 'uplode-box uplode-box-red':'uplode-box'"
+                                  *ngIf="!dlDocumnts" data-toggle="modal" data-target="#new-document2">
+                                  <div class="licence-pic">
+                                    <img src="assets/images/licance.png" alt="">
+                                  </div>
+                                  <div class="driver-photo-licence">
+                                    <h3><span><img src="assets/images/upload.svg" alt="" class="uplode"></span> Upload
+                                      Driver's
+                                      License (Not shown to public)</h3>
+                                  </div>
+                                  <!-- <input type="file" class="file-input"> -->
+                                </div>
+                              </div>
+
+
+                            </div>
+
+
+                            <div class="modal fade" id="new-document1" tabindex="-1" role="dialog"
+                              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered document_popup" role="document"
+                                *ngIf="!displaySelctedCl">
+                                <div class="modal-content massege_popup_txt-2">
+                                  <div class="modal-header border-0 p-0">
+                                    <h1 class="addDoc-txt">Add New Document</h1>
+                                  </div>
+                                  <div class="popup-body" id="img-slect-Box">
+                                    <div class="slect-input-popup">
+                                      <h3><img src="assets/images/upload-popup.svg" alt=""></h3>
+                                      <h4>your files to assets, or <span>browse</span></h4>
+                                      <input (change)="selectFile($event, 'clImageChangedEvent', 'displaySelctedCl')"
+                                        type="file" class="file-input-popup">
+                                    </div>
+                                    <p *ngIf="fileType" style="color: red;"> Please select a valid image(jpg/png) </p>
+                                  </div>
+                                  <div class="btn-details m-0" id="document-popup-Btn">
+                                    <button class="driver-vehicle-Btn-cancel" data-dismiss="modal"
+                                      (click)="cancelDocument()">Cancel</button>
+                                    <button class="driver-vehicle-Btn" disabled>Submit</button>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="modal-dialog modal-dialog-centered document_popup" role="document"
+                                *ngIf="displaySelctedCl">
+                                <div class="modal-content massege_popup_txt-2">
+                                  <div class="modal-header border-0 p-0">
+                                    <h1 class="addDoc-txt"></h1>
+                                  </div>
+                                  <div class="popup-body" id="img-slect-Box">
+                                    <div class="title-Document">
+                                      <form>
+
+                                      </form>
+                                    </div>
+                                    <div class="crop-Img-Box">
+                                      <image-cropper [maintainAspectRatio]="false" [aspectRatio]="4 / 4"
+                                        [imageChangedEvent]="clImageChangedEvent" (imageCropped)="clCropped($event)">
+                                      </image-cropper>
+                                    </div>
+                                  </div>
+                                  <div class="btn-details m-0" id="document-popup-Btn">
+                                    <button class="driver-vehicle-Btn-cancel" (click)="cancelDocument()"
+                                      data-dismiss="modal">Cancel</button>
+                                    <button class="driver-vehicle-Btn"
+                                      (click)="submitFile('croppedClImage', 'chauffeurLicensePhoto')"
+                                      [attr.data-dismiss]="hideModal? 'modal': ''">Submit</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+                            <div class="modal fade" id="new-document2" tabindex="-1" role="dialog"
+                              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered document_popup" role="document"
+                                *ngIf="!displaySelctedDl">
+                                <div class="modal-content massege_popup_txt-2">
+                                  <div class="modal-header border-0 p-0">
+                                    <h1 class="addDoc-txt">Add New Document</h1>
+                                  </div>
+                                  <div class="popup-body" id="img-slect-Box">
+                                    <div class="slect-input-popup">
+                                      <h3><img src="assets/images/upload-popup.svg" alt=""></h3>
+                                      <h4>your files to assets, or <span>browse</span></h4>
+                                      <input (change)="selectFile($event, 'dlImageChangedEvent', 'displaySelctedDl')"
+                                        type="file" class="file-input-popup">
+                                    </div>
+                                    <p *ngIf="fileType" style="color: red;"> Please select a valid image(jpg/png) </p>
+                                  </div>
+                                  <div class="btn-details m-0" id="document-popup-Btn">
+                                    <button class="driver-vehicle-Btn-cancel" data-dismiss="modal"
+                                      (click)="cancelDocument()">Cancel</button>
+                                    <button class="driver-vehicle-Btn" disabled>Submit</button>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="modal-dialog modal-dialog-centered document_popup" role="document"
+                                *ngIf="displaySelctedDl">
+                                <div class="modal-content massege_popup_txt-2">
+                                  <div class="modal-header border-0 p-0">
+                                    <h1 class="addDoc-txt"></h1>
+                                  </div>
+                                  <div class="popup-body" id="img-slect-Box">
+                                    <div class="title-Document">
+                                      <form>
+
+                                      </form>
+                                    </div>
+                                    <div class="crop-Img-Box">
+                                      <image-cropper [maintainAspectRatio]="false" [aspectRatio]="4 / 4"
+                                        [imageChangedEvent]="dlImageChangedEvent" (imageCropped)="dlCropped($event)">
+                                      </image-cropper>
+                                    </div>
+                                  </div>
+                                  <div class="btn-details m-0" id="document-popup-Btn">
+                                    <button class="driver-vehicle-Btn-cancel" (click)="cancelDocument()"
+                                      data-dismiss="modal">Cancel</button>
+                                    <button class="driver-vehicle-Btn"
+                                      (click)="submitFile('croppedDlImage', 'profileDocumentPhoto')"
+                                      [attr.data-dismiss]="hideModal? 'modal': ''">Submit</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+
+                            <div class="btn-details d-flex justify-content-between">
+                              <button class="driver-vehicle-Btn" id="back_driver-btn"
+                                (click)="goToGivenRoute('/driver/personal-info', 'personalInfo1Form')">Back</button>
+                              <button class="driver-vehicle-Btn" (click)="submitProfile()">Next</button>
+                            </div>
+
+                          </form>
+                        </div>
+                      </div>
+                      <div *ngIf="displayForm.vehicleDetailForm">
+
+                        <div class="form-personal-information p-0">
+                          <form formGroupName="vehicleDetailForm">
+                            <div class="form-group email-form">
+                              <label>Vehicle Make and Model</label>
+                              <input type="text" formControlName="model" class="form-control">
+                              <div
+                                *ngIf="vehicleDetailForm.get('model').invalid && (vehicleDetailForm.get('model').touched || vehicleDetailForm.get('model').dirty || isSubmit)"
+                                style="color: red;" id="v_massege">
+                                <span *ngIf="vehicleDetailForm.get('model')?.errors?.required">
+                                  Please enter vehicle make and model.
+                                </span>
+                                <span *ngIf="vehicleDetailForm.get('model')?.errors?.minlength">
+                                  Please enter vehicle make and model.
+                                </span>
+                                <span *ngIf="vehicleDetailForm.get('model')?.errors?.maxlength">
+                                  Please enter at most 30 characters
+                                </span>
+                              </div>
+                            </div>
+                            <div class="form-group email-form">
+                              <label>Vehicle Plate Number</label>
+                              <input type="text" formControlName="registrationNumber" class="form-control">
+                              <div
+                                *ngIf="vehicleDetailForm.get('registrationNumber').invalid && (vehicleDetailForm.get('registrationNumber').touched || vehicleDetailForm.get('registrationNumber').dirty || isSubmit)"
+                                style="color: red;" id="v_massege">
+                                <span *ngIf="vehicleDetailForm.get('registrationNumber')?.errors?.required">
+                                  Please enter vehicle plate number.
+                                </span>
+                                <span *ngIf="vehicleDetailForm.get('registrationNumber')?.errors?.minlength">
+                                  Please enter complete vehicle plate number.
+                                </span>
+                                <span *ngIf="vehicleDetailForm.get('registrationNumber')?.errors?.maxlength">
+                                  Please enter at most 30 characters
+                                </span>
+                              </div>
+                            </div>
+
+                            <div class="form-group email-form">
+                              <label>Vehicle Identification Number (VIN)</label>
+                              <input type="text" formControlName="vin" class="form-control">
+                              <div
+                                *ngIf="vehicleDetailForm.get('vin').invalid && (vehicleDetailForm.get('vin').touched || vehicleDetailForm.get('vin').dirty || isSubmit)"
+                                style="color: red;" id="v_massege">
+                                <span *ngIf="vehicleDetailForm.get('vin')?.errors?.required">
+                                  Please enter vehicle identification number.
+                                </span>
+                                <span *ngIf="vehicleDetailForm.get('vin')?.errors?.minlength">
+                                  Please enter complete vehicle identification number.
+                                </span>
+                                <span *ngIf="vehicleDetailForm.get('vin')?.errors?.maxlength">
+                                  Please enter at most 30 characters
+                                </span>
+                              </div>
+                            </div>
+                            <div class="form-group email-form">
+                              <label class="mb-0">County Inspection Number
+                                <small class="dropdown-sort-btn position-relative" style="cursor: pointer; color:#000;">
+                                  <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                  <div class="sort-box-padding-top" id="inspaction_numberImg">
+                                    <div class="dropdown-content-txt">
+                                      <div class="header-sort">
+                                        <img src="assets/images/Country_Inspection_Number.jpg">
+                                      </div>
+                                    </div>
+                                  </div>
+                                </small></label>
+                              <input type="text" formControlName="cin" class="form-control">
+                              <div
+                                *ngIf="vehicleDetailForm.get('cin').invalid && (vehicleDetailForm.get('cin').touched || vehicleDetailForm.get('cin').dirty || isSubmit)"
+                                style="color: red;" id="v_massege">
+                                <span *ngIf="vehicleDetailForm.get('cin')?.errors?.required">
+                                  Please enter county inspection number.
+                                </span>
+                                <span *ngIf="vehicleDetailForm.get('cin')?.errors?.minlength">
+                                  Please enter complete county inspection number.
+                                </span>
+                                <span *ngIf="vehicleDetailForm.get('cin')?.errors?.maxlength">
+                                  Please enter at most 30 characters
+                                </span>
+                              </div>
+                            </div>
+                            <div class="row" id="expiration_month">
+                              <div class="col-md-6 col-sm-6 form-group email-form" id="v_massege">
+                                <label class="mb-0">Expiration Month</label>
+                                <select formControlName="cinExpireMonth" type="text" [class]="(vehicleDetailForm.get('cinExpireMonth').invalid &&
+                             isSubmit && vehicleDetailForm.get('cinExpireMonth')?.errors?.required)? 
+                           'form-control is-invalid': 'form-control'">
+                                  <option value="null" hidden selected>Select</option>
+                                  <option *ngFor="let item of dayYearMonth?.months" [value]="item.name">{{item.name}}
+                                  </option>
+                                </select>
+                                <div
+                                  *ngIf="vehicleDetailForm.get('cinExpireMonth').invalid && (vehicleDetailForm.get('cinExpireMonth').dirty || vehicleDetailForm.get('cinExpireMonth').touched || isSubmit)">
+                                  <span style="color: red"
+                                    *ngIf="vehicleDetailForm.get('cinExpireMonth').errors['required']">
+                                    Please select month.
+                                  </span>
+                                </div>
+
+                              </div>
+                              <div class="col-md-6 col-sm-6 form-group email-form" id="v_massege">
+                                <label class="mb-0">Expiration Year</label>
+                                <select formControlName="cinExpireYear" type="text" [class]="(vehicleDetailForm.get('cinExpireYear').invalid &&
+                             isSubmit && vehicleDetailForm.get('cinExpireYear')?.errors?.required)? 
+                           'form-control is-invalid': 'form-control'">
+                                  <option value="null" hidden selected>Select</option>
+                                  <option *ngFor="let item of ExpirationYearMonth?.year" [value]="item">{{item}}
+                                  </option>
+                                </select>
+                                <div
+                                  *ngIf="vehicleDetailForm.get('cinExpireYear').invalid && (vehicleDetailForm.get('cinExpireYear').dirty || vehicleDetailForm.get('cinExpireYear').touched || isSubmit)">
+                                  <span style="color: red"
+                                    *ngIf="vehicleDetailForm.get('cinExpireYear').errors['required']">
+                                    Please select year.
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group email-form mb-0">
+                              <label for="exampleInputPassword1">Upload County Inspection Number</label>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6 col-sm-6 form-group " *ngIf="!cinDocuments">
+                                <div [class]="showCinRedIcon? 'uplode-box uplode-box-red':'uplode-box'"
+                                  data-toggle="modal" data-target="#new-document3">
+                                  <div class="licence-pic">
+                                    <img src="assets/images/licance.png" alt="">
+                                  </div>
+                                  <div class="driver-photo-licence" *ngIf="!cinDocuments">
+                                    <h3><span><img src="assets/images/upload.svg" alt="" class="uplode"></span> County
+                                      Inspection
+                                      Number Photos</h3>
+                                  </div>
+                                  <!-- <input type="file" class="file-input"> -->
+                                </div>
+                              </div>
+                              <div class="col-md-6 col-sm-6 form-group" *ngIf="cinDocuments">
+                                <div class="uplode-box-two">
+                                  <div class="licence-pic p-0">
+                                    <img [src]="cinDocuments" alt="">
+                                    <span id="up_close_icon" class="crose-icon"
+                                      (click)="removeImage('cinDocuments')"><img src="assets/images/crose.svg"
+                                        alt="saved document"></span>
+                                  </div>
+                                </div>
+                              </div>
+
+                            </div>
+
+                            <div class="form-group email-form mb-0">
+                              <label for="exampleInputPassword1">Upload Vehicle Photos</label>
+                            </div>
+                            <div class="row">
+                              <ng-container *ngIf="vinDocuments && vinDocuments.length>0">
+                                <div class="col-md-6 col-sm-6 form-group" *ngFor="let item of vinDocuments">
+                                  <div class="uplode-box-two">
+                                    <div class="licence-pic p-0">
+                                      <img [src]="item" alt="">
+                                      <span id="up_close_icon" class="crose-icon"
+                                        (click)="removeImage('vinDocuments', item)"><img src="assets/images/crose.svg"
+                                          alt="saved document"></span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </ng-container>
+                              <div class="col-md-6 col-sm-6 form-group" *ngIf="vinDocuments?.length<3">
+                                <div [class]="showVinRedIcon? 'uplode-box uplode-box-red':'uplode-box'"
+                                  data-toggle="modal" data-target="#new-document4">
+                                  <div class="licence-pic">
+                                    <img src="assets/images/licance.png" alt="">
+                                  </div>
+                                  <div class="driver-photo-licence">
+                                    <h3><span><img src="assets/images/upload.svg" alt="" class="uplode"></span> Upload
+                                      Vehicle Photos</h3>
+                                  </div>
+                                  <!-- <input type="file" class="file-input"> -->
+                                </div>
+                              </div>
+
+
+                            </div>
+
+
+
+                            <div class="modal fade" id="new-document3" tabindex="-1" role="dialog"
+                              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered document_popup" role="document"
+                                *ngIf="!displaySelctedCin">
+                                <div class="modal-content massege_popup_txt-2">
+                                  <div class="modal-header border-0 p-0">
+                                    <h1 class="addDoc-txt">Add New Document</h1>
+                                  </div>
+                                  <div class="popup-body" id="img-slect-Box">
+                                    <div class="slect-input-popup">
+                                      <h3><img src="assets/images/upload-popup.svg" alt=""></h3>
+                                      <h4>your files to assets, or <span>browse</span></h4>
+                                      <input (change)="selectFile($event, 'cinImageChangedEvent', 'displaySelctedCin')"
+                                        type="file" class="file-input-popup">
+                                    </div>
+                                    <p *ngIf="fileType" style="color: red;"> Please select a valid image(jpg/png) </p>
+                                  </div>
+                                  <div class="btn-details m-0" id="document-popup-Btn">
+                                    <button class="driver-vehicle-Btn-cancel" data-dismiss="modal"
+                                      (click)="cancelDocument()">Cancel</button>
+                                    <button class="driver-vehicle-Btn" disabled>Submit</button>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="modal-dialog modal-dialog-centered document_popup" role="document"
+                                *ngIf="displaySelctedCin">
+                                <div class="modal-content massege_popup_txt-2">
+                                  <div class="modal-header border-0 p-0">
+                                    <h1 class="addDoc-txt"></h1>
+                                  </div>
+                                  <div class="popup-body" id="img-slect-Box">
+                                    <div class="title-Document">
+                                      <form>
+
+                                      </form>
+                                    </div>
+                                    <div class="crop-Img-Box">
+                                      <image-cropper [maintainAspectRatio]="false" [aspectRatio]="4 / 4"
+                                        [imageChangedEvent]="cinImageChangedEvent" (imageCropped)="cinCropped($event)">
+                                      </image-cropper>
+                                    </div>
+                                  </div>
+                                  <div class="btn-details m-0" id="document-popup-Btn">
+                                    <button class="driver-vehicle-Btn-cancel" (click)="cancelDocument()"
+                                      data-dismiss="modal">Cancel</button>
+                                    <button class="driver-vehicle-Btn"
+                                      (click)="submitFile('croppedCinImage', 'cinPhoto')"
+                                      [attr.data-dismiss]="hideModal? 'modal': ''">Submit</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+                            <div class="modal fade" id="new-document4" tabindex="-1" role="dialog"
+                              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                              <div class="modal-dialog modal-dialog-centered document_popup" role="document"
+                                *ngIf="!displaySelctedVin">
+                                <div class="modal-content massege_popup_txt-2">
+                                  <div class="modal-header border-0 p-0">
+                                    <h1 class="addDoc-txt">Add New Document</h1>
+                                  </div>
+                                  <div class="popup-body" id="img-slect-Box">
+                                    <div class="slect-input-popup">
+                                      <h3><img src="assets/images/upload-popup.svg" alt=""></h3>
+                                      <h4>your files to assets, or <span>browse</span></h4>
+                                      <input (change)="selectFile($event, 'vinImageChangedEvent', 'displaySelctedVin')"
+                                        type="file" class="file-input-popup">
+                                    </div>
+                                    <p *ngIf="fileType" style="color: red;"> Please select a valid image(jpg/png) </p>
+                                  </div>
+                                  <div class="btn-details m-0" id="document-popup-Btn">
+                                    <button class="driver-vehicle-Btn-cancel" data-dismiss="modal"
+                                      (click)="cancelDocument()">Cancel</button>
+                                    <button class="driver-vehicle-Btn" disabled>Submit</button>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div class="modal-dialog modal-dialog-centered document_popup" role="document"
+                                *ngIf="displaySelctedVin">
+                                <div class="modal-content massege_popup_txt-2">
+                                  <div class="modal-header border-0 p-0">
+                                    <h1 class="addDoc-txt"></h1>
+                                  </div>
+                                  <div class="popup-body" id="img-slect-Box">
+                                    <div class="title-Document">
+                                      <form>
+
+                                      </form>
+                                    </div>
+                                    <div class="crop-Img-Box">
+                                      <image-cropper [maintainAspectRatio]="false" [aspectRatio]="4 / 4"
+                                        [imageChangedEvent]="vinImageChangedEvent" (imageCropped)="vinCropped($event)">
+                                      </image-cropper>
+                                    </div>
+                                  </div>
+                                  <div class="btn-details m-0" id="document-popup-Btn">
+                                    <button class="driver-vehicle-Btn-cancel" (click)="cancelDocument()"
+                                      data-dismiss="modal">Cancel</button>
+                                    <button class="driver-vehicle-Btn"
+                                      (click)="submitFile('croppedVinImage', 'vehicleDetailPhoto')"
+                                      [attr.data-dismiss]="hideModal? 'modal': ''">Submit</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+
+                            <div class="btn-details d-flex justify-content-between">
+                              <button class="driver-vehicle-Btn" id="back_driver-btn"
+                                (click)="goToGivenRoute('/driver/personal-info', 'personalInfo2Form')">Back</button>
+                              <button class="driver-vehicle-Btn" (click)="submitProfile()">Next</button>
+                            </div>
+
+                          </form>
+                        </div>
+
+                      </div>
+                      <div [hidden]="!displayForm.routeForm">
+                        <section class="create_rout mt-5">
+                          <div class="container max-container">
+                            <div class="rout_bod">
+                              <div class="row">
+
+                                <div class="col-md-6 col-sm-6">
+                                  <div class="rout-height">
+                                    <div class="ad-rout-box">
+                                      <div class="txt-create">
+                                        <h2>Create Route</h2>
+                                        <p data-toggle="modal" data-target="#exampleModal3"
+                                          style="cursor: pointer; font-size: 14px;">Need Help? <span
+                                            style="color: orange;">Watch Tutorial</span></p>
+                                      </div>
+                                      <form [formGroup]="routeForm">
+                                        <div class="input-Box">
+                                          <div class="loaction-add_hd ">
+                                            <h2>School name</h2>
+                                          </div>
+                                          <div class="form-group" id="reg_route2">
+                                            <input type="text" google-school-autocomplete formControlName="schoolName"
+                                              (onSelect)="selectAddress($event)" class="form-control"
+                                              id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            <div
+                                              *ngIf="routeForm.get('schoolName').invalid && (routeForm.get('schoolName').touched || routeForm.get('schoolName').dirty || isSubmit)"
+                                              style="color: red;">
+                                              <span *ngIf="routeForm.get('schoolName')?.errors?.required">
+                                                Please select schoolName
+                                              </span>
+                                            </div>
+                                          </div>
+
+                                          <div class="loaction-add_hd">
+                                            <h2>Route Name</h2>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col-md-12 doller">
+                                              <div class="col form-group " id="reg_route">
+                                                <input type="text" placeholder="Route name" formControlName="title"
+                                                  class="form-control">
+                                                <div
+                                                  *ngIf="routeForm.get('title')?.invalid && (routeForm.get('title')?.touched || routeForm.get('title')?.dirty || isSubmit)"
+                                                  style="color: red;">
+                                                  <span *ngIf="routeForm.get('title')?.errors?.required">
+                                                    Please enter route name
+                                                  </span>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+
+                                        </div>
+
+                                        <div class="row ml-0 mt-3">
+                                          <div class="submit-quote">
+                                            <button type="submit" [disabled]="!isPolygon"
+                                              [ngStyle]="{'cursor' :  !isPolygon ? 'not-allowed' : null}"
+                                              (click)="saveRoute()">Save
+                                              Route</button>
+                                          </div>
+                                          <div class=" name-save-route">
+                                            <div class=" name-save-route">
+                                              <div class="submit-quote">
+                                                <button type="button" (click)="cancelRoute()" id="cr_btn">Clear
+                                                  Route</button>
+                                              </div>
+                                            </div>
+                                          </div>
+
+
+
+                                        </div>
+                                      </form>
+                                    </div>
+
+
+                                  </div>
+
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                  <div class="mapImg-add-rout">
+                                    <div class="map" id="local">
+                                      <label id="panel"></label>
+
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </section>
+
+                      </div>
+
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal3">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="">
+            <button style="padding:8px 0px" type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span style="position:relative; top:2px; right: 8px" aria-hidden="true"><i class="fa fa-times"
+                  aria-hidden="true"></i></span>
+            </button>
+          </div>
+          <div class="modal-body p-0">
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/O0q4OIDfBy0"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </router-outlet>
+</app-admin-layout>

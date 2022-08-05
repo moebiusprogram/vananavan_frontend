@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- <meta charset="utf-8"> -->
+  <base href="/">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no user-scalable=no"> -->
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+  <link rel="icon" type="image/x-icon" href="assets/images/icon.png" />
+  <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+  <link rel="stylesheet" href="assets/css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+  <title>VananaVan</title>
+<link rel="stylesheet" href="styles.cedcea681041c8579fbb.css"></head>
+
+<body class="gilroy">
+  <div class="language-btns">
+    <a href="#" id="lang-es" style="font-size: 12px; color: #fff; margin-right: 10px;">ES</a>
+    <a href="#" id="lang-en" style="font-size: 12px; color: #fff;">EN</a>
+  </div>
+  <app-root>
+
+  </app-root> 
+   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+
+  <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+  <script type="text/javascript" src="assets/js/main.js"></script>
+  <script type="text/javascript" src="assets/js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+ 
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=drawing,places&key=AIzaSyAkq7DnUBTkddWXddoHAX02Srw6570ktx8">
+  </script>
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=drawing,places&key=AIzaSyCK1cwNv5gtuumRF41-Yx08eFUEM6NvvdY">
+  </script> -->
+  <!-- <script src="https://maps.googleapis.com/maps/api/js?libraries=drawing&key=AIzaSyAkq7DnUBTkddWXddoHAX02Srw6570ktx8">
+  </script> -->
+
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+  <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+  <script>
+    let directionsService = new google.maps.DirectionsService();
+    let directionsRenderer = new google.maps.DirectionsRenderer();
+  </script>
+
+  <script>
+    $(document).ready(function () {
+      $('#example').DataTable();
+    });
+    function getLang() {
+      if (navigator.languages !== undefined)
+        return navigator.languages[0];
+
+      return navigator.language;
+    }
+
+    document.getElementById("lang-es").addEventListener("click", function(event){
+      event.preventDefault()
+      setLang("es")
+    });
+
+    document.getElementById("lang-en").addEventListener("click", function(event){
+      event.preventDefault()
+      setLang("en")
+    });
+
+    function setLang(l) {
+      sessionStorage.setItem('locale', l);
+      window.location.reload();
+    }
+    function __(s) {
+      let lang = sessionStorage.getItem('locale');
+      if (lang === null) {
+        let lang = getLang().split('-')[0];
+        if (lang !== 'es' && lang !== 'en') {
+          lang = 'en';
+        }
+        sessionStorage.setItem('locale', lang);
+      }
+      if (lang === 'en') return s;
+      // footer
+
+      let locales = {
+        "Find Drivers for School": "Encuentra conductores para la escuela",
+        "School": "Escuela",
+        "Find Drivers for Trip": "Encontrar conductores para viaje",
+        "Book Event": "Evento de libro",
+        "Please select pickup location": "Seleccione el lugar de recogida",
+        "Please select school": "Por favor seleccione escuela",
+        "Pickup Location": "Lugar de recogida",
+        "School Name": "Nombre de la escuela",
+        "Search Drivers": "Buscar conductores",
+        "Become a driver": "Regístrate como conductor",
+        "Login": "Acceso",
+        "Get Started": "Empezar",
+        "Pickup Address": "Dirección de entrega",
+        "Please select source": "Por favor seleccione fuente",
+        "Destination Address": "Dirección de destino",
+        "Please select destination": "Por favor seleccione destino",
+        "One Way": "Un camino",
+        "Round Trip": "Viaje ida y vuelta",
+        "Choose Date": "Elegir fecha",
+        "Please Choose Date": "Por favor elija la fecha",
+        "Choose Date range": "Elija el rango de fechas",
+        "Please select date": "Por favor seleccione la fecha",
+        "Passenger Details": "Detalles del Pasajero",
+        "Number of Passengers": "Numero de Pasajeros",
+        "Do you have Luggage?": "¿Tienes equipaje?",
+        "Yes": "Si",
+        "No": "No",
+        "Would you like to share this ride?": "¿Te gustaría compartir este viaje?",
+        "Special instructions": "Instrucciones especiales",
+        "Type something here...": "Escriba algo aquí ...",
+        "Book Now": "Reservar ahora",
+        "Booking a trip is now easier than ever!": "¡Reservar un viaje ahora es más fácil que nunca!",
+        "Book event for": "Reservar evento para",
+        "Field Trip": "Viaje de estudios",
+        "Friends": "Amigos",
+        "Church": "Iglesia",
+        "Work": "Trabaja",
+        "About Us": "Sobre nosotros",
+        "We at VananaVan are an online service that provides users a place to easily find and contact available drivers for any of their transportation needs, whether that be for school or vacation or even work events. VananaVan is here to help you find the right driver for you.": "En VananaVan somos un servicio en línea que brinda a los usuarios un lugar para encontrar y comunicarse fácilmente con los conductores disponibles para cualquiera de sus necesidades de transporte, ya sea para la escuela, vacaciones o incluso eventos laborales. VananaVan está aquí para ayudarlo a encontrar el controlador adecuado para usted.",
+        "Legal": "Legal",
+        "Privacy Policy": "Política de privacidad",
+        "Terms and Conditions": "Términos y condiciones",
+        "Support": "Soporte",
+        "Contact Us": "Contacta con nosotros",
+        "Create your account": "",
+        "Drive With VananaVan": "",
+        "Choose from a variety of drivers for your trip.": "Elija entre una variedad de conductores para su viaje.",
+        "Available Drivers": "Conductores Disponibles",
+        "Log in as existing customer": "Iniciar sesión como cliente existente",
+        "Log in using Facebook": "Iniciar sesión con Facebook",
+        "Log in using Google": "Iniciar sesión con Google",
+        "OR": "O",
+        "Email": "Correo electrónico",
+        "Password": "Contraseña",
+        "Forgot Password?": "¿Has olvidado tu contraseña?",
+        "LOGIN": "ACCESO",
+        "Don't have an account?": "¿No tienes una cuenta?",
+        "Sign up": "Inscribirse",
+        "Please enter your email address below": "Por favor ingrese su dirección de correo electrónico a continuación",
+        "Send Code": "Enviar código",
+        "Cancel": "Cancelar",
+        "OTP Verification": "Verificación de OTP",
+        " We just sent a six-digit code to ": " Acabamos de enviar un código de seis dígitos a ",
+        " via Email. Enter the code below to confirm your email . ": " por correo electrónico. Ingrese el código a continuación para confirmar su correo electrónico ",
+        "Verify": "Verificar",
+        "Didn't receive code?": "¿No recibiste el código?",
+        "Resend Code": "Reenviar código",
+        " Please enter valid email ": " Por favor introduzca un correo electrónico válido ",
+        " Drive With VananaVan ": "Conduce con VananaVan",
+        " Continue using Facebook ": "Continuar con Facebook",
+        " Continue using Google ": "Continuar con Google",
+        "First Name": "Primer nombre",
+        "Last Name": "Apellido",
+        "Phone Number": "Número de teléfono",
+        "Confirm password": "Confirmar Contraseña",
+        " Please enter first name ": "Por favor ingrese el nombre",
+        " Please enter at least 3 characters ": " Por Favor introduzca al menos 3 caracteres ",
+        " Please enter last name ": "Por favor ingrese el apellido",
+        " Please enter phone number ": "Ingrese el número de teléfono",
+        " Please enter 10 digits ": "Ingrese 10 dígitos",
+        " Please enter email ": "Por favor ingrese correo electrónico",
+        " Please enter password ": " Por favor, ingrese contraseña ",
+        " Please enter at least 6 characters ": " Por favor ingrese al menos 6 caracteres ",
+        " Password not matched ": "Contraseña no coincidente",
+        "By proceeding, I agree to VananaVan's Terms of Use and acknowledge that I have read the Privacy Policy.": "Al continuar, acepto los Términos de uso de VananaVan y reconozco que he leído la Política de privacidad",
+        " Please select terms and condition ": "Seleccione términos y condiciones",
+        " SIGN UP ": " INSCRIBIRSE ",
+        "Already have an account?": "¿Ya tienes una cuenta?",
+        " Log in ": "Acceso",
+        " Create your account ": " Crea tu cuenta ",
+        " Profile": " Perfil",
+        " My Bookings": "Mis reservas",
+        " Messages": " Mensajes",
+        "Messages": "Mensajes",
+        " My Requests": "Mis solicitudes",
+        " Log out":" Cerrar sesión",
+        "Upload Profile Photo": "Subir foto de perfil",
+        "Your personal information": "Tu información personal",
+        "Submit": "Enviar",
+        "Current": "Actual",
+        "Past": "Pasado",
+        "No Bookings.": "Sin reservas",
+        "No Messages.": "Sin mensajes",
+        "No Ride Requests.": "Sin solicitudes de viaje.",
+        "Active": "Activas",
+        "Closed": "Cerradas",
+        "Our Address":"Nuestra Dirección",
+        "Our Email":"Nuestro Correo Electrónico",
+        "Please contact us for further assistance":"Póngase en contacto con nosotros para obtener más ayuda",
+        "Comment":"Comentario",
+        "VANANAVAN Terms of Service":"VANANAVAN Términos y Condiciones",
+        "VANANAVAN \xa0Privacy Policy\xa0":"VANANAVAN \xa0Políticas de Privacidad\xa0",
+        "Overall Rating":"Calificación general",
+        "Trips Completed" : "Viajes completados",
+        "Upcoming Trips":"Próximos viajes",
+        "Upcoming Trip":"Próximo viaje",
+        " Your Vehicle Details": " Tus datos de vehículo",
+        "Your Vehicle Details": "Tus datos de vehículo",
+        " Your Vehicle Details ": " Tus datos de vehículo ",
+        " Profile ": " Perfil ",
+        " School Routes":" Rutas Escolares",
+        "School Routes":"Rutas Escolares",
+        " Booking Routes": " Reserva de Rutas",
+        " Ride Requests ": " Solicitudes de viaje ",
+        "View All":"Ver Todos",
+        "No upcoming trips.":"No hay viajes pendientes",
+        "No past trips.":"No hay viajes realizados",
+        " Trip History":"Historial de Viajes",
+        "Recent Reviews":"Reseñas Recientes",
+        "No reviews.":"Sin reseñas.",
+        "No reviews yet.":"Sin reseñas todavía.",
+        "Date of Birth":"Fecha de nacimiento",
+        "Day":"Día",
+        "Month":"Mes",
+        "Year":"Año",
+        "Chauffeur License Number": "Número de licencia de chofer",
+        "Chauffeur License Number (Public)": "Número de licencia de chofer (Público)",
+        "Driver's License Number (Not shown to public)": "Número de licencia de conducir (no se muestra al público)",
+        "Years of Experience":"Años de Experiencia",
+        "Starting Rate Per Week":"Tarifa inicial por semana",
+        "Languages Known":"Idiomas Conocidos",
+        "English":"Inglés",
+        "Spanish":"Español",
+        "About Me":"Acerca de mí",
+        "Upload Chauffeur License (Public)":"Subir Licencia de Chofer (Pública)",
+        " Upload Chauffeur License (Public)":" Subir Licencia de Chofer (Pública)",
+        "Upload Driver's License (Not shown to public)":"Subir licencia de conducir (no se muestra al público)",
+        " Upload Driver's License (Not shown to public)":" Subir licencia de conducir (no se muestra al público)",
+        "Update":"Actualizar",
+        "Update ":"Actualizar ",
+        "Cancel":"Cancelar",
+        "More than 30 years":"Más de 30 años",
+        "Less than 1 year":"Menos de un año",
+        "Vehicle Make and Model":"Marca y Modelo del Vehículo",
+        "Vehicle Plate Number":"Número de Placa del Vehículo",
+        "Vehical Identification Number (VIN)":"Número de identificación vehicular (VIN)",
+        "County Inspection Number ":"Número de Inspección del Condado ",
+        "Expiration Month":"Mes de Vencimiento",
+        "Expiration Year":"Año de Vencimiento",
+        "County Inspection Number Photos":"Fotos del Número de Inspección del Condado",
+        "Upload Vehicle Photos":"Subir Fotos del Vehículo",
+        "February":"Febrero",
+        "+ ADD NEW SCHOOL ROUTE": "+ AÑADIR NUEVA RUTA ESCOLAR",
+        "+ ADD NEW BOOKING ROUTE":"+ AÑADIR NUEVA RESERVA DE RUTA",
+        "School Name:":"Nombre de la Escuela",
+        "Route Name":"Nombre de la Ruta",
+        "Need Help? ":"¿Necesitas Ayuda? ",
+        "Save Route":"Guardar Ruta",
+        "Clear Route":"Limpiar Ruta",
+        "Create Route":"Crear Ruta",
+        "Add Route":"Añadir Ruta",
+        "Watch Tutorial":"Ver Tutorial",
+        " Booking Routes": " Reserva de Rutas",
+        "Back":"Atrás",
+        "Add stop":"Añadir paradas",
+        "Add Stops":"Añadir Paradas",
+        "No ride requests yet.":"Todavía no hay solicitudes de viaje",
+        "Active ":"Activo ",
+        "Closed":"Cerrado",
+        "No trips yet.":"Ningún viaje todavía.",
+        "Trip History":"Historial de Viajes",
+        "Search Driver's Name":"Buscar nombre del conductor",
+        " Ride Requests":" Solicitudes de viaje",
+        " Trip History": " Historial de Viajes",
+        " Driver Registration":" Registro de Conductor",
+        "Personal Step 1":"Paso Personal 1",
+        " Personal Step 2":" Paso Personal 2",
+        " Vehicle Details":"Detalles del Vehículo",
+        "School Route":"Ruta Escolar"
+      };
+
+      return locales[s] !== undefined ? locales[s] : s;
+    }
+  </script>
+
+  <script src="runtime-es5.73e0cda13c42b21833e5.js" nomodule defer></script>
+  <script src="runtime-es2015.73e0cda13c42b21833e5.js" type="module"></script>
+  <script src="polyfills-es5.b175d65de35520e6ce33.js" nomodule defer></script>
+  <script src="polyfills-es2015.3fa83d399c70d1173548.js" type="module"></script>
+  <script src="main-es5.1d09fbcbeda113678f70.js" nomodule defer></script>
+  <script src="main-es2015.1d09fbcbeda113678f70.js" type="module"></script>
+</body>
+
+</html>
